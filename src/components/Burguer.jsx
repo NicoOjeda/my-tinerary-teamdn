@@ -19,6 +19,7 @@ export default function Burguer() {
 
     console.log(viewHide)
     
+    
 };
     return (
      <>
