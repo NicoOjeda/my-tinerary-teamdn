@@ -1,0 +1,175 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+
+    
+}
+.nav-container1{
+    display: flex;
+
+
+
+}
+
+.nav-container{
+ 
+    width: 100%;
+    color: black;
+    background-color: rgb(40,40,40);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    align-content: flex-start;
+    font-family: 'Merienda', cursive;
+
+    
+    
+}
+
+.nav1{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+
+
+
+.nav-0{
+    display: flex;
+}
+
+.nav-1{
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #E7C621;
+    color:black;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Merienda', cursive;
+
+    
+}
+.nav-2{
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #E7C621;
+    color: black;
+    font-weight: bold;
+    margin-left: 50px;
+    cursor: pointer;
+    font-family: 'Merienda', cursive;
+    
+}
+
+.logo1{
+    /* margin: 5px; */
+       height: 60px;
+       display: flex;
+
+   
+       
+ 
+   }
+.logo2{
+    height: 46px!important;
+    border-radius: 6px;
+    background-color: #E7C621;
+    padding: 1px;
+    width: 52px;
+    cursor: pointer;
+
+}
+ 
+
+.icon-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 60px;
+    margin-top: 12rem;
+    z-index: 1;
+    transition: all 0.5s;
+background-color: rgba(0, 0, 0, 0.444);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(163, 98, 38);         
+    border-radius: 10px;
+    border: 1px solid rgba(245, 245, 220, 0);
+    box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
+    padding: 5px 25px 27px ;
+
+}
+.icon-login:hover{
+    background-color: rgba(236, 247, 35, 0.444);
+  
+}
+.btn-1{
+    
+    background-color: #E7C621;
+        
+        transition: 0.5;
+        text-transform: uppercase;
+    
+}
+.btn-signin{
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #E7C621;
+    color:black;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Merienda', cursive;
+
+}
+.btn-signin:hover{
+    background-color: orangered;
+    color: white;
+    transition: 0.5;
+    text-transform: uppercase;
+}
+
+.btn-Login{
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #E7C621;
+    color:black;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Merienda', cursive;
+}
+.btn-Login:hover{
+    background-color: orangered;
+    transition: 0.5;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+
+@media (min-width: 600px) {
+
+    nav{
+        
+       width: 100%;
+    }
+}
+
+
+/* @media (max-width: 600px) {
+
+    .logo2{
+        
+       margin-left: 5rem;
+    }
+} */
+
