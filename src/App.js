@@ -4,7 +4,7 @@ import {Routes, Route } from 'react-router-dom'
 import WebSiteLayout from './layouts/WebSiteLayout'
 import NotFound from "./components/NotFound";
 
-import Signin from "./components/Signin";
+import Signin from "./pages/Signin";
 
 
 
