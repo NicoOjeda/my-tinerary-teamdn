@@ -13,6 +13,7 @@ function App() {
       <Route path='/' element={<Home/>} ></Route>
       <Route path='*' element={<NotFound/>} ></Route>
       <Route path='/SignUp' element={<SignUp/>} ></Route>
+      {/* <Route path="/SignIn" element></Route> */}
       </Routes>
   </WebSiteLayout>
       

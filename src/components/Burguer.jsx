@@ -28,7 +28,7 @@ export default function Burguer() {
       <div className="nav-container1">
       <div className="nav-container">
         <div className="nav-0">
-          <LinkRouter to="/Index">
+          <LinkRouter to="/">
             <button className="nav-1">{btn}</button>
           </LinkRouter>
           <LinkRouter to="/Cities">
@@ -54,7 +54,7 @@ export default function Burguer() {
               alt="burguer foto"
               onClick={hide}
             />
-          <LinkRouter to="/Index">
+          <LinkRouter to="/">
           <button className="btn-burguer-1">
             Home
           </button>

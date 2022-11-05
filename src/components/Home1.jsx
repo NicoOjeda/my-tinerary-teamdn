@@ -14,8 +14,10 @@ return(
 
             <h1 className="tittle-home"><span className='my-style'> {tittle}</span></h1>
             <p className='slogan-home'> {slogan}</p>
-       
+       <div>
+
           <CallToAction/>
+       </div>
 
  </div>
 
