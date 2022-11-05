@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', cursive;
+}
+.Signin-box{
+    height: 70vh ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+    gap: 0.5rem;
+}
+.Signin-form{
+    background-color: rgba(0, 0, 0, 0.644);
+    display: flex;
+    width: 20rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 8px;
+    color: #e7c621;
+    font-style: italic;
+    font-size: 18px;
+}
+.Signin-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.Signin-button2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 5rem;
+    
+}
+.Signin-google{
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.Signin-google2{
+    height: 1.5rem;
+    width: 12rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    border-radius: 8px;
+}
+.Signin-h2{
+    background-color: #1b2021;
+    text-align: center;
+    color: #e7c621;
+    font-size: 35px;
+    padding: 0.5rem;
+}
+.Signin-input{
+    width: 15rem;
+}
+@media (max-width: 550px){
+    .Signin-form{
+    
+        width: 50%;
+    }
+}
+@media (max-width: 425px){
+    .Signin-form{
+        width: 70%;
+    }
+    .Signin-input{
+        width: 14rem;
+    }
+}
+@media (max-width: 375px){
+    .Signin-form{
+        width: 80%;
+        padding: 1rem;
+    }
+    .Signin-input{
+        width: 14rem;
+    }
+}
