@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Merienda' ;
+    src: url(./Merienda-Bold.ttf);
+}
+/* fonts.css/Wasabi.ttf */
+h1{
+    font-family: 'Merienda';
+}
