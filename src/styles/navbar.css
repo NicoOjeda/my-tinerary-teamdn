@@ -117,7 +117,30 @@ background-color: rgba(0, 0, 0, 0.444);
         
         transition: 0.5;
         text-transform: uppercase;
+        margin-left: 20px!important;
     
+}
+.btn-2{
+ 
+    background-color: #E7C621;
+        
+    transition: 0.5;
+    text-transform: uppercase;
+
+
+}
+
+.btn-1:hover{
+    background-color: orangered;
+    color: white;
+    transition: 0.5;
+    text-transform: uppercase;
+}
+.bnt-2:hover{
+    background-color: orangered;
+    color: white;
+    transition: 0.5;
+    text-transform: uppercase;
 }
 .btn-signin{
     border: 2px solid black;
