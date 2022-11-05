@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../styles/home1.css';
 import{Link as LinkRouter} from "react-router-dom"
-import Navbar from '../components/Navbar';
+import Navbar from './Navbar';
 
 
 export default function Home1() {

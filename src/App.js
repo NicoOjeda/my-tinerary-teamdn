@@ -1,16 +1,17 @@
 import React from "react";
-import Home1 from "./pages/Home1";
+import Home from "./pages/Home";
 import {Routes, Route } from 'react-router-dom'
-import Layout from './layouts/Layout'
+import WebSiteLayout from './layouts/WebSiteLayout'
+
 
 
 function App() {
   return (
-    <Layout>
+    <WebSiteLayout>
       <Routes> 
-      <Route path='/Index' element={<Home1/>} ></Route>
+      <Route path='/' element={<Home/>} ></Route>
        </Routes>
-      </Layout>
+      </WebSiteLayout>
   );
 }
 export default App;

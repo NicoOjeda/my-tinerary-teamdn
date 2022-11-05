@@ -9,15 +9,15 @@ export default function CallToAction() {
   return (
     
 <>
- {/* <LinkRouter to='/Cities' className="Welcome-button" >
+ <LinkRouter to='/Cities' className="cities-button" >
   <button className="btn-1">Cities</button>
-  </LinkRouter>  */}
+  </LinkRouter>  
 
-{/* 
-  <LinkRouter to='/hotels' className="Welcome-button" >
+
+  <LinkRouter to='/hotels' className="cities-button" >
   <button className="btn-1">Hotels</button>
 
-    </LinkRouter> */}
+    </LinkRouter> 
 
 </>
 
