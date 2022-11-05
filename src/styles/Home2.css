@@ -1,0 +1,9 @@
+.Home2-container{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #51513d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Merienda', cursive;
+}
