@@ -4,7 +4,11 @@ import {Routes, Route } from 'react-router-dom'
 import WebSiteLayout from './layouts/WebSiteLayout'
 import NotFound from "./components/NotFound";
 
+import SignUp from "./components/SignUp"
+
+
 import Signin from "./pages/Signin";
+
 
 
 
@@ -12,6 +16,15 @@ function App() {
   return (
     <WebSiteLayout>
       <Routes> 
+
+      <Route path='/' element={<Home/>} ></Route>
+      <Route path='*' element={<NotFound/>} ></Route>
+      <Route path='/SignUp' element={<SignUp/>} ></Route>
+    
+      </Routes>
+  </WebSiteLayout>
+      
+
         <Route path='/' element={<Home/>} ></Route>
         <Route path='*' element={<NotFound/>} ></Route>
       
@@ -20,6 +33,7 @@ function App() {
         <Route path='/signin' element={<Signin/>} ></Route>
       </Routes>
     </WebSiteLayout>
+
   );
 }
 export default App;
