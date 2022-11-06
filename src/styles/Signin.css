@@ -19,7 +19,7 @@
 .Signin-form{
     background-color: rgba(0, 0, 0, 0.644);
     display: flex;
-    width: 20rem;
+    width: 30rem;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -71,7 +71,8 @@
     padding: 0.5rem;
 }
 .Signin-input{
-    width: 15rem;
+    width: 25rem;
+    border-radius: 8px;
 }
 @media (max-width: 550px){
     .Signin-form{
