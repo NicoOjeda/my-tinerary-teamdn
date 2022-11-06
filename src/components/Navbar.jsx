@@ -27,7 +27,7 @@ export default function Navbar() {
               <LinkRouter to="/SignUp">
                 <button className="btn-signin">SignUp</button>
               </LinkRouter>
-              <LinkRouter to="/index">
+              <LinkRouter to="/signin">
                 <button className="btn-Login">Login</button>
               </LinkRouter>
             </div>
