@@ -1,4 +1,4 @@
-let dataUsers = [
+const dataUsers = [
     {
         id: "user1",
         name: "Juan",
@@ -44,7 +44,7 @@ let dataUsers = [
         logged: true,
     },
 ];
-
+export default dataUsers;
 
 
 

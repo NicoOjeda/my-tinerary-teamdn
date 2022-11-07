@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Merienda', cursive;
 }
-.Signup-box{
+.New-box{
     height: 70vh ;
     width: 100%;
     display: flex;
@@ -16,7 +16,7 @@
     background-size: cover;
     gap: 0.5rem;
 }
-.Signup-form{
+.New-form{
     background-color: rgba(0, 0, 0, 0.644);
     display: flex;
     width: 20rem;
@@ -30,13 +30,13 @@
 
     font-size: 18px;
 }
-.Signup-button{
+.New-button{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.Signup-button2{
+.New-button2{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,12 +48,12 @@
     cursor: pointer;
 
 }
-.Signup-google{
+.New-google{
     height: 100%;
     object-fit: cover;
     cursor: pointer;
 }
-.Signup-google2{
+.New-google2{
     height: 1.5rem;
     width: 12rem;
     background-color: white;
@@ -65,14 +65,14 @@
     border-radius: 8px;
     cursor: pointer;
 }
-.Signup-h2{
+.New-h2{
     background-color: #1b2021;
     text-align: center;
     color: #e7c621;
     font-size: 35px;
     padding: 0.5rem;
 }
-.Signup-input{
+.New-input{
     width: 15rem;
     border-radius: 6px;
 }
@@ -80,21 +80,21 @@
 
 
 @media (max-width: 550px){
-    .Signup-form{
+    .New-form{
 
         width: 58%;
     }
-    .Signup-input{
+    .New-input{
         width: 12rem;
     }
 }
 
 
 @media (max-width: 425px){
-    .Signup-form{
+    .New-form{
         width: 70%;
     }
-    .Signup-input{
+    .New-input{
         width: 12rem;
     }
 }
@@ -102,11 +102,11 @@
 
 
 @media (max-width: 375px){
-    .Signup-form{
+    .New-form{
         width: 90%;
         padding: 1rem;
     }
-    .Signup-input{
+    .New-input{
         width: 16rem;
     }
 }
