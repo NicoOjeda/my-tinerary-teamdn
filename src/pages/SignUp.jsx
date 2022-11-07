@@ -72,7 +72,7 @@ export default function SignUp() {
                 onChange={handleInputChange} 
                 required/>
             <div className='Signup-button'>
-                <button className='Signup-button2' type='submit' onClick={"return validar"}>Enter</button>
+                <button className='Signup-button2' type='submit' >Enter</button>
                 
             </div>
         </form>
