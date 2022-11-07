@@ -59,11 +59,6 @@ export default function NewHotelForm() {
                 <button className='NewHotel-button2' type='submit'>Enter</button>
             </div>
         </form>
-        {/* <h3>{dataHotel.name} + {dataHotel.photo} </h3> */}
-        <button className='NewHotel-google2'>
-            <img className='NewHotel-google' src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/240px-Google_%22G%22_Logo.svg.png' alt='google'/>
-            <p>Sign in with google</p>
-        </button>
         </div>
         </div>
       )
