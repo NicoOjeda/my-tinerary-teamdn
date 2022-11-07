@@ -97,3 +97,5 @@ let dataHotelCasino = [
     }
 
 ]
+
+export default dataHotelCasino
