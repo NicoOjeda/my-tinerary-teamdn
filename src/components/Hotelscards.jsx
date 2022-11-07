@@ -7,11 +7,11 @@ import InputHotels from './InputHotels'
 export default function Hotelscards() {
 
 const cardview = (card)=> (
-    <div className="card">
-            <div className="card-title">{card.name}</div>
-            <img className="card-img" src={card.photo} alt={card.photo}></img>
+    <div className="hotel-card">
+            <div className="hotelcard-title">{card.name}</div>
+            <img className="hotelcard-img" src={card.photo} alt={card.photo}></img>
             <Link to={`/detailshotels/${card.id}`}>
-            <button className="card-button">view more! </button>
+            <button className="hotelcard-button">view more! </button>
             </Link>
     </div>
 )
