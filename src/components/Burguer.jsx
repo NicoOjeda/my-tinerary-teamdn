@@ -34,7 +34,7 @@ export default function Burguer() {
           <LinkRouter to="/Cities">
             <button className="nav-2"> {btn2}</button>
           </LinkRouter>
-          <LinkRouter to="/Hotels">
+          <LinkRouter to="/hotels">
             <button className="nav-2"> {btn3}</button>
           </LinkRouter>
         </div>
