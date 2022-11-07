@@ -19,8 +19,8 @@ export default function Footer() {
           </div>
           <div className='Footer-pages'>
             {/* <LinkRouter to='/' className='links'>Home</LinkRouter>
-            <LinkRouter to='/' className='links'>Cities</LinkRouter>
-            <LinkRouter to='/' className='links'>Hotels</LinkRouter> */}
+            <LinkRouter to='/' className='links'>Cities</LinkRouter>*/}
+            <LinkRouter to='/' className='links'>hotels</LinkRouter> 
           </div>
       </div>
       <ScrollToTop/>

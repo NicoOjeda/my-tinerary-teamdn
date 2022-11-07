@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', cursive;
+}
+.Hotelscards-box{
+    min-height: 100vh ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+    gap: 0.5rem;
+}
+.Hotelscards-container{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+flex-wrap: wrap;
+}
+.Hotels-h2{
+    background-color: #1b2021;
+    text-align: center;
+    color: #e7c621;
+    font-size: 35px;
+    padding: 0.5rem;
+    width: 100%;
+}
+.card {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin: 8px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
+    border-radius: 25px;
+}
+
+.card-img {
+    object-fit: cover;
+    height: 377px;
+    width: 300px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: adobe-handwriting-ernie;
+}
+
+.card-button {
+    background-image: linear-gradient(to right, #eacda3 0%, #d6ae7b 51%, #eacda3 100%);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: nunito, sans-serif;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 250, 96);
+    border-radius: 10px;
+    border: 1px solid rgba(245, 245, 220, 0);
+    box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
+    padding: 8px 45px;
+    margin-bottom: 10px;
+}
+
+.card-button:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', cursive;
+}
+.inputHotels-container{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    gap: 0.2rem;
+}
+.inputHotels-button{
+   
+    padding: 0.2rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 5rem; 
+}
+.inputHotels-input{
+    width: 10rem;
+    border-radius: 8px;
+}
+@media (max-width: 768px){
+    .inputHotels-container{
+        display: flex;
+       flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0.2rem;
+    }
+}
