@@ -1,13 +1,15 @@
-// import React from 'react'
-// import { useParams } from "react-router-dom";
+import React from 'react'
+import CityDetail from "../components/CityDetail"
 
 
-// export default function Details() {
-//     // let params = useParams()
-//     // console.log(params);
-//     let {id} = useParams()
-//     console.log(id);
-//   return (
-//     <div>{id}</div>
-//   )
-// }
+const Details = () => {
+
+
+  return (
+   
+    <CityDetail/>
+
+  )
+}
+
+export default Details
