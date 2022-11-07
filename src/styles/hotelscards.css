@@ -31,7 +31,7 @@ flex-wrap: wrap;
     padding: 0.5rem;
     width: 100%;
 }
-.card {
+.hotel-card{
     display: flex;
     flex-direction: row-reverse;
     height: 500px;
@@ -46,19 +46,19 @@ flex-wrap: wrap;
     border-radius: 25px;
 }
 
-.card-img {
+.hotelcard-img {
     object-fit: cover;
     height: 377px;
     width: 300px;
 }
 
-.card-title {
+.hotelcard-title {
     font-size: 20px;
     font-weight: 500;
     font-family: adobe-handwriting-ernie;
 }
 
-.card-button {
+.hotelcard-button {
     background-image: linear-gradient(to right, #eacda3 0%, #d6ae7b 51%, #eacda3 100%);
     text-align: center;
     text-transform: uppercase;
@@ -73,7 +73,7 @@ flex-wrap: wrap;
     margin-bottom: 10px;
 }
 
-.card-button:hover {
+.hotelcard-button:hover {
     background-position: right center;
     color: #fff;
     text-decoration: none;
