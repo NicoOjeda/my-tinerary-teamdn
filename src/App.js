@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp"
 import Signin from "./components/SignInForm";
 import NewHotel from "./components/NewHotelForm";
 import Hotels from "./pages/Hotels";
+import DetailsHotel from "./pages/DetailsHotel";
 
 
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <WebSiteLayout>
       <Routes> 
+      <Route path='/detailshotels/:id' element={<DetailsHotel/>} ></Route>
       <Route path='/' element={<Home/>} ></Route>
       <Route path='*' element={<NotFound/>} ></Route>
       <Route path='/newhotel' element={<NewHotel/>}></Route>
@@ -22,7 +24,6 @@ function App() {
 
       <Route path='/SignUp' element={<SignUp/>} ></Route>
       <Route path='/signin' element={<Signin/>} ></Route>
-
 
       
       </Routes>
