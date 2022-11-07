@@ -7,8 +7,10 @@ import SignUp from "./pages/SignUp"
 import Signin from "./components/SignInForm";
 import NewHotel from "./components/NewHotelForm";
 import Hotels from "./pages/Hotels";
+import DetailsHotel from "./pages/DetailsHotel";
 import NewCity from "./pages/NewCity"
 import Cities from './pages/Cities';
+
 
 
 
@@ -16,6 +18,8 @@ function App() {
   return (
     <WebSiteLayout>
       <Routes> 
+      <Route path='/detailshotels/:id' element={<DetailsHotel/>} ></Route>
+
 
       <Route path='/' element={<Home/>} ></Route>
       <Route path='*' element={<NotFound/>} ></Route>
@@ -28,7 +32,6 @@ function App() {
       <Route path='/NewCity' element={<NewCity/>} ></Route>
       
       
-
 
 
       
