@@ -4,7 +4,7 @@ import {Routes, Route } from 'react-router-dom'
 import WebSiteLayout from './layouts/WebSiteLayout'
 import NotFound from "./pages/NotFound";
 import SignUp from "./pages/SignUp"
-import Signin from "./components/SignInForm";
+import Signin from "./pages/Signin"
 import NewHotel from "./components/NewHotelForm";
 import Hotels from "./pages/Hotels";
 import DetailsHotel from "./pages/DetailsHotel";
@@ -28,7 +28,7 @@ function App() {
       <Route path='/Cities' element={<Cities/>} ></Route>
       <Route path='/SignUp' element={<SignUp/>} ></Route>
       <Route path='/signin' element={<Signin/>} ></Route>
-      <Route path='/SignUp' element={<SignUp/>} ></Route>
+    
       <Route path='/NewCity' element={<NewCity/>} ></Route>
       
       
