@@ -121,7 +121,7 @@ let  dataActivity =   [
         }
     ]
 
-
+    export default dataActivity
        
 
 

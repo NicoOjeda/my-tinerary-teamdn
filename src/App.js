@@ -9,7 +9,7 @@ import NewHotel from "./components/NewHotelForm";
 import Hotels from "./pages/Hotels";
 import NewCity from "./pages/NewCity"
 import Cities from './pages/Cities';
-
+import Details from "./pages/Details";
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
       <Route path='/signin' element={<Signin/>} ></Route>
       <Route path='/SignUp' element={<SignUp/>} ></Route>
       <Route path='/NewCity' element={<NewCity/>} ></Route>
+      <Route path='/Details/:id' element={<Details/>} ></Route>
       
       
 
