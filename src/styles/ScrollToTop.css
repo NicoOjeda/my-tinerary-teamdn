@@ -8,7 +8,7 @@
     border: none;
 }
 .Footer-arrow{
-    height: 12vh;
+    height: 10vh;
     position: fixed;
     bottom: 13vh;
     right: 5vw;
@@ -22,9 +22,9 @@
         width: 50%;
     }
     .Footer-arrow{
-        bottom: 35vh;
+        bottom: 32vh;
         right: 5vw;
-        height: 10vh;
+        height: 8vh;
     }
 }
 @media (max-width: 320px){
