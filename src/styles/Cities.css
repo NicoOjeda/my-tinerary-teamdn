@@ -83,3 +83,24 @@
 
 }
 
+
+
+
+@media (max-width: 700px) {
+    .Cities-container {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 694vh;
+   
+    }
+    .check-container{
+        display: flex;
+        flex-direction: column ;
+        /* width: 350px; */
+
+
+    }
+
+}
+
