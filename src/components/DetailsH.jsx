@@ -26,7 +26,7 @@ return (
                 dataHotelCasino.map((datah)=>{ if(id=== datah.id){
         return(
             <>
-            <div className="DetailsH-card">
+            <div className="DetailsH-card  ">
                 <div className="DetailsH-title">{datah.name}</div>
                 <img className="DetailsH-img" src={datah.photo} alt="nada"></img>
                 <div className="DetailsH-title2">Capacity: {datah.capacity}</div>
@@ -41,7 +41,7 @@ return (
             return(
             <>
             <div className="DetailsH-card">
-                <div className="DetailsH-title">Show: {itiner.name}</div>
+                <div className="DetailsH-title ">Show: {itiner.name}</div>
                 <img className="DetailsH-img" src={itiner.photo} alt="nada"></img>
                 <div className="DetailsH-title2">
                     <div>Description: {itiner.description}</div>
