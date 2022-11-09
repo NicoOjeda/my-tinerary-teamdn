@@ -5,7 +5,6 @@
     font-family: 'Merienda', cursive;
 }
 .New-box{
-    height: 70vh ;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -15,6 +14,8 @@
     background-position: center;
     background-size: cover;
     gap: 0.5rem;
+    min-height: 100vh;
+  
 }
 .New-form{
     background-color: rgba(0, 0, 0, 0.644);
@@ -29,6 +30,7 @@
     color: #e7c621;
 
     font-size: 18px;
+    margin-bottom: 14rem;
 }
 .New-button{
     display: flex;
@@ -76,6 +78,7 @@
     width: 15rem;
     border-radius: 6px;
 }
+
 
 
 

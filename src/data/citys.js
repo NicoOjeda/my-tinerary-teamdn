@@ -40,7 +40,7 @@
        userId:"admin5" 
     },{
         id: "city6",
-        photo: "https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/nrosjoo363yog5hsj1bs",
+        photo: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/16/a6/88/con-la-primavera-in-giappone.jpg?w=700&h=-1&s=1",
        name: "Tokyo",
        continent: "Asia",
        population: 176767923869,
