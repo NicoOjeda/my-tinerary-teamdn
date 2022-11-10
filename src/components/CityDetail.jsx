@@ -25,13 +25,13 @@ const CityDetail = () => {
           if (id === City.id) {
             return (
               <>
-                <div className="card-container" key={index}>
-                  <div className="card cardDetails">
-                    <div className="card-title">{City.name}</div>
-                    <img className="card-img" src={City.photo} alt={City.name}>
+                <div className="dcard-cont-city" key={index}>
+                  <div className="d-header-city">
+                    <div className="dcard-title">{City.name}</div>
+                    <img className="dcard-imgs" src={City.photo} alt={City.name}>
                     
                     </img>
-                    <div className="card-title">{City.continent}</div>
+                    <div className="dcard-title2">{City.continent}</div>
                   </div>
                 </div>
               </>
@@ -43,24 +43,24 @@ const CityDetail = () => {
  
 
   
-    <div className=".DetailsH-card">
+    <div className=".detail-container-Activity">
       <div className="d">
         {dataActivity.map((dataActivity,index) => 
         { if (id === dataActivity.citiId) {
           console.log(dataActivity); 
             return (
     <>
-                <div className="DetailsH-container cityImageDetails  " key={index}>
-                  <div className="DetailsH-card">
-                    <div className="DetailsH-title ">{dataActivity.name}</div>
+                <div className="d-activity-card cityImageDetails  " key={index}>
+                  <div className="container-activity-detailc">
+                    <div className="activity-title ">{dataActivity.name}</div>
                     <img
-                      className="DetailsH-img detail-img1"
+                      className="activity-img detail-img1"
                       src={dataActivity.photo}
                       alt={dataActivity.name}
                     ></img>
 
-                    <div className="DetailsH-title2">{dataActivity.description}</div>
-                    <div className="DetailsH-title2">{dataActivity.price}</div>
+                    <div className="activity-info">{dataActivity.description}</div>
+                    <div className="activity-info">{dataActivity.price}</div>
                     {
         mostrarOcultar?  
                         (

@@ -19,6 +19,8 @@
     flex-direction: column;
     gap: 30px;
     min-height: 100vh;
+
+
     
     
 }
@@ -34,7 +36,7 @@
         width: 7rem;
         cursor: pointer;
         font-family:monospace;
-        font-size: 15px;
+        /* font-size: 15px; */
         border: 2px solid black;
         font-weight: bold;
         margin-left: 1rem;
@@ -53,7 +55,7 @@
     width: 5rem;
     cursor: pointer;
     font-family:monospace;
-    font-size: 15px;
+    /* font-size: 15px; */
     border: 2px solid black;
     font-weight: bold;
     margin-left: 0rem;
@@ -80,23 +82,98 @@
     box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
     border-radius: 25px;
     margin-left: 20rem;
+border: 2px solid red;
+
     
 }
+.detail-container-Activity{
+    color: #e7c621;
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 600px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+    margin: 2rem;
+    background-color: rgba(0, 0, 0, 0.644);
+    box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
+    border-radius: 25px;
+border: 2px solid red;
+
+
+}
+.dcard-imgs{
+    object-fit: cover;
+    height: 377px;
+    width: 300px;
+    border-radius: 20px;
+
+
+
+}
+.dcard-cont-city{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin: 8px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 6px 31px -1px rgb(0 0 0 / 63%);
+    border-radius: 25px;
+    margin-left: 50px;
+    width: 20rem;
+    text-align: center;
+
+}
+
+.dcard-tittle{
+    /* font-size: 30px; */
+    font-weight: 500;
+    font-family: adobe-handwriting-ernie;
+
+}
+.dcard-title2{
+    object-fit: cover;
+    /* height: 377px;
+    width: 300px; */
+    border-radius: 20px;
+
+}
+
+
+
 
 .d-card-img{
     object-fit: cover;
     width: 80%;
     height: 50%;
     border-radius: 30px;
-    
 
+    }
+
+
+.d-activity-card{
+    min-height: 100vh ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
 
 }
 .Detail{
     background-color: #1b2021;
     text-align: center;
     color: #e7c621;
-    font-size: 35px;
+    /* font-size: 35px; */
     padding: 0.5rem;
     width: 100%;
     margin: 0;
@@ -105,8 +182,38 @@
     
 
 }
+.activity-info{
+    object-fit: cover;
+    width: 100%;
+    height: 70%;
+}
+.activity-title{
+    /* font-size: 30px; */
+    font-weight: 500;
+}
+.activity-img{
+    object-fit: cover;
+    width: 100%;
+    height: 70%;
+}
+.container-activity-detailc{
+    color: #e7c621;
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 600px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+    margin: 2rem;
+    background-color: rgba(0, 0, 0, 0.644);
+    box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
+    border-radius: 25px;
+}
 .detail{
-    min-height: 100vh;
+    min-height: 57vh;
 
 
 }
@@ -117,6 +224,7 @@
         padding: 0.5rem;
         min-height: 600px;
         width: 80%; 
+
     }  
 }
 @media (max-width: 425px){
@@ -124,30 +232,96 @@
         padding: 0.5rem;
         min-height: 600px;
         width: 90%; 
+
     } 
 }
 @media (max-width: 375px){
     .d-card{
         width: 90%; 
+
     }  
 }
 .ContainerDetail{
     height: none;
+
 }
 .detail{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
 }
 .cityImageDetails{
     background: none;
+
 }
-.cardDetails{
-    margin-left: 0;
-}
+
 
 .detail-img1{
 height: 300px;
 
 
 }
+@media (max-width: 320px){
+
+    .dcard-imgs {
+        object-fit: cover;
+        height: 377px;
+        width: 249px;
+        border-radius: 20px;
 
 
+}
+.dcard-cont-city {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin: 8px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 6px 31px -1px rgb(0 0 0 / 63%);
+    border-radius: 25px;
+    /* margin-left: 50px; */
+    width: 17rem;
+    text-align: center;
+}
+.container-activity-detailc {
+   
+    width: 90%;
+}
+
+}
+
+/* .container-activity-detailc{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin: 8px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
+    border-radius: 25px;
+    margin-left: 50px;
+
+}
+.d-card {
+    padding: 0.5rem;
+    min-height: 1600px;
+    width: 80%; 
+border: 2px solid red;
+    
+
+}     
+
+
+
+} */
