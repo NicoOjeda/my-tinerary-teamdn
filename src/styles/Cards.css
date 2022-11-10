@@ -1,0 +1,348 @@
+.card-container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin: 8px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
+    border-radius: 25px;
+    margin-left: 50px;
+  
+}
+
+.card-img {
+    object-fit: cover;
+    height: 377px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+.card-title {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: adobe-handwriting-ernie;
+}
+
+.card-button {
+    background-image: linear-gradient(to right, #eacda3 0%, #d6ae7b 51%, #eacda3 100%);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: nunito, sans-serif;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(242, 250, 96);
+    border-radius: 10px;
+    border: 1px solid rgba(245, 245, 220, 0);
+    box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
+    padding: 8px 45px;
+    margin-bottom: 10px;
+}
+
+
+.card-button:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    display: none;
+  }
+
+  .Cit-Container{
+    width: 100%;
+}
+
+
+@media (max-width:2560){
+    .Cities-container{
+         height: 127vh;
+        width: 100%;
+        justify-content: center;
+           }
+
+           .Cit-Container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+   }
+
+
+
+
+
+@media (max-width:1440px){
+ .Cities-container{
+      height: 313vh;
+     width: 100%;
+        }
+        .Cit-Container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+}
+
+@media (max-width: 1024px) {
+
+    .Cities-container{
+        height: 433vh;
+        width: 100%;
+    
+    
+    }
+
+    .Cit-Container {
+       
+        justify-content: center;
+    }
+
+ 
+}
+
+@media (max-width: 768px) {
+    .card{
+        height: 410px;
+        width: 375px;
+    }
+    
+    .card-img {
+        object-fit: cover;
+        height: 277px;
+        width:320px;
+        border-radius: 20px;
+    }
+    .Cities-container{
+        height: 683vh;
+        width: 100%;
+    
+    
+    }
+    .Cities-form{
+        background-color: rgba(0, 0, 0, 0.644);
+        display: flex;
+        width: 23rem;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        gap: 1rem;
+        border-radius: 35px;
+        color: #e7c621;
+        font-style: italic;
+        font-size: 18px;
+        align-items: center;
+        height: 14rem;
+    }
+    .Cit-Container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .Cities-button{
+        margin-right: 91px;
+    }
+
+
+    
+    
+
+}
+@media (max-width: 425px) {
+.card{
+    height: 400px;
+    width: 350px;
+}
+
+.card-img {
+    object-fit: cover;
+    height: 277px;
+    width:320px;
+    border-radius: 20px;
+}
+.Cities-container{
+    height: 683vh;
+    width: 100%;
+}
+.card-container{
+    width: 100%;
+display: flex;
+margin-right: 41px;
+}
+
+
+}
+
+
+
+@media (max-width: 375px) {
+    body{
+        width: 100%;
+
+
+    }
+    .card-container{
+        width: 100%;
+    display: flex;
+    margin-right: 41px;
+    }
+    .Cities-container{
+        height: 683vh;
+        width: 100%;
+
+
+    }
+    .Cities-input {
+        width: 16.4rem;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .card{
+        height: 400px;
+        width: 340px;
+    }
+    .card-img {
+        object-fit: cover;
+        height: 277px;
+        width: 290px;
+        border-radius: 20px;
+    }
+    .Cit-Container{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .check-container {
+        /* display: flex;
+        flex-direction: column; */
+  
+        margin-left: 45px;
+
+}
+  }
+
+  @media (max-width: 320px) {
+    body{
+        width: 100%;
+
+
+    }
+    .Cities-container{
+        width: 100vw;
+        height: 1767vw;
+
+    }
+.Cit-Container{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+    .Cities-input {
+        width: 14.3rem;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .Cities-form{
+        width: 18rem;
+    }
+
+    .card{
+        height: 399px;
+        width: 340px;
+    }
+    .card-img {
+        object-fit: cover;
+        height: 295px;
+        width: 94%;
+        border-radius: 12px;
+       
+    }
+    .card-container{
+        width: 100%;
+    display: flex;
+    margin-right: 41px;
+    }
+    /* .Cit-container{
+        margin-right: 5rem;
+    
+
+    } */
+
+    .check-container {
+        /* display: flex;
+        flex-direction: column; */
+/*   
+        margin-left: 45px; */
+
+}
+  }
+
+
+
+  
+
+
+
+
+/*   
+@media (max-width: 320px) {
+  .card-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+ 
+  }
+
+  .description-p {
+      font-size: 2vh;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-width: fit-content;
+  }
+
+  .city-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 2vh;
+  }
+
+  .city-img {
+      height: 300px;
+  }
+}
+ */
+
+
+
+
+

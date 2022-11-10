@@ -1,0 +1,37 @@
+.Footer-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    padding: 0;
+    border: none;
+}
+.Footer-arrow{
+    height: 10vh;
+    position: fixed;
+    bottom: 13vh;
+    right: 5vw;
+    background-color: #e7c621;
+    border-radius: 20px;
+    z-index: 100;
+}
+
+@media (max-width: 425px){
+    .Footer-left{
+        width: 50%;
+    }
+    .Footer-arrow{
+        bottom: 32vh;
+        right: 5vw;
+        height: 8vh;
+    }
+}
+@media (max-width: 320px){
+    .Footer-arrow{
+        bottom: 34vh;
+        right: 5vw;
+        height: 8vh;
+        padding: 0.2rem;
+    }
+}

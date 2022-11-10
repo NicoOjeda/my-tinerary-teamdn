@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.NotFound-container{
+    height: 100vh ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+    gap: 0.5rem;
+}
+.NotFound-img{
+    height: 70vh;
+    border:1px solid#E7C621;
+    /* width: 80vw; */
+}
+.NotFound-button{
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #E7C621;
+    color:black;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Merienda', cursive;
+    font-size: 30px;
+}
