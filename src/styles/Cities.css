@@ -82,16 +82,100 @@
   gap: 25px;
 
 }
+@media (max-width: 1876px) {
+
+    .Cities-container{
+        height: 252vh!important;
+        width: 100%;
+    
+    
+    }
+
+
+
+}
+@media (max-width: 1495px) {
+
+    .Cities-container{
+        height: 302vh!important;
+        width: 100%;
+    
+    
+    }
+
+
+
+}
+
+
+
+@media (max-width: 1121px) {
+
+    .Cities-container{
+        height: 430vh!important;
+        width: 100%;
+    
+    
+    }
+
+
+
+}
+
+
+
+@media (max-width: 768px) {
+    .Cities-container{
+        height: 702vh!important;
+        width: 100%;
+    
+    
+    }
+    .Cities-form{
+        background-color: rgba(0, 0, 0, 0.644);
+        display: flex;
+        width: 23rem;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        gap: 1rem;
+        border-radius: 35px;
+        color: #e7c621;
+        font-style: italic;
+        /* font-size: 18px; */
+        align-items: center;
+        height: 14rem;
+    }
+    .Cities-button{
+        margin-right: 91px;
+    }
 
 
 
 
+}
+
+
+@media (max-width: 600px) {
+    .Cities-container{  width: 100%;
+
+
+    }
+    .check-container{
+        display: flex;
+        flex-direction: column;
+            }
+
+}
+
+
+/* 
 @media (max-width: 700px) {
     .Cities-container {
         display: flex;
         flex-direction: column;
         width: 400px;
-        height: 694vh;
+  
    
     }
     .check-container{
@@ -100,7 +184,77 @@
         /* width: 350px; */
 
 
+    /* }
+
+}  */
+@media (max-width: 500px) {
+    .Cities-container{
+        height: 683vh;
+        width: 80%;
+    }
+    .check-container{
+display: flex;
+flex-direction: column;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .Cities-container{
+        height: 683vh;
+        width: 100%;
     }
 
+
+
+
+
+
+
+
+
 }
+@media (max-width: 375px) {
+    .Cities-container{
+        height: 683vh;
+        width: 100%;
+
+
+    }
+    .Cities-input {
+        width: 16.4rem;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+
+
+}
+
+@media (max-width: 320px) {
+
+    .Cities-container{
+        width: 100vw;
+        height: 1767vw;
+
+    }
+    .Cities-input {
+        width: 14.3rem;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+
+    .Cities-form{
+        width: 18rem;
+    }
+
+    .Cit-Container{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
 
