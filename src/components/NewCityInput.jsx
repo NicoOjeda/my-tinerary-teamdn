@@ -72,6 +72,15 @@ export default function NewCityInput() {
              placeholder='Enter the Usser: '
              onChange={handleInputChange} 
              required/>
+              <label>Usser ID</label>
+
+<input 
+className='New-input' 
+name="number" 
+type="number" 
+placeholder='Enter the Usser Id: '
+onChange={handleInputChange} 
+required/>
          <div className='New-button'>
              <button className='New-button2' type='submit' >Create</button>
          </div>
