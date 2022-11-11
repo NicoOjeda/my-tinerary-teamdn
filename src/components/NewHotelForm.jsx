@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, {useState } from 'react'
 import '../styles/newhotelform.css' 
+import { BASE_URL } from '../api/url';
 
 export default function NewHotelForm() {
+
+    // console.log(BASE_URL);
 
     const [dataHotel, setDataHotel] = useState({
         name: '',
@@ -22,9 +26,16 @@ export default function NewHotelForm() {
 }
  const SendDataHotel = (e) =>{
     console.log(dataHotel);
-    
+    e.preventDefault()
+    e.target.reset()
     localStorage.setItem("data", JSON.stringify(dataHotel))
+    
+        axios.post(`${BASE_URL}/api/hotels/` , dataHotel )
+        .then(response => console.log(response.data)) 
+        .catch(err=> console.log( err))
+        
  }
+
 
 
     return (
