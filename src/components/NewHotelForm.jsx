@@ -6,7 +6,9 @@ export default function NewHotelForm() {
     const [dataHotel, setDataHotel] = useState({
         name: '',
         photo:'',
-        capacity:''
+        capacity:'',
+        citiId : '',
+        userId : ''
     })
 
     const handleInplut = (e) =>{
@@ -36,6 +38,7 @@ export default function NewHotelForm() {
                 id="name" 
                 name="name" 
                 type="text"
+                placeholder='Enter name'
                 onChange={handleInplut}  
                 required />
             <label for='photo'>Photo</label>
@@ -44,6 +47,7 @@ export default function NewHotelForm() {
                 id="photo" 
                 name="photo" 
                 type="text"
+                placeholder='Enter Url'
                 onChange={handleInplut}  
                 required />
             <label for='capacity'>Capacity</label>
@@ -52,6 +56,25 @@ export default function NewHotelForm() {
                 id="capacity" 
                 name="capacity" 
                 type="number"
+                placeholder='Enter capacity'
+                onChange={handleInplut}  
+                required />
+            <label for='citiId'>City Id</label>
+            <input 
+                className='NewHotel-input' 
+                id="citiId" 
+                name="citiId" 
+                type="text"
+                placeholder='Enter city id'
+                onChange={handleInplut}  
+                required />
+            <label for='userId'>User Id</label>
+            <input 
+                className='NewHotel-input' 
+                id="userId" 
+                name="userId" 
+                type="text"
+                placeholder='Enter user id'
                 onChange={handleInplut}  
                 required />
             
