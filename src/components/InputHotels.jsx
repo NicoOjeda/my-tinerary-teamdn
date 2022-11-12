@@ -2,7 +2,7 @@ import React from 'react'
 import { useRef,useState } from 'react'
 import '../styles/inputHotels.css'
 
-export default function InputHotels() {
+export default function InputHotels(props) {
 
     const inputRef1 = useRef(null)
     const inputRef2 = useRef(null)
@@ -14,20 +14,22 @@ export default function InputHotels() {
         setvalueInput2(inputRef2.current.value)
         
     } 
+
+     
     console.log(valueInput) 
     console.log(valueInput2) 
 
   return (
     <div className='inputHotels-container'>
-            <div>
             <input className='inputHotels-input' type="text" ref={inputRef1} placeholder='Search Hotel' ></input>
-            <button onClick={makeThings} className='inputHotels-button'>Search</button>
-            </div>
+            <div>
             <select id='order' ref={inputRef2} className='inputHotels-input'>
                 <option value="">Order</option>
-                <option value="A-Z">From A-Z</option>
-                <option value="Z-A">From Z-A</option>
+                <option value="asc">From A-Z</option>
+                <option value="desc">From Z-A</option>
             </select>
+            <button onClick={makeThings} className='inputHotels-button'>Search</button>
+            </div>
     </div>
   )
 }
