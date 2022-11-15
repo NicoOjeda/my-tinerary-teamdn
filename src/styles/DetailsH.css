@@ -76,13 +76,43 @@
 .DetailsH-title2{
     text-align:start;
     padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
 }
+.DetailsH-photo{
+    height: 12vh;
+    width: 5vw;
+    object-fit: cover;
+    border-radius: 40px;
+}
+.DetailsH-user{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+    padding: 0.5rem;
+}
+@media (max-width: 768px){
+    .DetailsH-photo{
+        height: 11vh;
+        width: 7vw;
+    }
+}
+
 @media (max-width: 550px){
     .DetailsH-card {
         padding: 0.5rem;
         min-height: 600px;
         width: 80%; 
     }  
+    .DetailsH-photo{
+        height: 10vh;
+        width: 12vw;
+    }
 }
 @media (max-width: 425px){
     .DetailsH-card {

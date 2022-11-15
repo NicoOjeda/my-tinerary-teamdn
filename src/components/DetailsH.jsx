@@ -1,29 +1,41 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import '../styles/DetailsH.css'
-import itineraryHotel from '../data/itineraryHotel'
-import dataHotelCasino from '../data/dataHotelCasino'
+// import itineraryHotel from '../data/itineraryHotel'
+// import dataHotelCasino from '../data/dataHotelCasino'
+import axios from 'axios'
 
 
 export default function DetailsH() {
 
 
     let [mostrarOcultar, setMostrarOcultar] = useState(false)
+    let [data, setData] = useState([])
+    let [data2, setData2] = useState([])
 
     let hide = ()=>{
         setMostrarOcultar(!mostrarOcultar)
-        console.log(mostrarOcultar);
+        // console.log(mostrarOcultar);
     }
 
     let {id} = useParams()
-    // console.log(id);
-    // console.log(itineraryHotel);
-
+    useEffect(()=>{
+        axios.get(`http://localhost:8000/api/hotels/${id}`)
+        .then(res=> setData( res.data.response))
+    },[id])
+    
+    useEffect(()=>{
+        axios.get(`http://localhost:8000/api/shows?&hotelId=${id}`)
+        .then(res=> setData2( res.data.response))
+    },[id])
+    
+    // console.log(data);
+    // console.log(data2);
 return (
     <div className='DetailsH-container'>
         <h2 className='DetailsH-h2'>Hotel's Details</h2>
             {
-                dataHotelCasino.map((datah)=>{ if(id=== datah.id){
+                data.map((datah)=>{ 
         return(
             <>
             <div className="DetailsH-card  ">
@@ -32,40 +44,42 @@ return (
                 <div className="DetailsH-title2">Capacity: {datah.capacity}</div>
             </div>
             </>
-        )
-    }
+        )  
     })
             }
             {
-                itineraryHotel.map(itiner=>{ if(id === itiner.hotelId){
+                data2.map(show=>{ 
             return(
             <>
             <div className="DetailsH-card">
-                <div className="DetailsH-title ">Show: {itiner.name}</div>
-                <img className="DetailsH-img" src={itiner.photo} alt="nada"></img>
+                <div className="DetailsH-title ">Show: {show.name}</div>
+                <img className="DetailsH-img" src={show.photo} alt="nada"></img>
                 <div className="DetailsH-title2">
-                    <div>Description: {itiner.description}</div>
-                    <div>Price: USD {itiner.price}</div>
-                    <div>Date: {itiner.date}</div>
+                    <div>Description: {show.description}</div>
+                    <div>Price: USD {show.price}</div>
+                    <div>Date: {show.date}</div>
                 </div>
-                
+                <div className="DetailsH-user">
+                    <img img className="DetailsH-photo" src={show.userId.photo} alt="userphoto"></img>
+                    <div>{show.userId.name}</div>
+                </div>
                 {
                    mostrarOcultar? 
                    (
                     <>
-                        <button className='Btn-detailsH' onClick={hide}>ocultar</button>
-                        <p>Comentarios</p>
+                        <button className='Btn-detailsH' onClick={hide}>View Less</button>
+                        <p>Comments</p>
                         <div className='comments'>
-                            <p>Esto es un comentario</p>
+                            <p>This is a comment</p>
                         </div>
                     </>
                    ): 
-                   (<button className='Btn-detailsH' onClick={hide}>mostrar</button>) 
+                   (<button className='Btn-detailsH' onClick={hide}>View More</button>) 
                 }
             </div> 
             </>
         )
-        }
+        
          })
 
             }

@@ -16,8 +16,8 @@ export default function Hotelscards() {
     const [valueInput, setvalueInput] = useState('')
     const [valueInput2, setvalueInput2] = useState('')
 
-    console.log(valueInput) 
-    console.log(valueInput2)
+    // console.log(valueInput) 
+    // console.log(valueInput2)
     
     const [dataHotel, setDatahotel] = useState([])
 
@@ -33,13 +33,13 @@ export default function Hotelscards() {
     },[valueInput,valueInput2])
     
 
-    console.log(dataHotel);
+    // console.log(dataHotel);
 
 const cardview = (card)=> (
     <div className="hotel-card">
             <div className="hotelcard-title">{card.name}</div>
             <img className="hotelcard-img" src={card.photo} alt={card.photo}></img>
-            <Link to={`/detailshotels/${card.id}`}>
+            <Link to={`/detailshotels/${card._id}`}>
             <button className="hotelcard-button">view more! </button>
             </Link>
     </div>
