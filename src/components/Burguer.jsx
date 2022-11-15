@@ -59,12 +59,12 @@ export default function Burguer() {
             Home
           </button>
           </LinkRouter>
-          <LinkRouter to="/home2">
+          <LinkRouter to="/Cities">
           <button className="btn-burguer-2">
             Cities
           </button>
           </LinkRouter>
-          <LinkRouter to="/home2">
+          <LinkRouter to="/Hotels">
           <button className="btn-burguer-3">
             Hotels
           </button>
