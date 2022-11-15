@@ -2,12 +2,11 @@ import React from "react";
 import "../styles/Cities.css";
 import { useState, useRef } from "react";
 import "../styles/Cards.css";
-import Cards from "../components/Cards";
+// import Cards from "../components/Cards";
 import dataCity from "../data1/datosCities";
-import "../styles/Cities.css"
-
-let arrayCards = dataCity;
-const Cities = (props) => {
+import { Link as LinkRouter } from "react-router-dom";
+// let arrayCards = dataCity;
+const Cities = () => {
 
 
   const [data, setData] = useState({
@@ -26,7 +25,7 @@ const Cities = (props) => {
     localStorage.setItem("data", JSON.stringify(data));
   };
 
-
+console.log(data)
   return (
     
 
@@ -81,7 +80,22 @@ const Cities = (props) => {
           </div>
         </div>
         <div className="Cit-Container">
-          <Cards dataCities={arrayCards} />
+        <>
+           {dataCity.map((City) => 
+         <div className="card-container">
+          <div  className="card">
+            <div className="card-title">{City.name}</div>
+            <img className="card-img" src={City.photo}  alt={City.name} ></img>
+            <LinkRouter to={`/details/${City.id}`}>
+            <button className="card-button">view more! </button>
+            </LinkRouter>
+          </div>
+        </div>
+    )}
+   </>
+
+
+
         </div>
       </div>
     
