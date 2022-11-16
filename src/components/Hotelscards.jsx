@@ -32,7 +32,7 @@ export default function Hotelscards() {
     },[valueInput,valueInput2])
     
 
-    // console.log(dataHotel);
+    console.log(dataHotel);
 
 const cardview = (card)=> (
     <div className="hotel-card">
@@ -61,9 +61,23 @@ return (
                 </div>
         </div>
         <div className='Hotelscards-container'>
-                {
-                    dataHotel.map(card=> cardview(card))   
+        {
+            dataHotel.length === 0 ? 
+                    (
+                    <div className='Hotelscard-empty'>
+                        <p>We didn't found this place. Try other!</p>
+                    </div>
+                    ): 
+                    (
+                   
+                    <>
+                    {dataHotel.map(card=> cardview(card))} 
+                    </>
+                    ) 
                 }
+                {/* {
+                    dataHotel.map(card=> cardview(card))   
+                } */}
             </div>
     </div>
   )
