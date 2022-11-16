@@ -1,3 +1,5 @@
+
+
 import axios from 'axios'
 import React, {useState } from 'react'
 import '../styles/newhotelform.css' 
@@ -32,12 +34,12 @@ const navigate = useNavigate()
 const SendDataHotel = (e) =>{
     console.log(dataHotel);
     e.preventDefault()
-    e.target.reset()
     localStorage.setItem("data", JSON.stringify(dataHotel))
     
-        axios.post(`${BASE_URL}/api/hotels/` , dataHotel )
-        .then(response => console.log(response.data)) 
-        .catch(err=> console.log( err))
+    axios.post(`${BASE_URL}/api/hotels/` , dataHotel )
+    .then(response => console.log(response.data)) 
+    .catch(err=> console.log( err))
+    e.target.reset()
         navigate('/')
  }
 
@@ -102,3 +104,6 @@ const SendDataHotel = (e) =>{
         </div>
       )
     }
+
+
+
