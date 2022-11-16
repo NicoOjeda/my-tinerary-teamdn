@@ -4,6 +4,7 @@ import '../styles/DetailsH.css'
 // import itineraryHotel from '../data/itineraryHotel'
 // import dataHotelCasino from '../data/dataHotelCasino'
 import axios from 'axios'
+import { BASE_URL } from '../api/url';
 
 
 export default function DetailsH() {
@@ -20,14 +21,15 @@ export default function DetailsH() {
 
     let {id} = useParams()
     useEffect(()=>{
-        axios.get(`http://localhost:8000/api/hotels/${id}`)
+        axios.get(`${BASE_URL}/api/hotels/${id}`)
         .then(res=> setData( res.data.response))
+        .catch(err=> console.log( err))
+
+        axios.get(`${BASE_URL}/api/shows?&hotelId=${id}`)
+        .then(res=> setData2( res.data.response))
+        .catch(err=> console.log( err))
     },[id])
     
-    useEffect(()=>{
-        axios.get(`http://localhost:8000/api/shows?&hotelId=${id}`)
-        .then(res=> setData2( res.data.response))
-    },[id])
     
     // console.log(data);
     // console.log(data2);
