@@ -1,31 +1,43 @@
 import React from "react";
 import "../styles/Cities.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect} from "react";
 import "../styles/Cards.css";
-import Cards from "../components/Cards";
-import dataCity from "../data1/datosCities";
-import "../styles/Cities.css"
+// import Cards from "../components/Cards";
+// import dataCity from "../data1/datosCities";
+import { Link as LinkRouter } from "react-router-dom";
+// let arrayCards = dataCity;
+import axios from 'axios'
 
-let arrayCards = dataCity;
-const Cities = (props) => {
 
 
-  const [data, setData] = useState({
-    name: "",
-  });
+const Cities = () => {
+
+  const [data, setData] = useState({});
   const handleInputChange = (e) => {
-    console.log(e.target.value);
     setData({
       ...data,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value, 
     });
   };
+
+  const inputRef = useRef(null)
+  const [valueInput, setvalueInput] = useState('')
+  
   const sendData = (e) => {
     e.preventDefault();
-
-    localStorage.setItem("data", JSON.stringify(data));
+    setvalueInput(inputRef.current.value)
   };
+  
+  // console.log(data)
+  // console.log(valueInput);
+  const [dataCity, setdataCity] = useState([])
 
+useEffect(()=>{
+  axios.get(`http://localhost:8000/api/cities/?name=${valueInput}`)
+  .then(res=> setdataCity(res.data.response))
+},[valueInput,data])
+
+console.log(dataCity);
 
   return (
     
@@ -53,17 +65,12 @@ const Cities = (props) => {
             <input type="checkbox" name="Oceania" value="Oceania" onChange={handleInputChange}/>
             Oceania
           </div>
-          <div>
+          <label>
             <input type="checkbox" name="America del sur"  value="America Del Sur" onChange={handleInputChange}/>
             America del Sur
-          </div>
+          </label>
         </div>
-        <div
-         
-          className="Cities-form"
-          onSubmit={sendData}
-          id="form"
-        >
+        <div className="Cities-form" id="form">
           <label for="name">Start your adventure</label>
           <input
             className="Cities-input"
@@ -71,17 +78,27 @@ const Cities = (props) => {
             name="name"
             type="text"
             placeholder="Please Choice the City"
-            onChange={handleInputChange}
+            ref={inputRef}
             required
           />
           <div className="Contain-button">
-            <button className="Cities-button" type="submit" >
+            <button className="Cities-button" onClick={sendData}>
               Search
             </button>
           </div>
         </div>
         <div className="Cit-Container">
-          <Cards dataCities={arrayCards} />
+            {dataCity.map((City) =>
+                <div className="card-container">
+                  <div  className="card">
+                    <div className="card-title">{City.name}</div>
+                    <img className="card-img" src={City.photo}  alt={City.name} ></img>
+                    <LinkRouter to={`/details/${City._id}`}>
+                    <button className="card-button">view more! </button>
+                    </LinkRouter>
+                  </div>
+                </div>
+            )}
         </div>
       </div>
     

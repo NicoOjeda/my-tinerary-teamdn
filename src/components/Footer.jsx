@@ -13,9 +13,9 @@ export default function Footer() {
       </div>
       <div className='Footer-center'>
           <div className='Footer-social'>
-            <a href="https://www.facebook.com/" target="_blank"><img src='/img/facebook.png' alt='face' className='Footer-red'></img></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src='/img/instagram.png' alt='face' className='Footer-red'></img></a>
-            <a href="https://web.telegram.org/" target="_blank"><img src='/img/telegram.png' alt='face' className='Footer-red'></img></a>
+            <a href="https://www.facebook.com/"><img src='/img/facebook.png' alt='face' className='Footer-red'></img></a>
+            <a href="https://www.instagram.com/"><img src='/img/instagram.png' alt='face' className='Footer-red'></img></a>
+            <a href="https://web.telegram.org/"><img src='/img/telegram.png' alt='face' className='Footer-red'></img></a>
           </div>
           <div className='Footer-pages'>
             <LinkRouter to='/' className='links'>Home</LinkRouter>
