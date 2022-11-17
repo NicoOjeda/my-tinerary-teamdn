@@ -16,8 +16,8 @@
     align-items: center;
     flex-direction: column;
     gap: 30px;  
-    height: 210vh; 
-
+    height: 100%; 
+   
 
 
 
@@ -57,6 +57,7 @@
     width: 15rem;
     border-radius: 10px;
     padding: 10px;
+    margin-left: 0.8rem;
 }
 
 .Cities-form{
@@ -75,7 +76,12 @@
 }
 .Cit-Container{
     display: flex;
+    align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
+    margin-right: 0.1rem;
+    /* gap: 20px;
+    margin-left: 41px; */
 }
 .check-container{
   display: flex;
@@ -85,7 +91,7 @@
 @media (max-width: 1876px) {
 
     .Cities-container{
-        height: 252vh!important;
+        height: 100%;
         width: 100%;
     
     
@@ -97,10 +103,9 @@
 @media (max-width: 1495px) {
 
     .Cities-container{
-        height: 302vh!important;
-        width: 100%;
-    
-    
+        width: 100vw;
+        height: 100%!important;
+
     }
 
 
@@ -112,10 +117,9 @@
 @media (max-width: 1121px) {
 
     .Cities-container{
-        height: 430vh!important;
-        width: 100%;
-    
-    
+        width: 100vw;
+        height: 100%!important;
+
     }
 
 
@@ -126,10 +130,9 @@
 
 @media (max-width: 768px) {
     .Cities-container{
-        height: 702vh!important;
-        width: 100%;
-    
-    
+        width: 100vw;
+        height: 100%!important;
+
     }
     .Cities-form{
         background-color: rgba(0, 0, 0, 0.644);
@@ -157,8 +160,9 @@
 
 
 @media (max-width: 600px) {
-    .Cities-container{  width: 100%;
-
+    .Cities-container{
+        width: 100vw;
+        height: 100%!important;
 
     }
     .check-container{
@@ -189,8 +193,9 @@
 }  */
 @media (max-width: 500px) {
     .Cities-container{
-        height: 683vh;
-        width: 80%;
+        width: 100vw;
+        height: 100%!important;
+
     }
     .check-container{
 display: flex;
@@ -201,8 +206,9 @@ flex-direction: column;
 
 @media (max-width: 425px) {
     .Cities-container{
-        height: 683vh;
-        width: 100%;
+        width: 100vw;
+        height: 100%!important;
+
     }
 
 
@@ -216,9 +222,8 @@ flex-direction: column;
 }
 @media (max-width: 375px) {
     .Cities-container{
-        height: 683vh;
-        width: 100%;
-
+        width: 100vw;
+        height: 100%!important;
 
     }
     .Cities-input {
@@ -235,7 +240,7 @@ flex-direction: column;
 
     .Cities-container{
         width: 100vw;
-        height: 1767vw;
+        height: 100%!important;
 
     }
     .Cities-input {
@@ -250,9 +255,11 @@ flex-direction: column;
     }
 
     .Cit-Container{
-        width: 100%;
+        display: flex;
+        align-items: flex-start;
         justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
+        margin-right: 0.1rem;
     }
 }
 
