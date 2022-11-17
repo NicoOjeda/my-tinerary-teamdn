@@ -1,42 +1,51 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import "../styles/CityDetails.css";
-import dataCities from "../data1/datosCities";
 import dataActivity from "../data/activity";
-import { Link as LinkRouter } from "react-router-dom";
-import Cities from "../pages/Cities";
+import axios from 'axios'
 
 const CityDetail = () => {
   let { id } = useParams();
   console.log(id);
   let [mostrarOcultar, setMostrarOcultar] = useState(false);
+  let [data, setData] = useState()
+
   let hide = () => {
     setMostrarOcultar(!mostrarOcultar);
     console.log(mostrarOcultar);
   };
   // console.log(dataCities);
+  useEffect(()=>{
+      axios.get(`http://localhost:8000/api/cities/${id}`)
+      .then(res=> setData( [res.data.response]))
+      .catch(error=> console.log(error))
+    
+      console.log(data)
+  },[id])
+  
+
  
   return (
     <div className="detail-container ContainerDetail">
       <div className="detail">
       <h2 className="Detail">City Detail :</h2>
-        {dataCities.map((City,index) => {
-          if (id === City.id) {
+        {data?.map((city) => {
+      
             return (
               <>
-                <div className="dcard-cont-city" key={index}>
+                <div className="dcard-cont-city" key={city.name}>
                   <div className="d-header-city">
-                    <div className="dcard-title">{City.name}</div>
-                    <img className="dcard-imgs" src={City.photo} alt={City.name}>
+                    <div className="dcard-title">{city.name}</div>
+                    <img className="dcard-imgs" src={city.photo} alt={city.name}>
                     
                     </img>
-                    <div className="dcard-title2">{City.continent}</div>
+                    <div className="dcard-title2">{city.continent}</div>
                   </div>
                 </div>
               </>
             );
-          }
+          
         })}
       </div>
   
@@ -45,22 +54,22 @@ const CityDetail = () => {
   
     <div className=".detail-container-Activity">
       <div className="d">
-        {dataActivity.map((dataActivity,index) => 
-        { if (id === dataActivity.citiId) {
-          console.log(dataActivity); 
+        {dataActivity?.map((e,index) => 
+        { if (id === e.citiId) {
+          console.log(e); 
             return (
     <>
                 <div className="d-activity-card cityImageDetails  " key={index}>
                   <div className="container-activity-detailc">
-                    <div className="activity-title ">{dataActivity.name}</div>
+                    <div className="activity-title ">{e.name}</div>
                     <img
                       className="activity-img detail-img1"
-                      src={dataActivity.photo}
-                      alt={dataActivity.name}
+                      src={e.photo}
+                      alt={e.name}
                     ></img>
 
-                    <div className="activity-info">{dataActivity.description}</div>
-                    <div className="activity-info">{dataActivity.price}</div>
+                    <div className="activity-info">{e.description}</div>
+                    <div className="activity-info">{e.price}</div>
                     {
         mostrarOcultar?  
                         (
