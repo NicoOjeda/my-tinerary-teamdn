@@ -15,17 +15,11 @@ const Cities = () => {
   const inputRef = useRef(null);
   const [valueInput, setvalueInput] = useState("");
   const [dataCity, setdataCity] = useState([]);
-
   const handleInputChange = () => {
-
     setvalueInput(inputRef.current.value);
     console.log(inputRef)
-
   };
-
-
 const handleCheckboxChange = (event) => {
-
   console.log(event.target.value)
   if (event.target.checked){
     let newCheck = [...check,event.target.value ]
@@ -55,8 +49,7 @@ const handleCheckboxChange = (event) => {
   // console.log(valueInput);
 
   useEffect(() => {
-    axios
-      .get(`${BASE_URL}/api/cities/`, {params:{name:valueInput,continent:check}} )
+    axios.get(`${BASE_URL}/api/cities/`, {params:{name:valueInput,continent:check}} )
       .then((res) => setdataCity(res.data.response));
   }, [valueInput,check]);
 
@@ -64,6 +57,8 @@ const handleCheckboxChange = (event) => {
 
   return (
     <div className="Cities-container">
+    
+
       <h1>Cities</h1>
       <div className="check-container">
         <div>
@@ -111,15 +106,15 @@ const handleCheckboxChange = (event) => {
           />
           Oceania
         </div>
-        <label>
+        <div>
           <input
             type="checkbox"
-            name="America del sur"
-            value="America Del Sur"
+            name="America del Sur"
+            value="America del Sur"
             onChange={handleCheckboxChange}
           />
           America del Sur
-        </label>
+        </div>
       </div>
       <div className="Cities-form" id="form">
       
@@ -132,10 +127,7 @@ const handleCheckboxChange = (event) => {
           ref={inputRef}
           required
         />
-        <div className="Contain-button">
-        
-        </div>
-      </div>
+    </div>
       <div className="Cit-Container">
         {dataCity.map((City) => (
           <div className="card-container">
