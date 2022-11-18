@@ -8,7 +8,7 @@ import { Link as LinkRouter } from "react-router-dom";
 // let arrayCards = dataCity;
 import axios from "axios";
 import { BASE_URL } from "../api/url";
-
+import "../styles/NotFound.css"
 
 const Cities = () => {
   const [check, setCheck] = useState([]);
@@ -128,7 +128,12 @@ const handleCheckboxChange = (event) => {
           required
         />
     </div>
-      <div className="Cit-Container">
+    {dataCity.length === 0 ?
+      
+      (<div className='cities-nofound'> <p>We didn't found this city. Try other!</p> </div>):
+      (
+        <>
+        <div className="Cit-Container">
         {dataCity.map((City) => (
           <div className="card-container">
             <div className="card">
@@ -140,8 +145,20 @@ const handleCheckboxChange = (event) => {
             </div>
           </div>
         ))}
+          <div>
       </div>
+          </div>
+        </>
+          )
+    }
+        {/* {dataCity.length === 0 ? (<div className='cities-nofound'> <p>We didn't found this city. Try other!</p> </div>) 
+        :  */}
+        {/* (<Cards/>)  */}
+                      
     </div>
+
+
+        
   );
 };
 export default Cities;
