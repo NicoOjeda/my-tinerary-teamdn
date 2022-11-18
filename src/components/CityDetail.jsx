@@ -75,7 +75,7 @@ const CityDetail = () => {
                                                 ></img>
 
                                                 <div className="activity-info">{e.description}</div>
-                                                <div className="activity-info">{e.price}</div>
+                                                <div className="activity-info">${e.price}</div>
                                                 <div > {e.userId.name}</div>
                                                 <img  
                                                 className="DetailsH-photo" 
