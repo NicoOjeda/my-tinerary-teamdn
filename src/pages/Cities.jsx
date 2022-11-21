@@ -2,63 +2,56 @@ import React from "react";
 import "../styles/Cities.css";
 import { useState, useRef, useEffect } from "react";
 import "../styles/Cards.css";
-// import Cards from "../components/Cards";
-// import dataCity from "../data1/datosCities";
 import { Link as LinkRouter } from "react-router-dom";
-// let arrayCards = dataCity;
-import axios from "axios";
-import { BASE_URL } from "../api/url";
-import "../styles/NotFound.css"
+import "../styles/NotFound.css";
+import cardsActions from "../redux/actions/cardsActions";
+import { useDispatch, useSelector } from "react-redux";
 
-const Cities = () => {
-  const [check, setCheck] = useState([]);
+export default function Cities (){ 
+  const dispatch = useDispatch();
+  const { getCards } = cardsActions;
+  const { getSelect } = cardsActions;
+  const { getChecks } = cardsActions;
+  const { cities, search,initial,check } = useSelector((state) => state.card);
   const inputRef = useRef(null);
   const [valueInput, setvalueInput] = useState("");
   const [dataCity, setdataCity] = useState([]);
+  
+  useEffect(() => {
+  console.log(initial)    
+    if (!initial)
+    {
+      dispatch(getCards());
+    }
+  }, []);
   const handleInputChange = () => {
     setvalueInput(inputRef.current.value);
-    console.log(inputRef)
+    dispatch(getSelect(inputRef.current.value));
+    console.log(inputRef);
   };
-const handleCheckboxChange = (event) => {
-  console.log(event.target.value)
-  if (event.target.checked){
-    let newCheck = [...check,event.target.value ]
-    setCheck(newCheck)
-    console.log(newCheck)
-  }else{
-    let newCheck = check.filter((continent) =>{
-        return  continent != event.target.value
-        
-     })
-     console.log(newCheck)
- 
-     setCheck(newCheck)
+
+  const handleCheckboxChange = (event) => {
+    if(check.length<1){
+      dispatch(getChecks([event.target.value]))
+    }else{
+    if (event.target.checked) {
+      dispatch(getChecks(check.concat(event.target.value)));
+    } else {
+      let newCheck = check.filter((continent) => {
+        return continent !=  event.target.value;
+      });
+      dispatch(getChecks(newCheck));
     }
+  }
+  
+};
+// console.log(check)
+// useEffect(()  => {
+//   dispatch(getChecks(check));
 
-
-
-}
-
-
-  // const sendData = (e) => {
-  //   e.preventDefault();
-  //   setvalueInput(inputRef.current.value)
-  // };
-
-  // console.log(data)
-  // console.log(valueInput);
-
-  useEffect(() => {
-    axios.get(`${BASE_URL}/api/cities/`, {params:{name:valueInput,continent:check}} )
-      .then((res) => setdataCity(res.data.response));
-  }, [valueInput,check]);
-
-  console.log(dataCity);
-
+// },[check])
   return (
     <div className="Cities-container">
-    
-
       <h1>Cities</h1>
       <div className="check-container">
         <div>
@@ -67,6 +60,7 @@ const handleCheckboxChange = (event) => {
             name="Europa"
             value="Europa"
             onChange={handleCheckboxChange}
+            defaultChecked={check.includes("Europa")}
           />
           Europa
         </div>
@@ -76,6 +70,7 @@ const handleCheckboxChange = (event) => {
             name="Asia"
             value="Asia"
             onChange={handleCheckboxChange}
+            defaultChecked={check.includes("Asia")}
           />
           Asia
         </div>
@@ -85,6 +80,7 @@ const handleCheckboxChange = (event) => {
             name="America"
             value="America"
             onChange={handleCheckboxChange}
+            defaultChecked={check.includes("America")}
           />
           America del Norte
         </div>
@@ -94,6 +90,7 @@ const handleCheckboxChange = (event) => {
             name="Africa"
             value="Africa"
             onChange={handleCheckboxChange}
+            defaultChecked={check.includes("Africa")}
           />
           Africa
         </div>
@@ -103,6 +100,7 @@ const handleCheckboxChange = (event) => {
             name="Oceania"
             value="Oceania"
             onChange={handleCheckboxChange}
+            defaultChecked={check.includes("Oceania")}
           />
           Oceania
         </div>
@@ -112,12 +110,12 @@ const handleCheckboxChange = (event) => {
             name="America del Sur"
             value="America del Sur"
             onChange={handleCheckboxChange}
+            defaultChecked={check.includes("America del Sur")}
           />
           America del Sur
         </div>
       </div>
       <div className="Cities-form" id="form">
-      
         <label for="name">Start your adventure</label>
         <input
           className="Cities-input"
@@ -126,39 +124,36 @@ const handleCheckboxChange = (event) => {
           placeholder="Please Choice the City"
           ref={inputRef}
           required
+          defaultValue={search}
         />
-    </div>
-    {dataCity.length === 0 ?
-      
-      (<div className='cities-nofound'> <p>We didn't found this city. Try other!</p> </div>):
-      (
-        <>
-        <div className="Cit-Container">
-        {dataCity.map((City) => (
-          <div className="card-container">
-            <div className="card">
-              <div className="card-title">{City.name}</div>
-              <img className="card-img" src={City.photo} alt={City.name}></img>
-              <LinkRouter to={`/details/${City._id}`}>
-                <button className="card-button">view more! </button>
-              </LinkRouter>
-            </div>
-          </div>
-        ))}
-          <div>
       </div>
+      {cities.length === 0 ? (
+        <div className="cities-nofound">
+          {" "}
+          <p>We didn't found this city. Try other!</p>{" "}
+        </div>
+      ) : (
+        <>
+          <div className="Cit-Container">
+            {cities.map((City) => (
+              <div className="card-container">
+                <div className="card">
+                  <div className="card-title">{City.name}</div>
+                  <img
+                    className="card-img"
+                    src={City.photo}
+                    alt={City.name}
+                  ></img>
+                  <LinkRouter to={`/details/${City._id}`}>
+                    <button className="card-button">view more! </button>
+                  </LinkRouter>
+                </div>
+              </div>
+            ))}
+            <div></div>
           </div>
         </>
-          )
-    }
-        {/* {dataCity.length === 0 ? (<div className='cities-nofound'> <p>We didn't found this city. Try other!</p> </div>) 
-        :  */}
-        {/* (<Cards/>)  */}
-                      
+      )}
     </div>
-
-
-        
   );
 };
-export default Cities;
