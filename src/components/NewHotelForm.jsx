@@ -1,15 +1,13 @@
-
-
-import axios from 'axios'
-import React, {useState } from 'react'
+import React from 'react';
+import axios from 'axios';
+import {useState } from 'react';
 import '../styles/newhotelform.css' 
 import { BASE_URL } from '../api/url';
 import { useNavigate } from 'react-router-dom';
+import swal from 'sweetalert'
 
 
 export default function NewHotelForm() {
-
-    console.log(BASE_URL);
 
     const [dataHotel, setDataHotel] = useState({
         name: '',
@@ -31,16 +29,35 @@ export default function NewHotelForm() {
 
 const navigate = useNavigate()
 
-const SendDataHotel = (e) =>{
-    console.log(dataHotel);
+async function SendDataHotel(e){
+    // console.log(dataHotel);
     e.preventDefault()
     localStorage.setItem("data", JSON.stringify(dataHotel))
     
-    axios.post(`${BASE_URL}/api/hotels/` , dataHotel )
-    .then(response => console.log(response.data)) 
-    .catch(err=> console.log( err))
-    e.target.reset()
-        navigate('/')
+    try{
+       let res = await axios.post(`${BASE_URL}/api/hotels/` , dataHotel )
+        // console.log(res.data) 
+       if(res.data.success){
+        swal({
+            title: "Excelent",
+            text:  "Hotel created",
+            icon: "success",
+            timer: "3000"
+        })
+        navigate(`/detailshotels/${res.data.id}`)
+       } else {
+        swal({
+            text: res.data.message.join(" | "),
+            icon: "warning",
+            dangerMode: true,
+            timer: "5000" 
+        })
+       }
+    } catch(err){
+        console.log( err)
+    }
+   
+    // e.target.reset()
  }
 
 
@@ -101,6 +118,7 @@ const SendDataHotel = (e) =>{
             </div>
         </form>
         </div>
+       
         </div>
       )
     }
