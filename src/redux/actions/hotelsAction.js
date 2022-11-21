@@ -8,32 +8,25 @@ const getHotels = createAsyncThunk('getHotels', async ()=>{
     return {
         listHotels : response.data.response
     }
-
 })
 
-const getHotelsName = createAsyncThunk('getHotelsName', async (data)=>{
-    
-    const response = await axios.get(`http://localhost:8000/api/hotels?name=${data}`)
-    // console.log(response.data.response)
-    return {
-        listHotels : response.data.response
-    }
-
-})
 
 const getHotelsNameOrder = createAsyncThunk('getHotelsNameOrder', async (data)=>{
-    const response = await axios.get(`http://localhost:8000/api/hotels?order=${data.order}&name=${data.name}`)
-    // console.log(response.data.response)
-    return {
-        listHotels : response.data.response
+    try{
+        const response = await axios.get(`http://localhost:8000/api/hotels?order=${data.order}&name=${data.name}`)
+        return {
+            listHotels : response.data.response
+        }
+    } catch (error){
+        return {
+            listHotels : error.response.data.response
+        }
     }
-
 })
 
 
 const hotelsAction = {
     getHotels,
-    getHotelsName,
     getHotelsNameOrder
 }
 
