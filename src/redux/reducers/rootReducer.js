@@ -10,3 +10,10 @@ const rootReducer = {
 
 
 export default rootReducer;
+import hotelsReducer from "./hotelsReducer";
+
+const rootReducer = {
+    hotelsReducer
+};
+
+export default rootReducer;
