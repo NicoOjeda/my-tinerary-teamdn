@@ -22,22 +22,18 @@ export default function Hotelscards() {
     // console.log(valueInput) 
     // console.log(valueInput2)
     useEffect(()=>{
-        // axios.get(`${BASE_URL}/api/hotels/?name=${valueInput}&order=${valueInput2}`)
-        // .then(res=> setDatahotel(res.data.response))
-        dispatch(hotelsAction.getHotels())
-    },[])
-    
-    useEffect(()=>{
         
-        if(!valueInput === 0){
-            dispatch(hotelsAction.getHotelsName(valueInput))
+        if(valueInput === "" && valueInput2 === "" ){
+            dispatch(hotelsAction.getHotels())
         } else {
             let search = {
                 name: valueInput,
                 order: valueInput2
             }
+            console.log(search);
             dispatch(hotelsAction.getHotelsNameOrder(search))
         }
+        console.log(hotels);
     },[valueInput,valueInput2]) 
     
     console.log(hotels);
