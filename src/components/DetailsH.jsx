@@ -32,7 +32,7 @@ export default function DetailsH() {
     
     
     // console.log(data);
-    // console.log(data2);
+    console.log(data2);
 return (
     <div className='DetailsH-container'>
         <h2 className='DetailsH-h2'>Hotel's Details</h2>
