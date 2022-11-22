@@ -1,7 +1,7 @@
 import { createReducer} from "@reduxjs/toolkit";
 import hotelsAction from "../actions/hotelsAction";
 
-const {getHotels, getHotelsNameOrder } = hotelsAction
+const {getHotels, getHotelsNameOrder} = hotelsAction
 const initialState = {
     listHotels:[]
 }
@@ -17,7 +17,10 @@ const hotelsReducer = createReducer( initialState, (builder)=>{
         return { ...state, listHotels : action.payload.listHotels }
         
     })
+    
    
+   
+
 })
 
 
