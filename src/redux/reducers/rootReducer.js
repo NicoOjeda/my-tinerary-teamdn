@@ -1,19 +1,14 @@
 import cardReducer from './cardReducer'
-
+import hotelsReducer from "./hotelsReducer";
+import myHotelsReducer from "./myHotelsReducer";
 
 const rootReducer = {
-    card : cardReducer
-   
+        card : cardReducer,
+        hotelsReducer,
+        myHotelsReducer
 
 }
 
 
-
 export default rootReducer;
-import hotelsReducer from "./hotelsReducer";
 
-const rootReducer = {
-    hotelsReducer
-};
-
-export default rootReducer;
