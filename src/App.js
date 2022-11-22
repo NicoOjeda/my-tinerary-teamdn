@@ -13,7 +13,10 @@ import Cities from './pages/Cities';
 import Details from "./pages/Details";
 import MyShows from "./pages/MyShows";
 import EditShow from "./pages/EditShow";
-
+import MyHotels from "./pages/MyHotels";
+import MyCities from "./pages/MyCities";
+import MycityAdm from "./pages/";
+import EditHotel from "./pages/EditHotel"
 
 function App() {
   return (
@@ -37,15 +40,9 @@ function App() {
       <Route path='/edithotel/:id/' element={<EditHotel/>} ></Route>
       <Route path='/myshows' element={<MyShows/>} ></Route>
       <Route path='/editshow/:id/' element={<EditShow/>} ></Route>
-      
 
-
-      
       </Routes>
     </WebSiteLayout>
   );
 }
 export default App;
-
-
-
