@@ -11,8 +11,8 @@ import DetailsHotel from "./pages/DetailsHotel";
 import NewCity from "./pages/NewCity"
 import Cities from './pages/Cities';
 import Details from "./pages/Details";
-
-
+import MyCities from "./pages/MyCities";
+import MycityAdm from "./components/MycityAdm"
 
 function App() {
   return (
@@ -31,7 +31,8 @@ function App() {
     
       <Route path='/NewCity' element={<NewCity/>} ></Route>
       <Route path='/Details/:id' element={<Details/>} ></Route>
-      
+      <Route path='/MyCities' element={<MyCities/>} ></Route>
+      <Route path='/MycityAdm' element={<MycityAdm/>} ></Route>
       
 
 
