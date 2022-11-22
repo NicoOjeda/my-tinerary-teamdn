@@ -27,7 +27,7 @@ const getHotelsNameOrder = createAsyncThunk('getHotelsNameOrder', async (data)=>
 
 const hotelsAction = {
     getHotels,
-    getHotelsNameOrder
+    getHotelsNameOrder,
 }
 
 export default hotelsAction
