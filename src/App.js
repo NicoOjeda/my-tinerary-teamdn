@@ -13,7 +13,10 @@ import Cities from './pages/Cities';
 import Details from "./pages/Details";
 import MyShows from "./pages/MyShows";
 import EditShow from "./pages/EditShow";
-
+import MyHotels from "./pages/MyHotels";
+import MyCities from "./pages/MyCities";
+import MycityAdm from "./pages/";
+import EditHotel from "./pages/EditHotel"
 
 function App() {
   return (
