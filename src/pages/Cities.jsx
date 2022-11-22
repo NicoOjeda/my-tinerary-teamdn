@@ -19,7 +19,7 @@ export default function Cities (){
   
   useEffect(() => {
   console.log(initial)    
-    if (!initial)
+    if (initial)
     {
       dispatch(getCards());
     }

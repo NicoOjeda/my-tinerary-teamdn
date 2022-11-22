@@ -12,3 +12,13 @@ const rootReducer = {
 
 export default rootReducer;
 
+
+const rootReducer = {
+    card : cardReducer,
+     hotelsReducer
+
+
+}
+
+
+export default rootReducer;
