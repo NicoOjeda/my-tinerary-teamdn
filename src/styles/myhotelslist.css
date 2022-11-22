@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', cursive;
+}
+.MyHotels-container{
+
+    min-height: 100vh ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.MyHotels-input{
+    width: 10rem;
+    border-radius: 8px;
+}
+.MyHotels-card {
+    color: #e7c621;
+    display: flex;
+    flex-direction: row-reverse;
+    min-height: 600px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+    margin: 2rem;
+    background-color: rgba(0, 0, 0, 0.644);
+    box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
+    border-radius: 25px;
+}
+
+.MyHotels-img {
+    object-fit: cover;
+    width: 100%;
+    height: 70%;
+}
+
+.MyHotels-title {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.MyHotels-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 5rem;
+    font-weight: bold;
+    text-decoration: none;    
+    font-style: italic;
+}
+.MyHotels-title2{
+    text-align:start;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+@media (max-width: 550px){
+    .MyHotels-card {
+        padding: 0.5rem;
+        min-height: 600px;
+        width: 80%; 
+    }  
+}
+@media (max-width: 425px){
+    .MyHotels-card {
+        padding: 0.5rem;
+        min-height: 600px;
+        width: 90%; 
+    } 
+}
+@media (max-width: 375px){
+    .MyHotels-card {
+        width: 90%; 
+    }  
+}
