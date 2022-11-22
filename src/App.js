@@ -40,15 +40,9 @@ function App() {
       <Route path='/edithotel/:id/' element={<EditHotel/>} ></Route>
       <Route path='/myshows' element={<MyShows/>} ></Route>
       <Route path='/editshow/:id/' element={<EditShow/>} ></Route>
-      
 
-
-      
       </Routes>
     </WebSiteLayout>
   );
 }
 export default App;
-
-
-
