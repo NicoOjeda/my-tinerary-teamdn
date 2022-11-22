@@ -14,8 +14,6 @@ import Details from "./pages/Details";
 import MyShows from "./pages/MyShows";
 import EditShow from "./pages/EditShow";
 import MyHotels from "./pages/MyHotels";
-import MyCities from "./pages/MyCities";
-import MycityAdm from "./pages/";
 import EditHotel from "./pages/EditHotel"
 
 function App() {
@@ -35,8 +33,8 @@ function App() {
       <Route path='/myhotels' element={<MyHotels/>} ></Route>
       <Route path='/NewCity' element={<NewCity/>} ></Route>
       <Route path='/Details/:id' element={<Details/>} ></Route>
-      <Route path='/MyCities' element={<MyCities/>} ></Route>
-      <Route path='/MycityAdm' element={<MycityAdm/>} ></Route>
+     
+      
       <Route path='/edithotel/:id/' element={<EditHotel/>} ></Route>
       <Route path='/myshows' element={<MyShows/>} ></Route>
       <Route path='/editshow/:id/' element={<EditShow/>} ></Route>
