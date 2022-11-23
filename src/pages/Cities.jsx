@@ -26,21 +26,21 @@ export default function Cities (){
   }, []);
   const handleInputChange = () => {
     setvalueInput(inputRef.current.value);
-    dispatch(getSelect(inputRef.current.value));
+    dispatch(getSelect({select:inputRef.current.value,checks:check}));
     console.log(inputRef);
   };
 
   const handleCheckboxChange = (event) => {
     if(check.length<1){
-      dispatch(getChecks([event.target.value]))
+      dispatch(getChecks({select:inputRef.current.value,checks:[event.target.value]}))
     }else{
     if (event.target.checked) {
-      dispatch(getChecks(check.concat(event.target.value)));
+      dispatch(getChecks({select:inputRef.current.value,checks:check.concat(event.target.value)}));
     } else {
       let newCheck = check.filter((continent) => {
         return continent !=  event.target.value;
       });
-      dispatch(getChecks(newCheck));
+      dispatch(getChecks({select:inputRef.current.value,checks:newCheck}));
     }
   }
   

@@ -16,9 +16,9 @@ const getCards = createAsyncThunk("getCards", async (data) => {
       
 const getSelect = createAsyncThunk("getSelect", async (data) => {
   try {
-    const res = await axios.get(`http://localhost:8000/api/cities?name=${data}`);
+    const res = await axios.get(`http://localhost:8000/api/cities?name=${data.select}&continent=${data.checks.join("&continent=")}`);
     console.log(res);
-    return  {cities:res.data.response,search:data}
+    return  {cities:res.data.response,search:data.select}
    
   } catch (error) {
     console.log(error);
@@ -33,10 +33,10 @@ const getSelect = createAsyncThunk("getSelect", async (data) => {
 
 const getChecks = createAsyncThunk("getChecks", async (data) => {
   try {
-    const res = await axios.get(`http://localhost:8000/api/cities?continent=${data.join("&continent=")}`);
+    const res = await axios.get(`http://localhost:8000/api/cities?continent=${data.checks.join("&continent=")}&name=${data.select}`);
     console.log(res)
     
-    return {cities:res.data.response,check:data}
+    return {cities:res.data.response,check:data.checks}
 
   } catch (error) {
     console.log(error);
