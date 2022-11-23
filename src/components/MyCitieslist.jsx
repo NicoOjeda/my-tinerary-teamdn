@@ -1,0 +1,44 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import myCitiesActions from "../redux/actions/myCitiesActions";
+import "../styles/MyCities.css"
+import swal from "sweetalert";
+
+export default function MyCitieslist() {
+  const listCities = useSelector(
+    (store) => store.myCitiesReducer.citiesAdmlist
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    let id = "636d24d7ea4ed429429463a6";
+    dispatch(myCitiesActions.citiesList(id));
+  }, [listCities]);
+
+  console.log(listCities);
+
+  const deleteCities = (e) => {
+    dispatch(myCitiesActions.deleteCities(e));
+    swal({
+      tittle: "Excelent",
+      text: "City Deleted",
+      icon: "success",
+      timer: "3000",
+    });
+  };
+  const cityView = (myCity) => (
+    <div className="mc-oneContainer">
+    <div className="mc-container">
+      <div className="mc-title">{myCity.name}</div>
+      <img className="mc-img" src={myCity.photo}></img>
+      <div className="mc-continent"> {myCity.continent}</div>
+      <Link to={`/editcity/${myCity._id}`}>
+        <button className="mc-btn2">Edit City</button>
+      </Link>
+      <button className="mc-btn1" onClick={() => deleteCities(myCity._id)}>Delete</button>
+    </div>
+    </div>
+  );
+  return <div>{listCities.map((myCity) => cityView(myCity))}</div>;
+}
