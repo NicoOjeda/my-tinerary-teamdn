@@ -5,13 +5,18 @@
     font-family: 'Merienda', cursive;
 
 }
-.my-container{
-    width: 100%;
-    height: 100vh;
+.imagebckcities{
     background-image: url("/public/img/flat.jpg");
     object-fit: cover;
     background-position: center;
     background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.my-container{
     opacity: 0.9;
     display: flex;
     justify-content:center;
