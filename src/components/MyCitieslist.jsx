@@ -15,7 +15,8 @@ export default function MyCitieslist() {
     let id = "636d24d7ea4ed429429463a6";
     dispatch(myCitiesActions.citiesList(id));
   }, [listCities]);
-
+   
+  
   console.log(listCities);
   const navigate = useNavigate()
   const deleteCities = (e) => {
