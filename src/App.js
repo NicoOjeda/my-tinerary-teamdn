@@ -15,14 +15,16 @@ import MyShows from "./pages/MyShows";
 import EditShow from "./pages/EditShow";
 import MyHotels from "./pages/MyHotels";
 import EditHotel from "./pages/EditHotel"
+import MyCitiesget from "./pages/MyCitiesget";
+import EditCityForm from "./pages/EditCity";
+import Myitinerariesget from "./pages/Myitinerariesget";
+import EditItineraryForm from "./pages/EditItinerary";
 
 function App() {
   return (
     <WebSiteLayout>
       <Routes> 
       <Route path='/detailshotels/:id' element={<DetailsHotel/>} ></Route>
-
-
       <Route path='/' element={<Home/>} ></Route>
       <Route path='*' element={<NotFound/>} ></Route>
       <Route path='/newhotel' element={<NewHotel/>}></Route>
@@ -33,12 +35,13 @@ function App() {
       <Route path='/myhotels' element={<MyHotels/>} ></Route>
       <Route path='/NewCity' element={<NewCity/>} ></Route>
       <Route path='/Details/:id' element={<Details/>} ></Route>
-     
-      
+      <Route path='/editcity/:id' element={<EditCityForm/>} ></Route>
       <Route path='/edithotel/:id/' element={<EditHotel/>} ></Route>
       <Route path='/myshows' element={<MyShows/>} ></Route>
       <Route path='/editshow/:id/' element={<EditShow/>} ></Route>
-
+    <Route path="/mycities" element={<MyCitiesget/>}></Route>
+    <Route path="/myitineraries" element={<Myitinerariesget/>}></Route>
+    <Route path="/edititinerary/:id" element={<EditItineraryForm/>}></Route>
       </Routes>
     </WebSiteLayout>
   );
