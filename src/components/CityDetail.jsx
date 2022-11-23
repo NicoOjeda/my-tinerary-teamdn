@@ -78,7 +78,7 @@ const CityDetail = () => {
                     <div className="activity-info">${e.price}</div>
                     <div> {e.userId.name}</div>
                     <img
-                      className="DetailsH-photo"
+                      className="activity-photo"
                       src={e.userId.photo}
                       alt={e.userId.name}
                     ></img>
