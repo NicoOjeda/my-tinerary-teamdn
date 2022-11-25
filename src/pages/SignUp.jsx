@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 import "../styles/SignUp.css"
+import { Link as LinkRouter } from "react-router-dom";
 
 export default function SignUp() {
-  
+  const btn4 = "Signup";
   const [data,setData] = useState({
     name:'',
     lastname:'',
@@ -27,7 +28,9 @@ export default function SignUp() {
         localStorage.setItem("data", JSON.stringify(data))
       }
       
-
+      <LinkRouter to="/signup">
+      <button className="nav-2"> {btn4}</button>
+    </LinkRouter>
     
     return (
         <>
