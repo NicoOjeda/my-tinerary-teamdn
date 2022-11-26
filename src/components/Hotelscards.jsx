@@ -30,13 +30,13 @@ export default function Hotelscards() {
                 name: valueInput,
                 order: valueInput2
             }
-            console.log(search);
+            // console.log(search);
             dispatch(hotelsAction.getHotelsNameOrder(search))
         }
-        console.log(hotels);
+        // console.log(hotels);
     },[valueInput,valueInput2]) 
     
-    console.log(hotels);
+    // console.log(hotels);
     
 
 const cardview = (card)=> (

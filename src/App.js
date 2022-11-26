@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Home from "./pages/Home";
 import {Routes, Route } from 'react-router-dom'
 import WebSiteLayout from './layouts/WebSiteLayout'
@@ -19,8 +19,24 @@ import MyCitiesget from "./pages/MyCitiesget";
 import EditCityForm from "./pages/EditCity";
 import Myitinerariesget from "./pages/Myitinerariesget";
 import EditItineraryForm from "./pages/EditItinerary";
+import { useDispatch } from "react-redux";
+import userActions from "./redux/actions/SignInAction"; 
 
 function App() {
+
+let dispatch = useDispatch()
+let {relogin} = userActions
+
+useEffect(()=>{
+  let token = JSON.parse(localStorage.getItem('token'))
+  console.log(token?.token.user);
+  if(token){
+    dispatch(relogin(token.token.user))
+  }
+})
+
+
+
   return (
     <WebSiteLayout>
       <Routes> 
