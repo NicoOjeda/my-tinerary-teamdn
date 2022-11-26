@@ -4,12 +4,54 @@ import "./Home1";
 import { useState } from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import Burguer from "./Burguer";
+import { useSelector, useDispatch } from 'react-redux'
+// import LoginActions from '../redux/actions/LoginAction'
+
+
+// const pages = [
+//   { name: 'Home', to: '/'},
+//   { name: 'Ingresar', to: 'signup'}
+// ]
+// const onlinePages = [
+//   ...pages, 
+//   { name: 'NewPerfil', to: '/nuevo-perfil'},
+//   { name: 'Ingresar', to: '/ingresar'}
+
+// ]
+
+
+
+
+
+
+
+
 export default function Navbar() {
   let [viewHide, setViewHide] = useState(false);
   let hide = () => {
     setViewHide(!viewHide); //viewHide = mostrarOcultar
     console.log(viewHide);
   };
+
+
+
+//   let { online,token} = useSelector(store => store.usuario)
+//   let dispatch = useDispatch()
+//   let { salir } = LoginAction 
+
+//   async function cerrarSesion(event) {
+//     let res = await dispatch(salir(token))
+//     console.log(res)
+
+//   }
+
+// const link = (page) => <LinkRouter className="'NavBar-link "  to={page.to} key={page.name}>{page.name}</LinkRouter>
+
+
+
+
+
+
   return (
     <div className="nav-container1">
       <div className="nav-container">
