@@ -4,6 +4,7 @@ import myHotelsReducer from "./myHotelsReducer";
 import myShowsReducer from './myShowsReducer';
 import myCitiesReducer from './citiesReducer';
 import myItinerariesReducer from './itinerariesReducer';
+import SignInReducer from './SingInReducer'
 
 const rootReducer = {
         card : cardReducer,
@@ -11,7 +12,8 @@ const rootReducer = {
         myHotelsReducer,
         myShowsReducer,
         myCitiesReducer,
-        myItinerariesReducer
+        myItinerariesReducer,
+        SignInReducer
 }
 
 
