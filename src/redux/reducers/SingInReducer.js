@@ -64,6 +64,31 @@ const userReducer = createReducer( initialState, (builder)=>{
             return newState
         }
     } )
+
+    .addCase(signout.fulfilled, (state,action) => {
+        const { success,response} = action.payload
+        if(success){
+            localStorage.removeItem('token')
+            let newState = {
+                ...state,
+                name:"",
+                photo:"",
+                logged:false,
+                role: "",
+                token:"",
+                idUser: ""
+            }
+            return newState
+        } else{
+            let newState ={
+                ...state,
+                message: response
+            }
+            return newState
+        }
+    })
+
+
 })
 
 export default userReducer
