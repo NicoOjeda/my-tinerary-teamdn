@@ -5,6 +5,7 @@ import myShowsReducer from './myShowsReducer';
 import myCitiesReducer from './citiesReducer';
 import myItinerariesReducer from './itinerariesReducer';
 import SignInReducer from './SingInReducer'
+import profileReducer from './profileReducer';
 
 const rootReducer = {
         card : cardReducer,
@@ -13,7 +14,8 @@ const rootReducer = {
         myShowsReducer,
         myCitiesReducer,
         myItinerariesReducer,
-        SignInReducer
+        SignInReducer,
+        profileReducer
 }
 
 
