@@ -22,7 +22,7 @@ import EditItineraryForm from "./pages/EditItinerary";
 import { useDispatch } from "react-redux";
 import userActions from "./redux/actions/SignInAction"; 
 import Profile from "./pages/Profile";
-
+import MyTynerariesCreate from './pages/MyTynerariesCreate'
 function App() {
 
 let dispatch = useDispatch()
@@ -60,6 +60,7 @@ useEffect(()=>{
       <Route path="/myitineraries" element={<Myitinerariesget/>}></Route>
       <Route path="/edititinerary/:id" element={<EditItineraryForm/>}></Route>
       <Route path="/profile/:id" element={<Profile/>}> </Route>
+      <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
       </Routes>
     </WebSiteLayout>
   );
