@@ -21,6 +21,7 @@ import Myitinerariesget from "./pages/Myitinerariesget";
 import EditItineraryForm from "./pages/EditItinerary";
 import { useDispatch } from "react-redux";
 import userActions from "./redux/actions/SignInAction"; 
+import Profile from "./pages/Profile";
 
 function App() {
 
@@ -29,7 +30,7 @@ let {relogin} = userActions
 
 useEffect(()=>{
   let token = JSON.parse(localStorage.getItem('token'))
-  console.log(token?.token.user);
+  // console.log(token?.token.user);
   if(token){
     dispatch(relogin(token.token.user))
   }
@@ -55,9 +56,10 @@ useEffect(()=>{
       <Route path='/edithotel/:id/' element={<EditHotel/>} ></Route>
       <Route path='/myshows' element={<MyShows/>} ></Route>
       <Route path='/editshow/:id/' element={<EditShow/>} ></Route>
-    <Route path="/mycities" element={<MyCitiesget/>}></Route>
-    <Route path="/myitineraries" element={<Myitinerariesget/>}></Route>
-    <Route path="/edititinerary/:id" element={<EditItineraryForm/>}></Route>
+      <Route path="/mycities" element={<MyCitiesget/>}></Route>
+      <Route path="/myitineraries" element={<Myitinerariesget/>}></Route>
+      <Route path="/edititinerary/:id" element={<EditItineraryForm/>}></Route>
+      <Route path="/profile/:id" element={<Profile/>}> </Route>
       </Routes>
     </WebSiteLayout>
   );
