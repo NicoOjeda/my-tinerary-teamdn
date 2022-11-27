@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', cursive;
+}
+.Profile-container{
+    min-height: 100vh ;
+    width: 100%;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+  
+}
+.Profile-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+}
+.Profile-form{
+    background-color: rgba(0, 0, 0, 0.644);
+    display: flex;
+    width: 22rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 35px;
+    color: #e7c621;
+
+    font-size: 18px;
+}
+.Profile-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.Profile-button2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 5rem;
+    cursor: pointer;
+
+}
+.Profile-google{
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.Profile-google2{
+    height: 1.5rem;
+    width: 12rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.Profile-h2{
+    background-color: #1b2021;
+    text-align: center;
+    color: #e7c621;
+    font-size: 35px;
+    padding: 0.5rem;
+}
+.Profile-input{
+    width: 15rem;
+    border-radius: 6px;
+}
+
+
+
+@media (max-width: 550px){
+    .Profile-form{
+
+        width: 58%;
+    }
+    .Profile-input{
+        width: 12rem;
+    }
+}
+
+
+@media (max-width: 425px){
+    .Profile-form{
+        width: 70%;
+    }
+    .Profile-input{
+        width: 12rem;
+    }
+}
+
+
+
+@media (max-width: 375px){
+    .Profile-form{
+        width: 90%;
+        padding: 1rem;
+    }
+    .Profile-input{
+        width: 16rem;
+    }
+}
