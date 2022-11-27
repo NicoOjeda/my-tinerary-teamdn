@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', cursive;
+}
+
+.mts1-container{
+    height: 100vh ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+
+
+
+
+}
+.mts1-form{
+    background-color: rgba(0, 0, 0, 0.644);
+    display: flex;
+    width: 20rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 35px;
+    color: #e7c621;
+
+    font-size: 18px;
+    margin-bottom: 14rem;
+}
+
+.mts1-box{
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+    gap: 0.5rem;
+
+}
+.mts1-h2{
+    width: 100%;
+    background-color: #1b2021;
+    text-align: center;
+    color: #e7c621;
+    font-size: 35px;
+    padding: 0.5rem;
+}
+
+
+.mts1-input{
+
+    width: 15rem;
+    border-radius: 6px;
+
+
+}
+
+
+
+.mts1-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.mts1-button2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 5rem;
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+@media (max-width: 550px){
+    .mts1-container{
+        height: 100vh ;
+
+
+
+    }
+    .mts1-box{
+       
+            height: 100vh ;
+        
+
+
+    }
+    .mts1-form{
+
+        width: 58%;
+        align-items: center;
+    }
+    .mts1-input{
+        width: 12rem;
+    }
+}
+
+
+@media (max-width: 425px){
+    .mts1-form{
+        width: 70%;
+        align-items: center;
+    }
+    .mts1-input{
+        width: 12rem;
+    }
+    .mts1-container{
+        height: 100vh ;
+
+
+
+    }
+}
+
+
+
+@media (max-width: 375px){
+    .mts1-form{
+        width: 90%;
+        padding: 1rem;
+    }
+    .mts1-input{
+        width: 16rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
