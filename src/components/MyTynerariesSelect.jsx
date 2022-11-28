@@ -3,9 +3,13 @@ import axios from "axios";
 import swal from 'sweetalert'
 import { useNavigate } from "react-router-dom";
 import '../styles/MyTynerariesSelect.css'
+import { useSelector } from "react-redux";
 
 const MyTynerariesSelect = () => {
-
+  const listCities = useSelector(
+    (store) => store.myCitiesReducer.citiesAdmlist
+  );
+    console.log(listCities)
   const [data, setData] = useState([])
   const nav = useNavigate()
   const handleInputChange = (event) => {
@@ -19,10 +23,10 @@ const MyTynerariesSelect = () => {
   async function sendData  (event){
      event.preventDefault();
     try{
-     let sendCity = await axios.post('http://localhost:8000/api/itineraries',data)
-      console.log(sendCity.data.id._id)
-      if(sendCity.data.success){
-      nav('/cities')
+     let sendIti = await axios.post('http://localhost:8000/api/itineraries',data)
+      console.log(sendIti.data.id._id)
+      if(sendIti.data.success){
+      nav('/myitineraries')
         swal({
           title: "Successfully Created!!",
           icon: "success",
@@ -43,13 +47,27 @@ const MyTynerariesSelect = () => {
   return (
     <div className="mts1-container">
         <h2 className="mts1-h2">New Itinerary</h2>
-        
-
-
 
 
         <div className="mts1-box">
-          <form id="form" className="mts1-form" onSubmit={sendData}>
+              <form id="form" className="mts1-form" onSubmit={sendData}>
+              
+
+              <label for="name">Choice the City</label>
+            <select
+              className="mts1-input"
+              id="name"
+              name="name"
+              type="text"
+              placeholder=" Enter the Name City"
+              onChange={handleInputChange}
+              required
+            >
+
+
+
+
+            </select>
             <label for="name">Name</label>
             <input
               className="mts1-input"
@@ -109,26 +127,17 @@ const MyTynerariesSelect = () => {
               placeholder="Enter the Usser Id: "
               onChange={handleInputChange} required/>
 
+ 
             <div className="mts1-button">
               <button className="mts1-button2" type="submit">
                 Create
               </button>
             </div>
+
           </form>
         </div>
       </div>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // </div>
-
 
 
   )
