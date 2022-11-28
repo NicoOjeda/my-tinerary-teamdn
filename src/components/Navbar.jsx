@@ -10,6 +10,7 @@ import userActions from "../redux/actions/SignInAction";
 // import LoginActions from '../redux/actions/LoginAction'
 import { confirmAlert } from "react-confirm-alert";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // const pages = [
 //   { name: 'Home', to: '/'},
 //   { name: 'Ingresar', to: 'signup'}
@@ -35,7 +36,7 @@ export default function Navbar() {
     console.log(viewHide);
   };
 
-
+  const navigate = useNavigate()
 
   //   let { online,token} = useSelector(store => store.usuario)
   //   let dispatch = useDispatch()
@@ -74,6 +75,7 @@ export default function Navbar() {
         label: "Log Out",
         onClick: async () => {
           signOut(token2)
+          navigate("/")
         }
       },{
         label: "Back",

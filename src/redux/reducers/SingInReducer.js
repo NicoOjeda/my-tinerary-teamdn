@@ -28,7 +28,7 @@ const userReducer = createReducer( initialState, (builder)=>{
                 logged: true,
                 role: user.role,
                 token: token,
-                idUser: user.id
+                id: user.id
             } 
             // console.log(newState);
             return newState
@@ -44,15 +44,15 @@ const userReducer = createReducer( initialState, (builder)=>{
    .addCase(relogin.fulfilled,(state, action)=>{
         const {success, response} = action.payload
         if(success){
-            // console.log(response)
+            console.log(response)
             let { token} = response
-            let {name,photo,id} = response.user.user
+            let {name,photo,id,role} = response.user.user
             let newState={
                 ...state,
                 name: name,
                 photo: photo,
                 logged: true,
-              
+                role:role,
                 token: token,
                 id:id,
 
