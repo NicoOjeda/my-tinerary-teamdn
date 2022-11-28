@@ -21,6 +21,7 @@ export default function Footer() {
             <LinkRouter to='/' className='links'>Home</LinkRouter>
             <LinkRouter to='/Cities' className='links'>Cities</LinkRouter>
             <LinkRouter to='/hotels' className='links'>hotels</LinkRouter> 
+            
           </div>
       </div>
       <ScrollToTop/>
