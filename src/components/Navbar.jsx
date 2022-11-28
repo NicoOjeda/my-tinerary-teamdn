@@ -4,7 +4,6 @@ import "./Home1";
 import { useState } from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import Burguer from "./Burguer";
-import { useSelector, useDispatch } from 'react-redux'
 // import LoginActions from '../redux/actions/LoginAction'
 
 
@@ -20,18 +19,16 @@ import { useSelector, useDispatch } from 'react-redux'
 // ]
 
 
-
-
-
-
-
-
 export default function Navbar() {
   let [viewHide, setViewHide] = useState(false);
   let hide = () => {
     setViewHide(!viewHide); //viewHide = mostrarOcultar
-    console.log(viewHide);
+    // console.log(viewHide);
   };
+
+
+
+
 
 
 
@@ -65,7 +62,7 @@ export default function Navbar() {
                 alt="accountIcon"
                 onClick={hide}
               />
-
+              
               <LinkRouter to="/SignUp">
                 <button className="btn-signin">SignUp</button>
               </LinkRouter>
