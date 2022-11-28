@@ -77,13 +77,18 @@
  
    }
 .logo2{
-    height: 46px!important;
+    height: 6vh!important;
     border-radius: 6px;
     background-color: #E7C621;
     padding: 1px;
-    width: 52px;
+    width: 4vw;
     cursor: pointer;
 
+}
+.nameContainer{
+    position: absolute;
+    left: 70%;
+    color: #E7C621;
 }
  
 
