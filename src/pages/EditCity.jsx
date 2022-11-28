@@ -7,6 +7,8 @@ import "../styles/EditCity.css"
 export default function EditCityForm () {
     let {id} = useParams()
 
+
+    
     const [dataCity, setDataCity] = useState({
         name : "",
         photo: "",

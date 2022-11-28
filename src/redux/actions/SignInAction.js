@@ -55,6 +55,7 @@ const signout = createAsyncThunk('signout', async(token) => {
             success: true,
             response: user.data.message
         }
+        
     }catch(error) {
         console.log(error.response);
         return{

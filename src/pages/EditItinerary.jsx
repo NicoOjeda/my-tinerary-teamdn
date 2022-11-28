@@ -5,6 +5,7 @@ import swal from "sweetalert"
 import { useNavigate, useParams } from "react-router-dom"
 import "../styles/Edititinerary.css"
 
+
 export default function EditItineraryForm () {
     let {id} = useParams()
 
