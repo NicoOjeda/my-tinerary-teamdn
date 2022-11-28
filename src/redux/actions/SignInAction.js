@@ -44,10 +44,34 @@ const relogin = createAsyncThunk('relogin', async(token)=>{
    }
    
 })
+const signout = createAsyncThunk('signout', async(token) => {
+    let url =` ${BASE_URL}/api/auth/sign-out`
+
+    let headers = {headers: {"Authorization": `Bearer ${token}`}}
+    try {
+        let user = await axios.put(url,null,headers)
+        console.log(user.data);
+        return{
+            success: true,
+            response: user.data.message
+        }
+    }catch(error) {
+        console.log(error.response);
+        return{
+            success: false,
+            response: error.response.data.message
+        }
+    }
+})
+
 
 const userActions = {
     signin,
-    relogin
+    relogin,
+    signout
 }
+
+
+
 
 export default userActions

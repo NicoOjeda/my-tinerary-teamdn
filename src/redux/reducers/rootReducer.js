@@ -14,7 +14,7 @@ const rootReducer = {
         myShowsReducer,
         myCitiesReducer,
         myItinerariesReducer,
-        SignInReducer,
+        users:SignInReducer,
         profileReducer
 }
 

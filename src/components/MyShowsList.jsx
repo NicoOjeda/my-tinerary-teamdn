@@ -10,11 +10,11 @@ export default function MyShowsList() {
 
     const listShow = useSelector(store => store.myShowsReducer.showList)
     const dispatch = useDispatch()
-
+    let user = useSelector(store => store.users)
   
   useEffect(()=>{
-    let id = "636e7b53f4d7aa583b71eb68";
-    dispatch(myShowsActions.showsAction(id))
+    
+    dispatch(myShowsActions.showsAction(user.id))
   },[listShow])
    
 //   console.log(listShow);
@@ -44,11 +44,35 @@ const hotelView = (myShow)=> (
 )
 
     return (
-    <div className='MyHotels-container'>
-        {listShow.map((myShow)=> hotelView(myShow))}
-    </div>
-  )
-}
+   
+      <>
+      <div className='MyHotels-container'>
+  <div className="my-price">
+                  MyShows
+              </div>
+              <div className='containerShows'>
+              <div className="createItineraries">
+                 {/* <h3>
+                   Create Shows !!
+                  </h3>
+                  <Link className="containerCreateItinerary">
+                  <button className="my-btn createButton">Create Show</button>
+                  </Link> */}
+              </div>
+          {listShow.map((myShow)=> hotelView(myShow))}
+              </div>
+      </div>
+      </>
+    )
+  }
+
+
+
+
+
+
+
+
 
 
 // import React, {useEffect } from 'react'

@@ -2,7 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 import userActions from '../actions/SignInAction'
 
 
-const { signin, relogin } = userActions
+const { signin, relogin, signout } = userActions
 
 const initialState= {
     name: "",
@@ -43,16 +43,19 @@ const userReducer = createReducer( initialState, (builder)=>{
 
    .addCase(relogin.fulfilled,(state, action)=>{
         const {success, response} = action.payload
+
         if(success){
-            let { user ,token} = response
+            console.log(response)
+            let { token } = response
+            let { role,name,photo, id} = response.user.user
             let newState={
                 ...state,
-                name: user.name,
-                photo: user.photo,
+                name: name,
+                photo: photo,
                 logged: true,
-                role: user.role,
+                role: role,
                 token: token,
-                idUser: user.id
+                id: id
             } 
             // console.log(newState);
             return newState
@@ -64,6 +67,34 @@ const userReducer = createReducer( initialState, (builder)=>{
             return newState
         }
     } )
+
+    .addCase(signout.fulfilled, (state,action) => {
+        const { success,response} = action.payload
+        if(success){
+            localStorage.removeItem('token')
+            let newState = {
+                ...state,
+                name:"",
+                photo:"",
+                logged:false,
+                role: "",
+                token:"",
+                id: ""
+            }
+            return newState
+        } else{
+            let newState ={
+                ...state,
+                message: response
+            }
+            return newState
+        }
+    })
+
+
+
+
+
 })
 
 export default userReducer

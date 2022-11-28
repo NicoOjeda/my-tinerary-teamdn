@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const showsAction = createAsyncThunk('getShows', async (id)=>{
-    const res = await axios.get(`http://localhost:8000/api/shows?userId=${id}`)
+    const res = await axios.get(`http://localhost:8000/api/shows?`)
     // console.log(res);
     return {
         showList : res.data.response

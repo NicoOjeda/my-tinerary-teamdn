@@ -115,3 +115,24 @@
 .my-price{
     
 }
+
+.createItineraries{
+    height: 52.1vh;
+    text-align: center;
+    font-size: 4rem;
+}
+.containerCreateItinerary{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createButton{
+    margin-left: 0rem ;
+}
+.containerShows{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
