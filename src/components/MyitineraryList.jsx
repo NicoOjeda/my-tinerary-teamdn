@@ -58,6 +58,8 @@ export default function MyitineraryList () {
                 MyItineraries
             </div>
             <div>
+            <div className="my-price" onClick={() => navigate('/mytynerariescreate')}>  Add new itinerary
+            </div>
             {listItinerary.map((myItinerary) => itineraryView(myItinerary))}
             </div>
         </div>

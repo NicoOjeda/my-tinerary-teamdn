@@ -22,6 +22,7 @@ import EditItineraryForm from "./pages/EditItinerary";
 import { useDispatch, useSelector } from "react-redux";
 import userActions from "./redux/actions/SignInAction"; 
 import Profile from "./pages/Profile";
+import MyTynerariesCreate from './pages/MyTynerariesCreate'
 
 
 function App() {
@@ -67,6 +68,8 @@ console.log(tokenList);
       <Route path='/edithotel/:id/' element={<EditHotel/>} ></Route>
       <Route path='/editshow/:id/' element={<EditShow/>} ></Route>
       <Route path="/edititinerary/:id" element={<EditItineraryForm/>}></Route>
+      <Route path="/profile/:id" element={<Profile/>}> </Route>
+      <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
       <Route path="/profile" element={<Profile/>}> </Route>
       </Routes>
     </WebSiteLayout>
