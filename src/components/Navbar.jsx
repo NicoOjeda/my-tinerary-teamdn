@@ -49,7 +49,7 @@ export default function Navbar() {
 
   // const link = (page) => <LinkRouter className="'NavBar-link "  to={page.to} key={page.name}>{page.name}</LinkRouter>
 
-  let { logged, token, photo, name } = useSelector(store => store.users)
+  let { logged, token, photo, name,id } = useSelector(store => store.users)
   let dispatch = useDispatch()
   let { signout } = userActions
   const [token2, setToken2] = useState("")
@@ -104,7 +104,7 @@ export default function Navbar() {
                   onClick={hide}
                 />
 
-                <LinkRouter to="/profile">
+                <LinkRouter to={`/profile/${id}`}>
                   <button className="btn-signin">Profile</button>
                 </LinkRouter>
            
