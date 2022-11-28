@@ -31,7 +31,7 @@ const userReducer = createReducer( initialState, (builder)=>{
                 id: user.id
             } 
             // console.log(newState);
-            return newState
+            return newState 
         } else{
             let newState={
                 ...state,

@@ -18,7 +18,7 @@ const rootReducer = {
         users: SignInReducer,
         profileReducer,
         tokenReducer
-}
+} 
 
 
 export default rootReducer;

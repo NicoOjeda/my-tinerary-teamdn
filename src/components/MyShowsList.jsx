@@ -45,11 +45,26 @@ const hotelView = (myShow)=> (
 
     return (
     <div className='MyHotels-container'>
+      <div>
+      <label for="cars">Choose a City: </label>
+    <select name="city" id="city" >
+        <option value="berlin">Berlin</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="rome">Rome</option>
+        <option value="new york">New York</option>
+        <option value="bangkok">Bangkok</option>
+        <option value="seychelles">Seychelles</option>
+        <option value="oslo">Oslo</option>
+        <option value="madrid">Madrid</option>
+        <option value="wellington">Wellington</option>
+        <option value="orlando">orlando</option>
+    </select> 
+      </div>
         {listShow.map((myShow)=> hotelView(myShow))}
     </div>
   )
 }
-
+ 
 
 // import React, {useEffect } from 'react'
 // import '../styles/myhotelslist.css'
