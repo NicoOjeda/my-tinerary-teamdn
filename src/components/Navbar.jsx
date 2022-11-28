@@ -4,9 +4,11 @@ import "./Home1";
 import { useState } from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import Burguer from "./Burguer";
+
 import { useSelector, useDispatch } from 'react-redux'
 // import signOutAction from "../redux/actions/signOut";
 import userActions from "../redux/actions/SignInAction";
+
 // import LoginActions from '../redux/actions/LoginAction'
 import { confirmAlert } from "react-confirm-alert";
 import { useEffect } from "react";
@@ -23,17 +25,11 @@ import { useNavigate } from "react-router-dom";
 // ]
 
 
-
-
-
-
-
-
 export default function Navbar() {
   let [viewHide, setViewHide] = useState(false);
   let hide = () => {
     setViewHide(!viewHide); //viewHide = mostrarOcultar
-    console.log(viewHide);
+    // console.log(viewHide);
   };
 
   const navigate = useNavigate()
@@ -48,7 +44,16 @@ export default function Navbar() {
 
   //   }
 
+
+
+
+
+//   let { online,token} = useSelector(store => store.usuario)
+//   let dispatch = useDispatch()
+//   let { salir } = LoginAction 
+
   // const link = (page) => <LinkRouter className="'NavBar-link "  to={page.to} key={page.name}>{page.name}</LinkRouter>
+
 
   let { logged, token, photo, name,id } = useSelector(store => store.users)
   let dispatch = useDispatch()
@@ -121,9 +126,22 @@ export default function Navbar() {
                 alt="accountIcon"
                 onClick={hide}
               />
+
+              
+              <LinkRouter to="/SignUp">
+                <button className="btn-signin">SignUp</button>
+              </LinkRouter>
+              <LinkRouter to="/signin">
+                <button className="btn-Login">Login</button>
+              </LinkRouter>
+            </div>
+          </>
+        ) : (
+
             </>
           )}
         </>) : (
+
           <>
             {viewHide ? (
               <>

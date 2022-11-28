@@ -6,6 +6,7 @@ import myCitiesReducer from './citiesReducer';
 import myItinerariesReducer from './itinerariesReducer';
 import SignInReducer from './SingInReducer'
 import profileReducer from './profileReducer';
+import tokenReducer from './tokenReducer';
 
 
 const rootReducer = {
@@ -15,9 +16,13 @@ const rootReducer = {
         myShowsReducer,
         myCitiesReducer,
         myItinerariesReducer,
-        users: SignInReducer,
+        SignInReducer,
         profileReducer,
+        tokenReducer,
+        users: SignInReducer
+
       
+
 }
 
 

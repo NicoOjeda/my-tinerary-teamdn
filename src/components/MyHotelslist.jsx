@@ -15,7 +15,7 @@ export default function MyHotelslist() {
     dispatch(myHotelsAction.hotelList(id))
   },[listHotel])
    
-  console.log(listHotel);
+  // console.log(listHotel);
 
     const deleteHotel = (e)=>{
     dispatch(myHotelsAction.deleteHotel(e))

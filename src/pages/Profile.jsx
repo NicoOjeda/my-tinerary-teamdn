@@ -11,7 +11,8 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 
 export default function Profile() {
     const profileUser = useSelector(store=> store.profileReducer.profileData)
-
+    const tokenList = useSelector(store => store.tokenReducer.tokenList)
+    console.log(tokenList);
     const dispatch = useDispatch();
     let {id} = useParams()
     // console.log(id);
@@ -32,7 +33,7 @@ export default function Profile() {
     };
 
     useEffect(()=>{
-        dispatch(profileAction.getProfile(id))
+        dispatch(profileAction.getProfile(tokenList._id))
     },[profileUser])
 
     async function sendData(e){
