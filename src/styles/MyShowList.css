@@ -12,9 +12,6 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    background-image: url("/public/img/flat.jpg");
-    background-position: center;
-    background-size: cover;
 }
 .MyShows-input{
     width: 10rem;
@@ -70,11 +67,94 @@
     padding: 1rem;
 }
 
+.newShowFrom-box{
+    min-height: 100vh ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem;
+}
+.newShowFrom-form{
+    background-color: rgba(0, 0, 0, 0.644);
+    display: flex;
+    width: 30rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 8px;
+    color: #e7c621;
+    font-style: italic;
+    font-size: 18px;
+}
+.newShowFrom-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.newShowFrom-button2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 5rem;
+    
+}
+.newShowFrom-google{
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.newShowFrom-google2{
+    height: 1.5rem;
+    width: 12rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    border-radius: 8px;
+}
+.newShowFrom-h2{
+    background-color: #1b2021;
+    text-align: center;
+    color: #e7c621;
+    font-size: 35px;
+    padding: 0.5rem;
+}
+.newShowFrom-input{
+    width: 25rem;
+    border-radius: 8px;
+}
+@media (max-width: 550px){
+   
+}
+@media (max-width: 425px){
+    
+}
+@media (max-width: 375px){
+    
+}
 @media (max-width: 550px){
     .MyShows-card {
         padding: 0.5rem;
         min-height: 600px;
         width: 80%; 
+    }
+    .newShowFrom-form{
+        width: 60%;
+    }
+    .newShowFrom-input{
+        width: 14rem;
     }  
 }
 @media (max-width: 425px){
@@ -83,9 +163,22 @@
         min-height: 600px;
         width: 90%; 
     } 
+    .newShowFrom-form{
+        width: 70%;
+    }
+    .newShowFrom-input{
+        width: 14rem;
+    }
 }
 @media (max-width: 375px){
     .MyShows-card {
         width: 90%; 
     }  
+    .newShowFrom-form{
+        width: 80%;
+        padding: 1rem;
+    }
+    .newShowFrom-input{
+        width: 14rem;
+    }
 }
