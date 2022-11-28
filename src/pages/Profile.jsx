@@ -21,8 +21,8 @@ export default function Profile() {
         lastName: "",
         email: "",
         photo:"",
-        age:"",
-        password: ""
+        age:""
+        
     });
     console.log(data);
         const handleInputChange = (e) => {
@@ -116,8 +116,7 @@ export default function Profile() {
                 <label htmlFor="email">Email:</label>
                 <input className="Profile-input" id="email" name="email" type="email" placeholder="Please Enter Your Email" onChange={handleInputChange} required/>
 
-                <label>Password</label>
-                <input className="Profile-input" name="password" type="password" placeholder="Please Enter Your Password" onChange={handleInputChange} required/>
+  
             <div className="Profile-button">
             
                 <button className="Profile-button2" type="submit" > Update</button>
