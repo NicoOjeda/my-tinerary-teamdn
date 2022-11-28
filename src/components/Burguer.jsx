@@ -55,8 +55,8 @@ useEffect(()=>{
           <LinkRouter to="/myitineraries">
             <button className="nav-1">My itineraries</button>
           </LinkRouter>
-          <LinkRouter to="/myhotels">
-            <button className="nav-1">My Hotels </button>
+          <LinkRouter to="/myshows">
+            <button className="nav-1">My Shows</button>
           </LinkRouter>
         </div>
       ): tokenList.role === "admin" && tokenList.logged === true ?
@@ -73,9 +73,6 @@ useEffect(()=>{
           </LinkRouter>
           <LinkRouter to="/mycities">
             <button className="nav-1">My Cities</button>
-          </LinkRouter>
-          <LinkRouter to='/profile'>
-            <button className="nav-1">Profile</button>
           </LinkRouter>
         </div>
       ) : (

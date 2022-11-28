@@ -8,7 +8,6 @@ import SignInReducer from './SingInReducer'
 import profileReducer from './profileReducer';
 import tokenReducer from './tokenReducer';
 
-
 const rootReducer = {
         card : cardReducer,
         hotelsReducer,
@@ -16,13 +15,9 @@ const rootReducer = {
         myShowsReducer,
         myCitiesReducer,
         myItinerariesReducer,
-        SignInReducer,
+        users: SignInReducer,
         profileReducer,
-        tokenReducer,
-        users: SignInReducer
-
-      
-
+        tokenReducer
 }
 
 

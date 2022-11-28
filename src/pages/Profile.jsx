@@ -12,17 +12,19 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 export default function Profile() {
     const profileUser = useSelector(store=> store.profileReducer.profileData)
     const tokenList = useSelector(store => store.tokenReducer.tokenList)
-    console.log(tokenList);
+  
     const dispatch = useDispatch();
-    let {id} = useParams()
+   
     // console.log(id);
     const [data, setData] = useState({
         name: "",
         lastName: "",
         email: "",
-        password: "",
+        photo:"",
+        age:"",
+        password: ""
     });
-    
+    console.log(data);
         const handleInputChange = (e) => {
         // console.log(e.target.value);
         setData({
@@ -45,7 +47,7 @@ export default function Profile() {
             label: "Edit",
             onClick: async () => {
               try {
-                let res = await axios.patch(`${BASE_URL}/api/auth/me/${id}` , data)
+                let res = await axios.patch(`${BASE_URL}/api/auth/me/${tokenList._id}` , data)
                 console.log(res);
                 if (res.data.success) {
                   swal({

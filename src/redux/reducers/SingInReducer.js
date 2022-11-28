@@ -73,7 +73,7 @@ const userReducer = createReducer( initialState, (builder)=>{
         if(success){
             localStorage.removeItem('token')
             let newState = {
-                ...state,
+             
                 name:"",
                 photo:"",
                 logged:false,
