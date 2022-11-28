@@ -1,47 +1,95 @@
 import React from "react";
 import "../styles/burguer.css";
 import "../styles/navbar.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link as LinkRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import tokenAction from "../redux/actions/tokenAction";
 
 
   
 export default function Burguer() {
-    const btn = "Home";
-    const btn2 = "Cities";
-    const btn3 = "Hotels";
-
-
 
   let [viewHide, setViewHide] = useState(false);
   let hide = () => {
     setViewHide(!viewHide);//viewHide = mostrarOcultar
-
-    console.log(viewHide)
-    
-    
+    console.log(viewHide) 
 };
+ const tokenList = useSelector(store => store.tokenReducer.tokenList)
+//  console.log(tokenList);
+ let dispatch = useDispatch()
+
+let token=""
+
+if(JSON.parse(localStorage.getItem('token'))){
+  token = JSON.parse(localStorage.getItem('token'))
+  token = token.token.user
+}
+
+useEffect(()=>{
+  dispatch(tokenAction.getToken(token))
+},[token])
+
+
+
     return (
      <>
 
       <img className="logo1" src="https://i.imgur.com/lGiu6NV.png" alt="" />
       <div className="nav-container1">
       <div className="nav-container">
+      
+      {
+        tokenList.role === "user" && tokenList.logged === true?
+      (
         <div className="nav-0">
           <LinkRouter to="/">
-            <button className="nav-1">{btn}</button>
+            <button className="nav-1">Home</button>
           </LinkRouter>
           <LinkRouter to="/Cities">
-            <button className="nav-2"> {btn2}</button>
+            <button className="nav-1">Cities</button>
           </LinkRouter>
           <LinkRouter to="/hotels">
-            <button className="nav-2"> {btn3}</button>
+            <button className="nav-1">Hotels</button>
+          </LinkRouter>
+          <LinkRouter to="/myitineraries">
+            <button className="nav-1">My itineraries</button>
+          </LinkRouter>
+          <LinkRouter to="/myshows">
+            <button className="nav-1">My Shows</button>
           </LinkRouter>
         </div>
-        
+      ): tokenList.role === "admin" && tokenList.logged === true ?
+      (
+        <div className="nav-0">
+          <LinkRouter to="/newhotel">
+            <button className="nav-1">New Hotel</button>
+          </LinkRouter>
+          <LinkRouter to="/NewCity">
+            <button className="nav-1">New City </button>
+          </LinkRouter>
+          <LinkRouter to="/myhotels">
+            <button className="nav-1">My Hotels </button>
+          </LinkRouter>
+          <LinkRouter to="/mycities">
+            <button className="nav-1">My Cities</button>
+          </LinkRouter>
+        </div>
+      ) : (
+        <div className="nav-0">
+        <LinkRouter to="/">
+            <button className="nav-1">Home</button>
+          </LinkRouter>
+          <LinkRouter to="/Cities">
+            <button className="nav-1">Cities</button>
+          </LinkRouter>
+          <LinkRouter to="/hotels">
+            <button className="nav-1">Hotels</button>
+          </LinkRouter>
+        </div>
+      )
 
-
-
+      }
 
         {
          viewHide ?
@@ -54,7 +102,61 @@ export default function Burguer() {
               alt="burguer foto"
               onClick={hide}
             />
+            <>
+              {tokenList.role === "user" && tokenList.logged === true?
+      (
+        <div className="nav-0">
           <LinkRouter to="/">
+            <button className="nav-1">Home</button>
+          </LinkRouter>
+          <LinkRouter to="/Cities">
+            <button className="nav-1">Cities</button>
+          </LinkRouter>
+          <LinkRouter to="/hotels">
+            <button className="nav-1">Hotels</button>
+          </LinkRouter>
+          <LinkRouter to="/myitineraries">
+            <button className="nav-1">My itineraries</button>
+          </LinkRouter>
+          <LinkRouter to="/myhotels">
+            <button className="nav-1">My Hotels </button>
+          </LinkRouter>
+        </div>
+      ): tokenList.role === "admin" && tokenList.logged === true ?
+      (
+        <div className="nav-0">
+          <LinkRouter to="/newhotel">
+            <button className="nav-1">New Hotel</button>
+          </LinkRouter>
+          <LinkRouter to="/NewCity">
+            <button className="nav-1">New City </button>
+          </LinkRouter>
+          <LinkRouter to="/myhotels">
+            <button className="nav-1">My Hotels </button>
+          </LinkRouter>
+          <LinkRouter to="/mycities">
+            <button className="nav-1">My Cities</button>
+          </LinkRouter>
+          <LinkRouter to='/profile'>
+            <button className="nav-1">Profile</button>
+          </LinkRouter>
+        </div>
+      ) : (
+        <div className="nav-0">
+        <LinkRouter to="/">
+            <button className="nav-1">Home</button>
+          </LinkRouter>
+          <LinkRouter to="/Cities">
+            <button className="nav-1">Cities</button>
+          </LinkRouter>
+          <LinkRouter to="/hotels">
+            <button className="nav-1">Hotels</button>
+          </LinkRouter>
+        </div>
+      )
+}
+            </>
+          {/* <LinkRouter to="/">
           <button className="btn-burguer-1">
             Home
           </button>
@@ -69,7 +171,9 @@ export default function Burguer() {
             Hotels
           </button>
           </LinkRouter>
-
+          <LinkRouter to="/profile">
+            <button className="btn-burguer-3">Profile</button>
+          </LinkRouter> */}
           </div>
             </>
 
@@ -91,3 +195,7 @@ export default function Burguer() {
      </> 
         );
         }
+
+
+        
+

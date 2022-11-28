@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+
 import profileAction from '../redux/actions/profileAction';
 import "../styles/Profile.css";
 import axios from 'axios';
@@ -11,17 +11,20 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 
 export default function Profile() {
     const profileUser = useSelector(store=> store.profileReducer.profileData)
-
+    const tokenList = useSelector(store => store.tokenReducer.tokenList)
+  
     const dispatch = useDispatch();
-    let {id} = useParams()
+   
     // console.log(id);
     const [data, setData] = useState({
         name: "",
         lastName: "",
         email: "",
-        password: "",
+        photo:"",
+        age:""
+        
     });
-    
+    console.log(data);
         const handleInputChange = (e) => {
         // console.log(e.target.value);
         setData({
@@ -32,7 +35,7 @@ export default function Profile() {
     };
 
     useEffect(()=>{
-        dispatch(profileAction.getProfile(id))
+        dispatch(profileAction.getProfile(tokenList._id))
     },[profileUser])
 
     async function sendData(e){
@@ -44,7 +47,7 @@ export default function Profile() {
             label: "Edit",
             onClick: async () => {
               try {
-                let res = await axios.patch(`${BASE_URL}/api/auth/me/${id}` , data)
+                let res = await axios.patch(`${BASE_URL}/api/auth/me/${tokenList._id}` , data)
                 console.log(res);
                 if (res.data.success) {
                   swal({
@@ -113,8 +116,7 @@ export default function Profile() {
                 <label htmlFor="email">Email:</label>
                 <input className="Profile-input" id="email" name="email" type="email" placeholder="Please Enter Your Email" onChange={handleInputChange} required/>
 
-                <label>Password</label>
-                <input className="Profile-input" name="password" type="password" placeholder="Please Enter Your Password" onChange={handleInputChange} required/>
+  
             <div className="Profile-button">
             
                 <button className="Profile-button2" type="submit" > Update</button>
