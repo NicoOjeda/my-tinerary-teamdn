@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
+/**/
 const itinerariesList = createAsyncThunk ('itinerariesList', async(id)=>{
-    const res = await axios.get(`http://localhost:8000/api/itineraries?userId=${id}`)
+    const res = await axios.get(`http://localhost:8000/api/itineraries?`)
     // console.log(res);
     return {
         itinerariesAdmlist: res.data.response

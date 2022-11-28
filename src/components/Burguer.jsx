@@ -58,6 +58,9 @@ useEffect(()=>{
           <LinkRouter to="/myshows">
             <button className="nav-1">My Shows</button>
           </LinkRouter>
+          <LinkRouter to={`/mytynerariescreate`}>
+                <button className="nav-1">New Itinerary</button>
+            </LinkRouter>
         </div>
       ): tokenList.role === "admin" && tokenList.logged === true ?
       (

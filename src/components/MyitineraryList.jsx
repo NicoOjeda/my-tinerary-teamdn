@@ -10,10 +10,10 @@ import { useNavigate } from "react-router-dom";
 export default function MyitineraryList () {
     const listItinerary = useSelector(store => store.myItinerariesReducer.itinerariesAdmlist)
     const dispatch = useDispatch()
-
+    let user = useSelector(store => store.users)
+    
     useEffect(()=>{
-        let id = "636e7c1af4d7aa583b71eb6c"
-        dispatch(myItinerariesActions.itinerariesList(id))
+        dispatch(myItinerariesActions.itinerariesList(user.id))
     },[listItinerary])
 
     console.log(listItinerary);
@@ -33,7 +33,7 @@ export default function MyitineraryList () {
          <div className="container-activity-detailc">
 
             <div className="activity-title">
-            Nombre{myItinerary.name}
+            {myItinerary.name}
             </div>
             <img  className="activity-img detail-img1" src={myItinerary.photo}></img>
             <div className="my-price">
@@ -52,15 +52,29 @@ export default function MyitineraryList () {
          </div>
         </div>
     )
+
+    
+        
+
     return(
         <div className="imagebckcities">
             <div className="my-price">
                 MyItineraries
+            </div>  
+            <div>
+
+            <div className="createItineraries">
+               {/* <h3>
+                 Crea Itinerarios !!
+                </h3> */}
+                {/* <Link className="containerCreateItinerary">
+                <button className="my-btn createButton">Create Itinerary</button>
+                </Link> */}
             </div>
             <div>
-            <div className="my-price" onClick={() => navigate('/mytynerariescreate')}>  Add new itinerary
+         
+             {listItinerary.map((myItinerary,) => itineraryView(myItinerary))}
             </div>
-            {listItinerary.map((myItinerary) => itineraryView(myItinerary))}
             </div>
         </div>
     )
