@@ -12,7 +12,7 @@ export default function Burguer() {
   const btn3 = "Hotels";
   const btn4 = "MyItineraries"
   const btn5 = "myshows"
-
+  const btn6 = "MyTynerariesCreate"
   let user= useSelector(store => store.users)
 
 console.log(user);
@@ -49,6 +49,11 @@ console.log(user);
             <LinkRouter to="/myshows">
               <button className="nav-2"> {btn5}</button>
             </LinkRouter>
+            <LinkRouter to="/MyTynerariesCreate">
+              <button className="nav-2"> {btn6}</button>
+            </LinkRouter>
+
+
           </div>
           </>) : (<>
             <div className="nav-0">
