@@ -23,18 +23,21 @@ export default function Burguer() {
 
     console.log(viewHide)
 
-
   };
-
-
-  let dispatch = useDispatch()
-  let token = JSON.parse(localStorage.getItem('token'))
-
+  const tokenList = useSelector(store => store.tokenReducer.tokenList)
+  
+   let dispatch = useDispatch()
+  
+  let token=""
+  
+  if(JSON.parse(localStorage.getItem('token'))){
+    token = JSON.parse(localStorage.getItem('token'))
+    token = token.token.user
+  }
+  
   useEffect(()=>{
     dispatch(tokenAction.getToken(token))
   },[token])
-  
-   
 
 
 
