@@ -14,7 +14,7 @@ export default function Profile() {
     const tokenList = useSelector(store => store.tokenReducer.tokenList)
   
     const dispatch = useDispatch();
-   
+
     // console.log(id);
     const [data, setData] = useState({
         name: "",
@@ -37,7 +37,7 @@ export default function Profile() {
     useEffect(()=>{
         dispatch(profileAction.getProfile(tokenList._id))
     },[profileUser])
-
+console.log(profileUser);
     async function sendData(e){
     e.preventDefault()
     confirmAlert({

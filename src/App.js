@@ -42,7 +42,8 @@ console.log(user)
     }
   }, [])
 
-
+  const tokenList = useSelector(store => store.tokenReducer.tokenList)
+  console.log(tokenList );
 
   
 
@@ -52,7 +53,7 @@ console.log(user)
         <Route path='/' element={<Home />} ></Route>
         <Route path='*' element={<NotFound />} ></Route>
         <Route element={<ProtectedRoute isAllowed={user.logged == false} reDirect={"/"} />}>
-          <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path='/newhotel' element={<NewHotel />} />
           <Route path="/myitineraries" element={<Myitinerariesget />} />
           <Route path='/NewCity' element={<NewCity />} />

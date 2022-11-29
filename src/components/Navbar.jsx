@@ -104,7 +104,7 @@ console.log(_id)
                   onClick={hide}
                 />
 
-                <LinkRouter to={`/profile/${_id}`}>
+                <LinkRouter to={'/profile'}>
                   <button className="btn-signin">Profile</button>
                 </LinkRouter>
            
