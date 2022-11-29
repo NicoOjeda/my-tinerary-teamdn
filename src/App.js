@@ -33,7 +33,7 @@ function App() {
   // const userLogin = user.logged
 
 
-console.log(user)
+
   useEffect(() => {
     let token = JSON.parse(localStorage.getItem('token'))
     // console.log(token?.token.user);
@@ -42,10 +42,7 @@ console.log(user)
     }
   }, [])
 
-  const tokenList = useSelector(store => store.tokenReducer.tokenList)
-  console.log(tokenList );
 
-  
 
   return (
     <WebSiteLayout>

@@ -12,7 +12,10 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 export default function Profile() {
     const profileUser = useSelector(store=> store.profileReducer.profileData)
     const tokenList = useSelector(store => store.tokenReducer.tokenList)
-  
+    console.log(tokenList);
+    let user= useSelector(store => store.users)
+    console.log(user);
+    
     const dispatch = useDispatch();
 
     // console.log(id);

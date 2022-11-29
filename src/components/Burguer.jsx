@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/burguer.css";
 import "../styles/navbar.css";
 import { useState } from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
-
+import tokenAction from "../redux/actions/tokenAction";
 
 export default function Burguer() {
   const btn = "Home";
@@ -15,7 +15,7 @@ export default function Burguer() {
   const btn6 = "MyTynerariesCreate"
   let user= useSelector(store => store.users)
 
-console.log(user);
+
 
   let [viewHide, setViewHide] = useState(false);
   let hide = () => {
@@ -25,6 +25,19 @@ console.log(user);
 
 
   };
+
+
+  let dispatch = useDispatch()
+  let token = JSON.parse(localStorage.getItem('token'))
+
+  useEffect(()=>{
+    dispatch(tokenAction.getToken(token))
+  },[token])
+  
+   
+
+
+
   return (
     <>
 
