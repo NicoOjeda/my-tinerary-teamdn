@@ -87,7 +87,11 @@ export default function Navbar() {
 
   // console.log(name);
 
-console.log(_id)
+  let user= useSelector(store => store.users)
+
+console.log(user);
+
+
   return (
     <div className="nav-container1">
       <div className="nav-container">
@@ -104,7 +108,7 @@ console.log(_id)
                   onClick={hide}
                 />
 
-                <LinkRouter to={`/profile/${_id}`}>
+                <LinkRouter to={'/profile'}>
                   <button className="btn-signin">Profile</button>
                 </LinkRouter>
            

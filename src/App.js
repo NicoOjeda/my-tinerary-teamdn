@@ -33,7 +33,7 @@ function App() {
   // const userLogin = user.logged
 
 
-console.log(user)
+
   useEffect(() => {
     let token = JSON.parse(localStorage.getItem('token'))
     // console.log(token?.token.user);
@@ -44,15 +44,13 @@ console.log(user)
 
 
 
-  
-
   return (
     <WebSiteLayout>
       <Routes>
         <Route path='/' element={<Home />} ></Route>
         <Route path='*' element={<NotFound />} ></Route>
         <Route element={<ProtectedRoute isAllowed={user.logged == false} reDirect={"/"} />}>
-          <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path='/newhotel' element={<NewHotel />} />
           <Route path="/myitineraries" element={<Myitinerariesget />} />
           <Route path='/NewCity' element={<NewCity />} />

@@ -12,10 +12,9 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 export default function Profile() {
     const profileUser = useSelector(store=> store.profileReducer.profileData)
     const tokenList = useSelector(store => store.tokenReducer.tokenList)
-  
+    
     const dispatch = useDispatch();
-   
-    // console.log(id);
+
     const [data, setData] = useState({
         name: "",
         lastName: "",
@@ -26,7 +25,7 @@ export default function Profile() {
     });
     console.log(data);
         const handleInputChange = (e) => {
-        // console.log(e.target.value);
+       
         setData({
             ...data,
             [e.target.name]: e.target.value,
