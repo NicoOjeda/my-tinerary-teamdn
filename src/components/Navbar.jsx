@@ -10,7 +10,6 @@ import userActions from "../redux/actions/SignInAction";
 // import LoginActions from '../redux/actions/LoginAction'
 import { confirmAlert } from "react-confirm-alert";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 // const pages = [
 //   { name: 'Home', to: '/'},
 //   { name: 'Ingresar', to: 'signup'}
@@ -36,7 +35,7 @@ export default function Navbar() {
     console.log(viewHide);
   };
 
-  const navigate = useNavigate();
+
 
   //   let { online,token} = useSelector(store => store.usuario)
   //   let dispatch = useDispatch()
@@ -50,15 +49,15 @@ export default function Navbar() {
 
   // const link = (page) => <LinkRouter className="'NavBar-link "  to={page.to} key={page.name}>{page.name}</LinkRouter>
 
-  let { logged, token, photo, name, id } = useSelector(store => store.users)
+  let { logged, token, photo, name, _id } = useSelector(store => store.users)
   let dispatch = useDispatch()
   let { signout } = userActions
-  const [token2, setToken2] = useState("")
+  // const [token2, setToken2] = useState("")
 
 
-  useEffect(() => {
-    setToken2(token)
-  }, [token2])
+  // useEffect(() => {
+  //   setToken2(token)
+  // }, [token2])
 
   // console.log(token2);
   
@@ -74,19 +73,13 @@ export default function Navbar() {
       buttons: [{
         label: "Log Out",
         onClick: async () => {
-          signOut(token2)
+          signOut(token)
         }
-
-      }
-      ,{
+      },{
         label: "Back",
         onClick: () => console.log("Click no")
       }]
-    }
-    
-    )
-    navigate("/")
-  }
+    })}
 
     // let res = await dispatch(signout(token))
     // console.log(res);
@@ -94,7 +87,7 @@ export default function Navbar() {
 
   // console.log(name);
 
-
+console.log(_id)
   return (
     <div className="nav-container1">
       <div className="nav-container">
@@ -111,11 +104,11 @@ export default function Navbar() {
                   onClick={hide}
                 />
 
-                <LinkRouter to={'/profile'}>
+                <LinkRouter to={`/profile/${_id}`}>
                   <button className="btn-signin">Profile</button>
                 </LinkRouter>
            
-                <button onClick={()=>SignOut(token2)} className="btn-signin">Log Out</button>
+                <button onClick={()=>SignOut(token)} className="btn-signin">Log Out</button>
               </div>
             </>
           ) : (
@@ -165,5 +158,7 @@ export default function Navbar() {
         </div>
       </div>
     </div>
+
+    
   );
-} 
+}
