@@ -23,7 +23,7 @@ import { useDispatch, useSelector } from "react-redux";
 import userActions from "./redux/actions/SignInAction";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoutes";
-
+import MyTynerariesCreate from './pages/MyTynerariesCreate'
 
 function App() {
   let dispatch = useDispatch()
@@ -65,6 +65,7 @@ console.log(user)
           <Route path='/editcity/:id' element={<EditCityForm />} />
           <Route path='/Details/:id' element={<Details />} />
           <Route path='/editshow/:id/' element={<EditShow />} />
+          <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
         </Route>
         <Route element={<ProtectedRoute isAllowed={!!user && user.logged == true} reDirect={"/"} />}>
           <Route path='/signin' element={<Signin />} />
