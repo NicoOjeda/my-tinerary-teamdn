@@ -12,14 +12,23 @@ export default function MyitineraryList () {
     const dispatch = useDispatch()
     let user = useSelector(store => store.users)
     
+    let token = localStorage.getItem('token')
+
     useEffect(()=>{
         dispatch(myItinerariesActions.itinerariesList(user.id))
-    },[listItinerary])
+    },[])
 
-    console.log(listItinerary);
+    // console.log(JSON.parse(token));
     const navigate = useNavigate()
+
     const deleteItineraries = (e) =>{
-        dispatch(myItinerariesActions.deleteItineraries(e))
+        let newToken = JSON.parse(token)
+        let objeto = {
+            id:e,
+            newToken
+            
+          }
+        dispatch(myItinerariesActions.deleteItineraries(objeto))
         swal({
             tittle:"Excelent",
             text: "Itinerary Deleted",

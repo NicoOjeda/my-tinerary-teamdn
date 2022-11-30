@@ -10,16 +10,22 @@ export default function MyCitieslist() {
     (store) => store.myCitiesReducer.citiesAdmlist
   );
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    let id = "636d24d7ea4ed429429463a6";
-    dispatch(myCitiesActions.citiesList(id));
+    const tokenList= useSelector(store => store.tokenReducer.tokenList)
+    let token = JSON.parse(localStorage.getItem('token'))
+    useEffect(() => {
+  
+    dispatch(myCitiesActions.citiesList(tokenList.id));
   }, [listCities]);
 
   console.log(listCities);
   const navigate = useNavigate()
   const deleteCities = (e) => {
-    dispatch(myCitiesActions.deleteCities(e));
+      
+  let objeto = {
+    idCities:e,
+    newToken:token.user
+  }
+  dispatch(myCitiesActions.deleteCities(objeto));
     swal({
       tittle: "Excelent",
       text: "City Deleted",
@@ -28,6 +34,7 @@ export default function MyCitieslist() {
     });
     navigate('/cities')
   };
+
   const cityView = (myCity) => (
     <div className="mc-oneContainer">
     <div className="mc-container">
