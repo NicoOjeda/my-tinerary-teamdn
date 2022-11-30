@@ -10,9 +10,11 @@ const itinerariesList = createAsyncThunk ('itinerariesList', async(id)=>{
     }
 })
 
-const deleteItineraries = createAsyncThunk('deleteItineraries', async (id)=>{
+const deleteItineraries = createAsyncThunk('deleteItineraries', async (objeto)=>{
+    console.log(objeto)
+    let headers= {headers: {'Authorization':`Bearer ${objeto.newToken.token.user}`}}
     try{
-        const res = await axios.delete(`http://localhost:8000/api/itineraries/${id}`)
+        const res = await axios.delete(`http://localhost:8000/api/itineraries/${objeto.id}`,headers)
         console.log(res);
         return{
             success: true,

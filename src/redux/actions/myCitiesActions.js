@@ -10,9 +10,10 @@ const citiesList = createAsyncThunk ('citieslist', async(id)=>{
     }
 })
 
-const deleteCities = createAsyncThunk('deleteCities', async (id)=>{
+const deleteCities = createAsyncThunk('deleteCities', async (objeto)=>{
+    let headers= {headers: {'Authorization':`Bearer ${objeto.newToken}`}}
     try{
-        const res = await axios.delete(`http://localhost:8000/api/cities/${id}`)
+        const res = await axios.delete(`http://localhost:8000/api/cities/${objeto.idCities}`, headers)
         console.log(res);
         return{
             success: true,
