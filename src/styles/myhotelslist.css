@@ -61,6 +61,20 @@
     text-decoration: none;    
     font-style: italic;
 }
+.MyHotels-btn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 15vw;
+    font-weight: bold;
+    text-decoration: none;    
+    font-style: italic;
+}
 .MyHotels-title2{
     text-align:start;
     padding: 0.5rem;
@@ -76,6 +90,11 @@
         min-height: 600px;
         width: 80%; 
     }  
+    .MyHotels-btn2{
+       
+        width: 20vw;
+        font-size: 15px;
+    }
 }
 @media (max-width: 425px){
     .MyHotels-card {
@@ -83,6 +102,11 @@
         min-height: 600px;
         width: 90%; 
     } 
+    .MyHotels-btn2{
+       
+        width: 30vw;
+        font-size: 15px;
+    }
 }
 @media (max-width: 375px){
     .MyHotels-card {

@@ -5,16 +5,17 @@ import '../styles/newhotelform.css'
 import { BASE_URL } from '../api/url';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert'
+import { useSelector } from 'react-redux';
 
 
 export default function NewHotelForm() {
-
+    const tokenList = useSelector(store => store.tokenReducer.tokenList)
     const [dataHotel, setDataHotel] = useState({
         name: '',
         photo:'',
         capacity:'',
         citiId : '',
-        userId : ''
+        userId : `${tokenList._id}`
     })
 
     const handleInplut = (e) =>{
@@ -101,15 +102,6 @@ async function SendDataHotel(e){
                 name="citiId" 
                 type="text"
                 placeholder='Enter city id'
-                onChange={handleInplut}  
-                required />
-            <label for='userId'>User Id</label>
-            <input 
-                className='NewHotel-input' 
-                id="userId" 
-                name="userId" 
-                type="text"
-                placeholder='Enter user id'
                 onChange={handleInplut}  
                 required />
             

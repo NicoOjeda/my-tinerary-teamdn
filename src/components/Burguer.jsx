@@ -13,6 +13,7 @@ export default function Burguer() {
   const btn4 = "MyItineraries"
   const btn5 = "myshows"
   const btn6 = "MyTynerariesCreate"
+  const btn7 = "My Hotels"
   let user= useSelector(store => store.users)
 
 
@@ -25,7 +26,7 @@ export default function Burguer() {
 
   };
   const tokenList = useSelector(store => store.tokenReducer.tokenList)
-  
+  console.log(user);
    let dispatch = useDispatch()
   
   let token=""
@@ -51,7 +52,7 @@ export default function Burguer() {
           {user.logged ? (<>
             <div className="nav-0">
             <LinkRouter to="/">
-              <button className="nav-1">{btn}</button>
+              <button className="nav-2">{btn}</button>
             </LinkRouter>
             <LinkRouter to="/Cities">
               <button className="nav-2"> {btn2}</button>
@@ -67,6 +68,9 @@ export default function Burguer() {
             </LinkRouter>
             <LinkRouter to="/MyTynerariesCreate">
               <button className="nav-2"> {btn6}</button>
+            </LinkRouter>
+            <LinkRouter to="/myhotels">
+              <button className="nav-2"> {btn7}</button>
             </LinkRouter>
 
 
