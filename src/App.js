@@ -53,7 +53,6 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path='/newhotel' element={<NewHotel />} />
           <Route path="/myitineraries" element={<Myitinerariesget />} />
-          <Route path='/NewCity' element={<NewCity />} />
           <Route path='/myhotels' element={<MyHotels />} />
           <Route path="/mycities" element={<MyCitiesget />} />
           <Route path='/myshows' element={<MyShows />} />
@@ -69,6 +68,7 @@ function App() {
           <Route path='/signin' element={<Signin />} />
           <Route path='/SignUp' element={<SignUp />} />
         </Route>
+<Route path='/NewCity' element={<NewCity />} />
         <Route path='/hotels' element={<Hotels />}></Route>
         <Route path='/Cities' element={<Cities />} ></Route>
         {/* <Route path="/mycities/:id" element={<MyCitiesget />}></Route> */}
@@ -76,7 +76,7 @@ function App() {
       </Routes>
     </WebSiteLayout>
   );
-
-
+  
+  
 }
 export default App;
