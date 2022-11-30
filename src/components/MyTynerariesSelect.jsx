@@ -3,39 +3,48 @@ import axios from "axios";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import "../styles/MyTynerariesSelect.css";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import myCitiesActions from "../redux/actions/myCitiesActions";
 
 const MyTynerariesSelect = () => {
-  const listCities = useSelector(
-    (store) => store.myCitiesReducer.citiesAdmlist
-  );
-  console.log(listCities);
-  const [data, setData] = useState([]);
-  const [cities, setCities] = useState([]);
-  const [itineraryId , setItineraryId] = useState()
+  const user = useSelector(store => store.users)
+  const [data, setData] = useState({
+    citiId : "",
+    name: "",
+    photo:"",
+    description:"",
+    price:"",
+    duration:"",
+    userId: user.id
+  });
+  const [citiesData,setCitiesData] = useState([])
   const nav = useNavigate();
+
+  // console.log(user);
+  useEffect(()=>{
+    axios.get("http://localhost:8000/api/cities?")
+    .then((res) => setCitiesData(res.data.response))
+  },[])
+  
+// console.log(citiesData);
   const handleInputChange = (event) => {
-    
     console.log(event.target.value);
-    console.log(event.target.value);
-    setItineraryId(event.target.value)
     setData({
       ...data,
       [event.target.name]: event.target.value,
     });
   };
+  
   async function sendData(e) {
     e.preventDefault();
     try {
-      let sendIti = await axios.patch(
-        `http://localhost:8000/api/itineraries/${itineraryId}`,
-        data
-      );
-      console.log(sendIti.data.id._id);
+      let sendIti = await axios.post(
+        `http://localhost:8000/api/itineraries`,data);
+      console.log(sendIti);
       if (sendIti.data.success) {
         nav("/myitineraries");
         swal({
-          title: "Successfully edited!!",
+          title: "Successfully created!!",
           icon: "success",
           timer: "3000",
         });
@@ -43,19 +52,13 @@ const MyTynerariesSelect = () => {
       }
     } catch (error) {
       console.log(error);
-      swal("Error in created", error.response.data.message.join("\n"));
+      swal( "Error in created",error.response.data.message.join("\n"))
     }
   }
-  let id = "636e7caaf4d7aa583b71eb6e";
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8000/api/itineraries?userId=${id}`)
-      .then((e) => setCities(e.data.response));
-  }, []);
 
 
 
-
+// citiesData.map((e) =>console.log(e));
 
 
 
@@ -66,18 +69,18 @@ const MyTynerariesSelect = () => {
 
       <div className="mts1-box">
         <form id="form" className="mts1-form" onSubmit={sendData}>
-          <label htmlFor="name">Choice the City</label>
+          <label htmlFor="citiId">Choice the City</label>
           <select
             className="mts1-input"
-            id="name"
-            name="name"
+            id="citiId"
+            name="citiId"
             type="text"
             placeholder=" Enter the Name City"
             onChange={handleInputChange}
             required
           >
-            {cities.map((e) => (
-              <option value={e._id}> {e.citiId.name} </option>
+            {citiesData.map((e,index) => (
+              <option value={e._id} key={index}> {e.name} </option>
             ))}
           </select>
           <label for="name">Name</label>
@@ -100,49 +103,59 @@ const MyTynerariesSelect = () => {
             onChange={handleInputChange}
             required
           />
-          <label for="continent">Description</label>
+          <label for="description">Description</label>
           <input
             className="mts1-input"
-            id="continent"
-            name="continent"
+            id="description"
+            name="description"
             type="text"
-            placeholder="Enter the Continent"
+            placeholder="Enter the description"
             onChange={handleInputChange}
             required
           />
 
-          <label for="population">Price</label>
+          <label for="price">Price</label>
           <input
             className="mts1-input"
-            name="population"
-            id="population"
+            name="price"
+            id="price"
             type="text"
-            placeholder="Enter the Usser: "
+            placeholder="Enter the price: "
             onChange={handleInputChange}
             required
           />
-          <label for="userId">Duration</label>
+          <label for="duration">Duration</label>
           <input
             className="mts1-input"
-            name="userId"
-            id="userId"
+            name="duration"
+            id="duration"
             type="text"
             placeholder="Enter the Usser Id: "
             onChange={handleInputChange}
             required
           />
-
-          <label for="userId">userID</label>
-          <input
+           <label for="userId">userId</label>
+            <input
+              className="New-input"
+              name="userId"
+              id="userId"
+              value={user.id}
+              type="text"
+              placeholder={user.id}
+              onChange={handleInputChange} required/>
+{/* <label htmlFor="userId">Choice the City</label>
+ <select
             className="mts1-input"
-            name="userId"
             id="userId"
+            name="userId"
             type="text"
-            placeholder="Enter the Usser Id: "
+            placeholder=" Enter the Name City"
             onChange={handleInputChange}
             required
-          />
-
+          >
+              <option value={user.id} > {user.name} </option>
+          
+          </select> */}
           <div className="mts1-button">
             <button className="mts1-button2" type="submit">
               Create

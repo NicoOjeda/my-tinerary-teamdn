@@ -46,7 +46,7 @@ const userReducer = createReducer( initialState, (builder)=>{
         if(success){
             console.log(response)
             let { token} = response
-            let {name,photo,id,role} = response.user.user
+            let {name,photo,_id,role} = response.user.user
             let newState={
                 ...state,
                 name: name,
@@ -54,7 +54,7 @@ const userReducer = createReducer( initialState, (builder)=>{
                 logged: true,
                 role:role,
                 token: token,
-                id:id,
+                id:_id,
 
             } 
             // console.log(newState);
