@@ -19,8 +19,8 @@ export default function Hotelscards() {
         setvalueInput2(inputRef2.current.value)
     } 
     
-    // console.log(valueInput) 
-    // console.log(valueInput2)
+    console.log(valueInput) 
+    console.log(valueInput2)
     useEffect(()=>{
         
         if(valueInput === "" && valueInput2 === "" ){

@@ -31,7 +31,7 @@ function App() {
   const user = useSelector(store => store.users)
   // const [logueado, setLogueado] = (null)
   // const userLogin = user.logged
-
+console.log(user);
 
 
   useEffect(() => {

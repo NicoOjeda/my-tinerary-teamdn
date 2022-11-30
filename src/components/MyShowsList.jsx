@@ -1,29 +1,30 @@
-import React, {useEffect,useState } from 'react'
+import React, {useEffect,useRef,useState } from 'react'
 import '../styles/MyShowList.css'
 import {Link} from 'react-router-dom'
 import { useSelector, useDispatch} from 'react-redux'
 import swal from 'sweetalert'
 import myShowsActions from '../redux/actions/myShowsActions'
+import axios from 'axios'
+import { BASE_URL } from '../api/url'
+import { useNavigate } from 'react-router-dom'
 
 export default function MyShowsList() {
-    
 
     const listShow = useSelector(store => store.myShowsReducer.showList)
     const dispatch = useDispatch()
+    const tokenList = useSelector(store => store.tokenReducer.tokenList)
+  const navigate= useNavigate()
 
-  
   useEffect(()=>{
-    let id = "636e7b53f4d7aa583b71eb68";
-    dispatch(myShowsActions.showsAction(id))
+    dispatch(myShowsActions.showsAction(tokenList._id))
   },[listShow])
-   
-//   console.log(listShow);
+
 
     const deleteHotel = (e)=>{
         dispatch(myShowsActions.showsDelete(e))
     swal({
       title: "Excelent",
-      text:  "Hotel deleted",
+      text:  "Show deleted",
       icon: "success",
       timer: "3000"
   })
@@ -36,8 +37,10 @@ const [dataShow, setDataShow] = useState({
   photo:'',
   price:'',
   date : '',
-  userId : ''
+  userId : `${tokenList._id}`
 })
+
+console.log(dataShow);
 
 const getInplut = (e) =>{
   setDataShow({
@@ -45,9 +48,34 @@ const getInplut = (e) =>{
       [e.target.name] : e.target.value
   })
 }
-function SendDataShow(e){
+
+async function SendDataShow(e){
+  // console.log(dataHotel);
   e.preventDefault()
-  console.log(dataShow);
+  try{
+     let res = await axios.post(`${BASE_URL}/api/shows/` , dataShow )
+      // console.log(res.data) 
+     if(res.data.success){
+      swal({
+          title: "Excelent",
+          text:  "Show created",
+          icon: "success",
+          timer: "3000"
+      })
+     } else {
+      swal({
+          text: res.data.message.join(" | "),
+          icon: "warning",
+          dangerMode: true,
+          timer: "5000" 
+      })
+      navigate('/myshows')
+     }
+  } catch(err){
+      console.log( err)
+  }
+ 
+  // e.target.reset()
 }
 
 const hotelView = (myShow)=> (
@@ -67,30 +95,25 @@ const hotelView = (myShow)=> (
     return (
     <div className='MyHotels-container'>
       <div>
-      <label for="city">Choose a City: </label>
-      <select name="city" id="city" >
-        <option value="berlin">Berlin</option>
-        <option value="tokyo">Tokyo</option>
-        <option value="rome">Rome</option>
-        <option value="new york">New York</option>
-        <option value="bangkok">Bangkok</option>
-        <option value="seychelles">Seychelles</option>
-        <option value="oslo">Oslo</option>
-        <option value="madrid">Madrid</option>
-        <option value="wellington">Wellington</option>
-        <option value="orlando">orlando</option>
-      </select> 
     <div className='newShowFrom-box' >
         <form className='newShowFrom-form' onSubmit={SendDataShow} >
-            <label for='hotelId'>Hotel Id</label>
-            <input 
-                className='newShowFrom-input' 
-                id="hotelId" 
-                name="hotelId" 
-                type="text"
-                placeholder='Enter Hotel id'
-                onChange={getInplut}  
-                required />
+        <label  for='hotelId'>Select a Hotel:</label>
+          <select  id='hotelId' name='hotelId' onChange={getInplut}>
+
+            <option value="636d6fe9fe85fb66a3614788">Select</option>
+            <option value="636d6fe9fe85fb66a3614789">Andronis Luxury Suites</option>
+            <option value="636d6fe9fe85fb66a361478a">Holland Casino Amsterdam Centrum</option>
+            <option value="636d6fe9fe85fb66a361478b">Park Hotel Tokyo</option>
+            <option value="636d6fe9fe85fb66a3614786">Hilton Garden Inn</option>
+            <option value="636d6fe9fe85fb66a3614787">Hotel Artemide</option>
+            <option value="636d6fe9fe85fb66a361478e">Ibis Bangkok Riverside</option>
+            <option value="636d6fe9fe85fb66a361478f">Kempinski Seychelles Resort</option>
+            <option value="636d6fe9fe85fb66a3614790">Jupiter Lisboa Hotel</option>
+            <option value="636d6fe9fe85fb66a3614791">Citybox Oslo</option>
+            <option value="636d6fe9fe85fb66a361478d">Hippodrome Casino</option>
+            <option value="636d6fe9fe85fb66a361478d">Hippodrome Casino</option>
+            <option value="636d6fe9fe85fb66a361478c">Dear Hotel Madrid</option>
+          </select> 
             <label for='name'>Name</label>
             <input 
                 className='newShowFrom-input' 
@@ -136,7 +159,7 @@ const hotelView = (myShow)=> (
                 placeholder='Enter date'
                 onChange={getInplut}  
                 required />
-            <label for='userId'>User Id</label>
+            {/* <label for='userId'>User Id</label>
             <input 
                 className='newShowFrom-input' 
                 id="userId" 
@@ -145,7 +168,7 @@ const hotelView = (myShow)=> (
                 placeholder='Enter user id'
                 onChange={getInplut}  
                 required />
-            
+             */}
             <div className='newShowFrom-button'>
                 <button className='newShowFrom-button2' type='submit'>Create</button>
             </div>

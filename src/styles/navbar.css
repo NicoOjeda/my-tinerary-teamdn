@@ -61,7 +61,6 @@
     background-color: #E7C621;
     color: black;
     font-weight: bold;
-    margin-left: 50px;
     cursor: pointer;
     font-family: 'Merienda', cursive;
     
@@ -86,8 +85,8 @@
 
 }
 .nameContainer{
-    position: absolute;
-    left: 70%;
+    /* position: absolute;
+    left: 70%; */
     color: #E7C621;
 }
  

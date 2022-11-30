@@ -10,9 +10,12 @@ const hotelList = createAsyncThunk ('hotelList', async(id)=>{
     }
 })
 
-const deleteHotel = createAsyncThunk('deleteHotel', async (id)=>{
+
+const deleteHotel = createAsyncThunk('deleteHotel', async (objeto)=>{
+
+    let headers = {headers: {'Authorization': `Bearer ${objeto.newToken}`}}
     try{
-        const res = await axios.delete(`http://localhost:8000/api/hotels/${id}`)
+        const res = await axios.delete(`http://localhost:8000/api/hotels/${objeto.idHotel}`, headers)
         console.log(res);
         return{
             success: true,
