@@ -4,17 +4,20 @@ import { BASE_URL } from '../api/url';
 import swal from 'sweetalert'
 import '../styles/EditHotelForm.css'
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function EditHotelForm() {
     
     let {id} = useParams()
+    let token = JSON.parse(localStorage.getItem('token'))
+    const tokenList = useSelector(store => store.tokenReducer.tokenList)
 
     const [dataHotel, setDataHotel] = useState({
         name: '',
         photo:'',
         capacity:'',
         citiId : '',
-        userId : ''
+        userId : `${tokenList._id}`
     })
     
     const getInplut = (e) =>{
@@ -23,14 +26,19 @@ export default function EditHotelForm() {
             [e.target.name] : e.target.value
         })
     }
+
+    console.log(token.token.user);
     console.log(dataHotel);
     console.log(id);
     const navigate = useNavigate()
 
 async function SendData(e){
+
+    let headers = {headers: {'Authorization': `Bearer ${token.token.user}`}}
+
     e.preventDefault()
     try{
-        let res = await axios.patch(`${BASE_URL}/api/hotels/${id}` , dataHotel )
+        let res = await axios.patch(`${BASE_URL}/api/hotels/${id}`,dataHotel , headers)
         if(res.data.success){
         swal({
             title: "Excelent",
@@ -87,7 +95,7 @@ return (
                 placeholder='Enter city id'
                 onChange={getInplut}  
                 required />
-            <label for='userId'>User Id</label>
+            {/* <label for='userId'>User Id</label>
             <input 
                 className='EditHotelFrom-input' 
                 id="userId" 
@@ -95,7 +103,7 @@ return (
                 type="text"
                 placeholder='Enter user id'
                 onChange={getInplut}  
-                required />
+                required /> */}
             
             <div className='EditHotelFrom-button'>
                 <button className='EditHotelFrom-button2' type='submit'>Edit</button>
