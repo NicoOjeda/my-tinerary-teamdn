@@ -14,8 +14,8 @@ import Details from "./pages/Details";
 import MyShows from "./pages/MyShows";
 import EditShow from "./pages/EditShow";
 import MyHotels from "./pages/MyHotels";
-import EditHotel from "./pages/EditHotel"
 import MyCitiesget from "./pages/MyCitiesget";
+import EditHotel from "./pages/EditHotel"
 import EditCityForm from "./pages/EditCity";
 import Myitinerariesget from "./pages/Myitinerariesget";
 import EditItineraryForm from "./pages/EditItinerary";
@@ -70,6 +70,7 @@ console.log(user);
           <Route path='/editshow/:id/' element={<EditShow />} />
         </Route>
         <Route element={<ProtectedRoute isAllowed={user.logged === true} reDirect={"/"} />}>
+
           <Route path='/signin' element={<Signin />} />
           <Route path='/SignUp' element={<SignUp />} />
         </Route>

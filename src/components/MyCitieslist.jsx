@@ -15,7 +15,7 @@ export default function MyCitieslist() {
     useEffect(() => {
   
     dispatch(myCitiesActions.citiesList(tokenList.id));
-  }, [listCities]);
+  }, []);
 
   console.log(listCities);
   const navigate = useNavigate()
