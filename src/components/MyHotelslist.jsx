@@ -17,7 +17,7 @@ export default function MyHotelslist() {
     dispatch(myHotelsAction.hotelList(tokenList._id))
   },[listHotel])
    
-  console.log(listHotel);
+  // console.log(listHotel);
 
     const deleteHotel = (e)=>{
       let objeto = {

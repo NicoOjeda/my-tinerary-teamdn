@@ -4,10 +4,13 @@ import { BASE_URL } from '../api/url';
 import swal from 'sweetalert'
 import '../styles/EditShowForm.css'
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function EditShowForm() {
     
     let {id} = useParams()
+    let token = JSON.parse(localStorage.getItem('token'))
+    const tokenList = useSelector(store => store.tokenReducer.tokenList)
 
     const [dataShow, setDataShow] = useState({
         hotelId:'',
@@ -16,7 +19,7 @@ export default function EditShowForm() {
         photo:'',
         price:'',
         date : '',
-        userId : ''
+        userId : `${tokenList._id}`
     })
     
     const getInplut = (e) =>{
@@ -30,9 +33,11 @@ export default function EditShowForm() {
     const navigate = useNavigate()
 
 async function SendDataShow(e){
+    let headers = {headers: {'Authorization': `Bearer ${token.token.user}`}}
+
     e.preventDefault()
     try{
-        let res = await axios.patch(`${BASE_URL}/api/shows/${id}` , dataShow )
+        let res = await axios.patch(`${BASE_URL}/api/shows/${id}` , dataShow, headers )
         if(res.data.success){
         swal({
             title: "Excelent",
@@ -107,7 +112,7 @@ return (
                 placeholder='Enter date'
                 onChange={getInplut}  
                 required />
-            <label for='userId'>User Id</label>
+            {/* <label for='userId'>User Id</label>
             <input 
                 className='EditShowFrom-input' 
                 id="userId" 
@@ -115,7 +120,7 @@ return (
                 type="text"
                 placeholder='Enter user id'
                 onChange={getInplut}  
-                required />
+                required /> */}
             
             <div className='EditShowFrom-button'>
                 <button className='EditShowFrom-button2' type='submit'>Edit</button>

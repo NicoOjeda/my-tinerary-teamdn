@@ -48,29 +48,35 @@ console.log(user);
     <WebSiteLayout>
       <Routes>
         <Route path='/' element={<Home />} ></Route>
+        <Route path='/hotels' element={<Hotels />}></Route>
+        <Route path='/Cities' element={<Cities />} ></Route>
         <Route path='*' element={<NotFound />} ></Route>
-        <Route element={<ProtectedRoute isAllowed={user.logged == false} reDirect={"/"} />}>
-          <Route path="/profile" element={<Profile />} />
+        <Route path='/Details/:id' element={<Details />} />
+        <Route path='/detailshotels/:id' element={<DetailsHotel />} />
+        <Route element={<ProtectedRoute isAllowed={user.logged === true && user.role === "user" } reDirect={"/"} />}>
           <Route path='/newhotel' element={<NewHotel />} />
-          <Route path="/myitineraries" element={<Myitinerariesget />} />
+          <Route path='/NewCity' element={<NewCity />} />
           <Route path='/myhotels' element={<MyHotels />} />
-          <Route path="/mycities" element={<MyCitiesget />} />
-          <Route path='/myshows' element={<MyShows />} />
-          <Route path='/detailshotels/:id' element={<DetailsHotel />} />
-          <Route path="/edititinerary/:id" element={<EditItineraryForm />} />
-          <Route path='/edithotel/:id/' element={<EditHotel />} />
           <Route path='/editcity/:id' element={<EditCityForm />} />
-          <Route path='/Details/:id' element={<Details />} />
-          <Route path='/editshow/:id/' element={<EditShow />} />
-          <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
+          <Route path="/mycities" element={<MyCitiesget />} />
+          <Route path='/edithotel/:id/' element={<EditHotel />} />
         </Route>
-        <Route element={<ProtectedRoute isAllowed={!!user && user.logged == true} reDirect={"/"} />}>
+        <Route element={<ProtectedRoute isAllowed={user.logged === true && user.role === "admin" } reDirect={"/"} />}>
+          <Route path="/edititinerary/:id" element={<EditItineraryForm />} />
+          <Route path='/myshows' element={<MyShows />} />
+          <Route path="/myitineraries" element={<Myitinerariesget />} />
+          <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
+          
+          <Route path='/editshow/:id/' element={<EditShow />} />
+        </Route>
+        <Route element={<ProtectedRoute isAllowed={user.logged === true} reDirect={"/"} />}>
           <Route path='/signin' element={<Signin />} />
           <Route path='/SignUp' element={<SignUp />} />
         </Route>
-<Route path='/NewCity' element={<NewCity />} />
-        <Route path='/hotels' element={<Hotels />}></Route>
-        <Route path='/Cities' element={<Cities />} ></Route>
+        <Route element={<ProtectedRoute isAllowed={user.logged === false} reDirect={"/"} />}>
+          <Route path="/profile" element={<Profile />} />
+
+        </Route>
         {/* <Route path="/mycities/:id" element={<MyCitiesget />}></Route> */}
         {/* <Route path="/myitineraries/:id" element={<Myitinerariesget />}></Route> */}
       </Routes>
