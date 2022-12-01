@@ -13,15 +13,22 @@ export default function MyShowsList() {
     const listShow = useSelector(store => store.myShowsReducer.showList)
     const dispatch = useDispatch()
     const tokenList = useSelector(store => store.tokenReducer.tokenList)
-  const navigate= useNavigate()
+    const navigate= useNavigate()
+    let token = JSON.parse(localStorage.getItem('token'))
 
   useEffect(()=>{
     dispatch(myShowsActions.showsAction(tokenList._id))
   },[listShow])
 
 
-    const deleteHotel = (e)=>{
-        dispatch(myShowsActions.showsDelete(e))
+    const deleteShow = (e)=>{
+        
+      let objeto={
+        idShow: e,
+        newToken: token.token.user
+      }
+      console.log(objeto);
+        dispatch(myShowsActions.showsDelete(objeto))
     swal({
       title: "Excelent",
       text:  "Show deleted",
@@ -40,8 +47,6 @@ const [dataShow, setDataShow] = useState({
   userId : `${tokenList._id}`
 })
 
-console.log(dataShow);
-
 const getInplut = (e) =>{
   setDataShow({
       ...dataShow,
@@ -50,7 +55,7 @@ const getInplut = (e) =>{
 }
 
 async function SendDataShow(e){
-  // console.log(dataHotel);
+
   e.preventDefault()
   try{
      let res = await axios.post(`${BASE_URL}/api/shows/` , dataShow )
@@ -88,7 +93,7 @@ const hotelView = (myShow)=> (
                     <div>Date: {myShow.date}</div>
                 </div>
                 <Link to={`/editshow/${myShow._id}`}><button className='MyShows-btn'>Edit Hotel</button></Link>
-                <button className='MyShows-btn' onClick={()=>deleteHotel(myShow._id)}>Delete</button>
+                <button className='MyShows-btn' onClick={()=>deleteShow(myShow._id)}>Delete</button>
             </div>
 )
 
