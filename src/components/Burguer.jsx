@@ -14,7 +14,7 @@ export default function Burguer() {
   const btn5 = "myshows"
   const btn6 = "MyTynerariesCreate"
   const btn7 = "My Hotels"
-  let user= useSelector(store => store.users)
+  const user = useSelector(store => store.users)
 
 
 
@@ -26,7 +26,7 @@ export default function Burguer() {
 
   };
   const tokenList = useSelector(store => store.tokenReducer.tokenList)
-  console.log(user);
+  console.log(user.role);
    let dispatch = useDispatch()
   
   let token=""
@@ -49,10 +49,33 @@ export default function Burguer() {
       <div className="nav-container1">
         <div className="nav-container">
 
-          {user.logged ? (<>
+          {(user.logged && user.role === "admin") ?(<>
             <div className="nav-0">
             <LinkRouter to="/">
               <button className="nav-2">{btn}</button>
+            </LinkRouter>
+            <LinkRouter to="/Cities">
+              <button className="nav-2"> {btn2}</button>
+            </LinkRouter>
+            <LinkRouter to="/hotels">
+              <button className="nav-2"> {btn3}</button>
+            </LinkRouter>
+            <LinkRouter to="/myhotels">
+              <button className="nav-2"> {btn7}</button>
+            </LinkRouter>
+            <LinkRouter to="/mycities">
+              <button className="nav-2"> My cities</button>
+            </LinkRouter>
+            <LinkRouter to="/NewCity">
+              <button className="nav-2"> New City</button>
+            </LinkRouter>
+
+
+          </div>
+          </>) : (user.logged && user.role === "user") ? (<>
+            <div className="nav-0">
+            <LinkRouter to="/">
+              <button className="nav-1">{btn}</button>
             </LinkRouter>
             <LinkRouter to="/Cities">
               <button className="nav-2"> {btn2}</button>
@@ -69,13 +92,8 @@ export default function Burguer() {
             <LinkRouter to="/MyTynerariesCreate">
               <button className="nav-2"> {btn6}</button>
             </LinkRouter>
-            <LinkRouter to="/myhotels">
-              <button className="nav-2"> {btn7}</button>
-            </LinkRouter>
-
-
           </div>
-          </>) : (<>
+          </>) : (
             <div className="nav-0">
             <LinkRouter to="/">
               <button className="nav-1">{btn}</button>
@@ -86,13 +104,69 @@ export default function Burguer() {
             <LinkRouter to="/hotels">
               <button className="nav-2"> {btn3}</button>
             </LinkRouter>
+            
           </div>
-          </>)}
+          )}
 
+          {
+            user.logged?(<>
 
-          {user.logged ? (<>
-            {
-            viewHide ?
+              {user.role === "admin"? (<>
+            {viewHide ?
+              (<>
+                <div className="burguer-container">
+                  <img
+                    className="burguer-img"
+                    src="https://cdn-icons-png.flaticon.com/512/7134/7134106.png"
+                    alt="burguer foto"
+                    onClick={hide}
+                  />
+                  <LinkRouter to="/">
+                    <button className="btn-burguer-1">
+                      Home
+                    </button>
+                  </LinkRouter>
+                  <LinkRouter to="/Cities">
+                    <button className="btn-burguer-2">
+                      Cities
+                    </button>
+                  </LinkRouter>
+                  <LinkRouter to="/Hotels">
+                    <button className="btn-burguer-3">
+                      Hotels
+                    </button>
+                  </LinkRouter>
+                  <LinkRouter to="/myhotels">
+                    <button className="btn-burguer-3">
+                    {btn7}
+                    </button>
+                  </LinkRouter>
+                  <LinkRouter  to="/mycities">
+                    <button className="btn-burguer-3">
+                    My cities
+                    </button>
+                  </LinkRouter>
+                  <LinkRouter  to="/NewCity">
+                    <button className="btn-burguer-3">
+                    New City
+                    </button>
+                  </LinkRouter>
+
+                </div>
+              </>
+
+              ) : (
+                <>
+                  <img
+                    className="burguer-img "
+                    src="https://cdn-icons-png.flaticon.com/512/7134/7134106.png"
+                    alt="burguerIcon"
+                    onClick={hide}
+                  />
+                </>
+              )}
+          </>) :  (<>
+           {viewHide ?
 
               (<>
                 <div className="burguer-container">
@@ -118,14 +192,13 @@ export default function Burguer() {
                     </button>
                   </LinkRouter>
                   <LinkRouter to="/myitineraries">
-                    <button className="btn-burguer-3">
-                      MyItineraries
-                    </button>
+                    <button className="btn-burguer-1"> {btn4}</button>
                   </LinkRouter>
                   <LinkRouter to="/myshows">
-                    <button className="btn-burguer-3">
-                      MyShows
-                    </button>
+                    <button className="btn-burguer-1"> {btn5}</button>
+                  </LinkRouter>
+                  <LinkRouter to="/MyTynerariesCreate">
+                    <button className="btn-burguer-1"> {btn6}</button>
                   </LinkRouter>
 
                 </div>
@@ -141,11 +214,14 @@ export default function Burguer() {
                   />
                 </>
               )}
-          </>) : 
-          (<>
-           {
-            viewHide ?
+          
+          </>)}
 
+
+
+
+            </>):(<>
+              {viewHide ?
               (<>
                 <div className="burguer-container">
                   <img
@@ -183,8 +259,13 @@ export default function Burguer() {
                   />
                 </>
               )}
+
+
+            </>)
+          }
+
+
           
-          </>)}
 
 
         </div>
@@ -193,3 +274,7 @@ export default function Burguer() {
     </>
   );
 }
+
+
+
+
