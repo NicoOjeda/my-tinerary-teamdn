@@ -81,6 +81,7 @@ const MyTynerariesSelect = () => {
             onChange={handleInputChange}
             required
           >
+          <option>Select City</option>
             {citiesData.map((e,index) => (
               <option value={e._id} key={index}> {e.name} </option>
             ))}
@@ -141,7 +142,7 @@ const MyTynerariesSelect = () => {
               className="New-input"
               name="userId"
               id="userId"
-              value={user.id}
+              defaultValue={user.id}
               type="text"
               placeholder={user.id}
               onChange={handleInputChange} required/>
