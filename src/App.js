@@ -14,8 +14,8 @@ import Details from "./pages/Details";
 import MyShows from "./pages/MyShows";
 import EditShow from "./pages/EditShow";
 import MyHotels from "./pages/MyHotels";
-import EditHotel from "./pages/EditHotel"
 import MyCitiesget from "./pages/MyCitiesget";
+import EditHotel from "./pages/EditHotel"
 import EditCityForm from "./pages/EditCity";
 import Myitinerariesget from "./pages/Myitinerariesget";
 import EditItineraryForm from "./pages/EditItinerary";
@@ -49,7 +49,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} ></Route>
         <Route path='*' element={<NotFound />} ></Route>
-        <Route element={<ProtectedRoute isAllowed={user.logged == false} reDirect={"/"} />}>
+        {/* <Route element={<ProtectedRoute isAllowed={user.logged == false} reDirect={"/"} />}> */}
           <Route path="/profile" element={<Profile />} />
           <Route path='/newhotel' element={<NewHotel />} />
           <Route path="/myitineraries" element={<Myitinerariesget />} />
@@ -63,7 +63,7 @@ function App() {
           <Route path='/Details/:id' element={<Details />} />
           <Route path='/editshow/:id/' element={<EditShow />} />
           <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
-        </Route>
+        {/* </Route> */}
         <Route element={<ProtectedRoute isAllowed={!!user && user.logged == true} reDirect={"/"} />}>
           <Route path='/signin' element={<Signin />} />
           <Route path='/SignUp' element={<SignUp />} />
