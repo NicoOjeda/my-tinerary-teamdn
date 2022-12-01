@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import "../styles/MyTynerariesSelect.css";
 import { useSelector,useDispatch } from "react-redux";
 // import myCitiesActions from "../redux/actions/myCitiesActions";
-
 const MyTynerariesSelect = () => {
   const user = useSelector(store => store.users)
   const tokenList = useSelector(store => store.tokenReducer.tokenList)

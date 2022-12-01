@@ -5,15 +5,20 @@ import myCitiesActions from "../redux/actions/myCitiesActions";
 import "../styles/MyCities.css"
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 export default function MyCitieslist() {
+  
   const listCities = useSelector(
-    (store) => store.myCitiesReducer.citiesAdmlist
-  );
+    (store) => store.myCitiesReducer.citiesAdmlist);
+    
   const dispatch = useDispatch();
-    const tokenList= useSelector(store => store.tokenReducer.tokenList)
+    
+  const tokenList= useSelector(store => store.tokenReducer.tokenList)
+      const userIdToken = tokenList._id
+    console.log(tokenList)
     let token = JSON.parse(localStorage.getItem('token'))
     useEffect(() => {
-  
+  axios.get()
     dispatch(myCitiesActions.citiesList(tokenList.id));
   }, []);
 
