@@ -26,7 +26,7 @@ export default function Burguer() {
 
   };
   const tokenList = useSelector(store => store.tokenReducer.tokenList)
-  console.log(user.role);
+  // console.log(user.role);
    let dispatch = useDispatch()
   
   let token=""
