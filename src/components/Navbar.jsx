@@ -32,7 +32,7 @@ export default function Navbar() {
   let [viewHide, setViewHide] = useState(false);
   let hide = () => {
     setViewHide(!viewHide); //viewHide = mostrarOcultar
-    console.log(viewHide);
+    // console.log(viewHide);
   };
 
 
@@ -89,7 +89,7 @@ export default function Navbar() {
 
   let user= useSelector(store => store.users)
 
-console.log(user);
+// console.log(user);
 
 
   return (
