@@ -69,7 +69,8 @@
     background-color:rgba(0, 0, 0, 0.644);
     color: #e7c621;
     border: 1px solid #e7c621;
-    padding: 0.2rem;
+    padding: 0.1rem;
+    margin-top:0.4rem;
     border-radius: 10px;
     cursor: pointer;
     height: 2rem;

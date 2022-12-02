@@ -5,27 +5,8 @@ import { useState } from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import Burguer from "./Burguer";
 import { useSelector, useDispatch } from 'react-redux'
-// import signOutAction from "../redux/actions/signOut";
 import userActions from "../redux/actions/SignInAction";
-// import LoginActions from '../redux/actions/LoginAction'
 import { confirmAlert } from "react-confirm-alert";
-import { useEffect } from "react";
-// const pages = [
-//   { name: 'Home', to: '/'},
-//   { name: 'Ingresar', to: 'signup'}
-// ]
-// const onlinePages = [
-//   ...pages, 
-//   { name: 'NewPerfil', to: '/nuevo-perfil'},
-//   { name: 'Ingresar', to: '/ingresar'}
-
-// ]
-
-
-
-
-
-
 
 
 export default function Navbar() {
@@ -37,29 +18,10 @@ export default function Navbar() {
 
 
 
-  //   let { online,token} = useSelector(store => store.usuario)
-  //   let dispatch = useDispatch()
-  //   let { salir } = LoginAction 
-
-  //   async function cerrarSesion(event) {
-  //     let res = await dispatch(salir(token))
-  //     console.log(res)
-
-  //   }
-
-  // const link = (page) => <LinkRouter className="'NavBar-link "  to={page.to} key={page.name}>{page.name}</LinkRouter>
-
-  let { logged, token, photo, name, _id } = useSelector(store => store.users)
+  let { logged, token, photo, name} = useSelector(store => store.users)
   let dispatch = useDispatch()
   let { signout } = userActions
-  // const [token2, setToken2] = useState("")
-
-
-  // useEffect(() => {
-  //   setToken2(token)
-  // }, [token2])
-
-  // console.log(token2);
+ 
   
   async function signOut(event){
     let res = await dispatch(signout(token))
@@ -80,16 +42,6 @@ export default function Navbar() {
         onClick: () => console.log("Click no")
       }]
     })}
-
-    // let res = await dispatch(signout(token))
-    // console.log(res);
-
-
-  // console.log(name);
-
-  let user= useSelector(store => store.users)
-
-// console.log(user);
 
 
   return (
