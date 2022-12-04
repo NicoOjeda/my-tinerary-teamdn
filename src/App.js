@@ -24,14 +24,15 @@ import userActions from "./redux/actions/SignInAction";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoutes";
 import MyTynerariesCreate from './pages/MyTynerariesCreate'
-
+import NewReaction from "./pages/NewReaction";
+import MyReactions from "./pages/MyReactions";
 function App() {
   let dispatch = useDispatch()
   let { relogin } = userActions
   const user = useSelector(store => store.users)
   // const [logueado, setLogueado] = (null)
   // const userLogin = user.logged
-console.log(user);
+
 
 
   useEffect(() => {
@@ -47,27 +48,34 @@ console.log(user);
   return (
     <WebSiteLayout>
       <Routes>
+      
         <Route path='/' element={<Home />} ></Route>
         <Route path='/hotels' element={<Hotels />}></Route>
         <Route path='/Cities' element={<Cities />} ></Route>
         <Route path='*' element={<NotFound />} ></Route>
-        <Route path='/Details/:id' element={<Details />} />
+        <Route path='/details/:id' element={<Details />} />
         <Route path='/detailshotels/:id' element={<DetailsHotel />} />
         <Route element={<ProtectedRoute isAllowed={user.logged === true && user.role === "user" } reDirect={"/"} />}>
           <Route path='/newhotel' element={<NewHotel />} />
           <Route path='/NewCity' element={<NewCity />} />
+         
           <Route path='/myhotels' element={<MyHotels />} />
           <Route path='/editcity/:id' element={<EditCityForm />} />
           <Route path="/mycities" element={<MyCitiesget />} />
           <Route path='/edithotel/:id/' element={<EditHotel />} />
+          {/* <Route path="/myreactions" element={<MyReactions />} /> */}
+          {/* <Route path='/newreaction' element={<NewReaction />} /> */}
         </Route>
         <Route element={<ProtectedRoute isAllowed={user.logged === true && user.role === "admin" } reDirect={"/"} />}>
           <Route path="/edititinerary/:id" element={<EditItineraryForm />} />
           <Route path='/myshows' element={<MyShows />} />
           <Route path="/myitineraries" element={<Myitinerariesget />} />
           <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
-          
+          <Route path="/myreactions" element={<MyReactions />} />
+          <Route path='/newreaction' element={<NewReaction />} />
           <Route path='/editshow/:id/' element={<EditShow />} />
+          <Route path="/mycities" element={<MyCitiesget />} />
+          
         </Route>
         <Route element={<ProtectedRoute isAllowed={user.logged === true} reDirect={"/"} />}>
 
