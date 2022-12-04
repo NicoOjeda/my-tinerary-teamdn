@@ -15,7 +15,7 @@ export default function Burguer() {
   const btn6 = "MyTynerariesCreate"
   const btn7 = "My Hotels"
   const user = useSelector(store => store.users)
-
+  
 
 
   let [viewHide, setViewHide] = useState(false);
@@ -25,7 +25,9 @@ export default function Burguer() {
     console.log(viewHide)
 
   };
-  
+
+  const tokenList = useSelector(store => store.tokenReducer.tokenList)
+
   // console.log(user.role);
    let dispatch = useDispatch()
   
@@ -69,6 +71,12 @@ export default function Burguer() {
             <LinkRouter to="/NewCity">
               <button className="nav-2"> New City</button>
             </LinkRouter>
+            <LinkRouter to="/myreactions">
+              <button className="nav-2"> My Reactions</button>
+            </LinkRouter>
+            <LinkRouter to="/newreaction">
+              <button className="nav-2"> New Reaction</button>
+            </LinkRouter>
 
 
           </div>
@@ -92,6 +100,21 @@ export default function Burguer() {
             <LinkRouter to="/MyTynerariesCreate">
               <button className="nav-2"> {btn6}</button>
             </LinkRouter>
+            <LinkRouter  to="/myreactions">
+            
+                    <button className="btn-burguer-3">
+                    My Reaction
+                    </button>
+                  </LinkRouter>
+                  <LinkRouter to="/mycities">
+              <button className="nav-2"> My cities</button>
+            </LinkRouter>
+                  <LinkRouter  to="/NewReaction">
+                    <button className="btn-burguer-3">
+                    New Reaction
+                    </button>
+                  </LinkRouter>
+
           </div>
           </>) : (
             <div className="nav-0">
@@ -104,7 +127,10 @@ export default function Burguer() {
             <LinkRouter to="/hotels">
               <button className="nav-2"> {btn3}</button>
             </LinkRouter>
-            
+            {/* <LinkRouter to="/mycities">
+              <button className="nav-2"> My cities</button>
+            </LinkRouter>
+             */}
           </div>
           )}
 
@@ -151,7 +177,7 @@ export default function Burguer() {
                     New City
                     </button>
                   </LinkRouter>
-
+                
                 </div>
               </>
 

@@ -5,7 +5,7 @@ import axios from "axios";
 const getToken = createAsyncThunk('getToken', async(data)=>{
     let headers = {headers: {'Authorization': `Bearer ${data}`}}
     let res= await axios.post(`${BASE_URL}/api/auth/token`, null, headers)
-    console.log( res.data.response.user);
+    // console.log( res.data.response.user);
     return {
         tokenList: res.data.response.user
         
