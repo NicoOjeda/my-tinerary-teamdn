@@ -96,6 +96,9 @@
     gap: 1.5rem;
     padding: 0.5rem;
 }
+.DetailsH-commentBox{
+    width: 100%; 
+}
 @media (max-width: 768px){
     .DetailsH-photo{
         height: 11vh;

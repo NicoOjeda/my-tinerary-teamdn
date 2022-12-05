@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import "../styles/MyTynerariesSelect.css";
 import { useSelector,useDispatch } from "react-redux";
 // import myCitiesActions from "../redux/actions/myCitiesActions";
-
 const MyTynerariesSelect = () => {
   const user = useSelector(store => store.users)
   const tokenList = useSelector(store => store.tokenReducer.tokenList)
@@ -81,6 +80,7 @@ const MyTynerariesSelect = () => {
             onChange={handleInputChange}
             required
           >
+          <option>Select City</option>
             {citiesData.map((e,index) => (
               <option value={e._id} key={index}> {e.name} </option>
             ))}
@@ -141,7 +141,7 @@ const MyTynerariesSelect = () => {
               className="New-input"
               name="userId"
               id="userId"
-              value={user.id}
+              defaultValue={user.id}
               type="text"
               placeholder={user.id}
               onChange={handleInputChange} required/>
