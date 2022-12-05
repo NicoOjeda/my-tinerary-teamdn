@@ -6,7 +6,8 @@ import "../styles/CityDetails.css";
 import axios from "axios";
 import "../styles/hotelscards.css";
 import "../styles/inputHotels.css";
-import Reaction from "./Reactions";
+import Reaction from "./Reaction";
+import Itinerary from "./Itinerary";
 
 
 const CityDetail = () => {
@@ -15,6 +16,7 @@ const CityDetail = () => {
   let [mostrarOcultar, setMostrarOcultar] = useState(false);
   let [data, setData] = useState([]);
   let [dataItinerary, setDataItinerary] = useState([]);
+
 
   let hide = () => {
     setMostrarOcultar(!mostrarOcultar);
@@ -68,53 +70,13 @@ const CityDetail = () => {
             console.log(data.name);
             console.log(dataItinerary)
             return (
-              <>
-                <div className="d-activity-card cityImageDetails  ">
-                  <div className="container-activity-detailc">
-                    <div className="activity-title ">{data.name}</div>
-                    <img
-                      className="activity-img detail-img1"
-                      src={data.photo}
-                      alt={data.name}
-                    ></img>
-
-                    <div className="activity-info">{data.description}</div>
-                    <div className="activity-info">${data.price}</div>
-                    <div> {data.userId.name}</div>
-                    <img
-                    width="100px"
-                      className="activity-photo"
-                      src={data.userId.photo}
-                      alt={data.userId.name}
-                    ></img>
-
-                    {/* {console.log(user)} */}
-                    {!mostrarOcultar ? (
-                      <>
-                        <button className="d-btn2" onClick={hide}>
-                          Comments:{" "}
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <button className="d-btn3" onClick={hide}>
-                          Cerrar❌
-                        </button>
-                        <p>Comment:</p>
-                        <div className="comments">
-                          <p>This events are Amazing</p>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </>
+             <Itinerary data={data} mostrarOcultar={mostrarOcultar} hide={hide}/>
             );
           })}
         </div>
       </div>
 
-<Reaction type="itinerary" eventid={id} />
+
     </div>
   );
 };
