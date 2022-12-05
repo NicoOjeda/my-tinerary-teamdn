@@ -10,7 +10,6 @@ export default function Mycity() {
   const nav = useNavigate()
   const handleInputChange = (event) => {
 
-    console.log(event.target.value);
     setData({
       ...data,
       [event.target.name]: event.target.value,
@@ -20,7 +19,6 @@ export default function Mycity() {
      event.preventDefault();
     try{
      let sendCity = await axios.post('http://localhost:8000/api/cities',data)
-      console.log(sendCity.data.id._id)
       if(sendCity.data.success){
       nav('/cities')
         swal({

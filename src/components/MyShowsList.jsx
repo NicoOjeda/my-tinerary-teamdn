@@ -27,7 +27,6 @@ export default function MyShowsList() {
         idShow: e,
         newToken: token.token.user
       }
-      console.log(objeto);
         dispatch(myShowsActions.showsDelete(objeto))
     swal({
       title: "Excelent",
@@ -59,7 +58,6 @@ async function SendDataShow(e){
   e.preventDefault()
   try{
      let res = await axios.post(`${BASE_URL}/api/shows/` , dataShow )
-      // console.log(res.data) 
      if(res.data.success){
       swal({
           title: "Excelent",

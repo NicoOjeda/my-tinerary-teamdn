@@ -2,13 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../styles/CityDetails.css";
-// import dataActivity from "../data/activity";
 import axios from "axios";
 import "../styles/hotelscards.css";
 import "../styles/inputHotels.css";
-import Reaction from "./Reaction";
 import Itinerary from "./Itinerary";
-
 
 const CityDetail = () => {
   let { id } = useParams();
@@ -16,7 +13,6 @@ const CityDetail = () => {
   let [mostrarOcultar, setMostrarOcultar] = useState(false);
   let [data, setData] = useState([]);
   let [dataItinerary, setDataItinerary] = useState([]);
-
 
   let hide = () => {
     setMostrarOcultar(!mostrarOcultar);
@@ -31,21 +27,15 @@ const CityDetail = () => {
 
     axios
       .get(`http://localhost:8000/api/itineraries?citiId=${id}`)
-      .then(res => setDataItinerary(res.data.response))
-      .catch(error => console.log(error));
-    // console.log(data)
+      .then((res) => setDataItinerary(res.data.response))
+      .catch((error) => console.log(error));
   }, [id]);
 
-  console.log(dataItinerary);
-
   return (
-    <div className="detail-container ContainerDetail">
+    <div className="detail-container ContainerDetail" key={data?._id}>
       <div className="detail">
         <h2 className="Detail">City Detail :</h2>
         {data?.map((city) => {
-          {
-            console.log(city.userId);
-          }
           return (
             <>
               <div className="dcard-cont-city" key={city.name}>
@@ -65,18 +55,18 @@ const CityDetail = () => {
       </div>
 
       <div className=".detail-container-Activity">
-        <div className="d">
+        <div className="d" key={data?._id}>
           {dataItinerary.map((data) => {
-            console.log(data.name);
-            console.log(dataItinerary)
             return (
-             <Itinerary data={data} mostrarOcultar={mostrarOcultar} hide={hide}/>
+              <Itinerary
+                data={data}
+                mostrarOcultar={mostrarOcultar}
+                hide={hide}
+              />
             );
           })}
         </div>
       </div>
-
-
     </div>
   );
 };

@@ -28,8 +28,7 @@ export default function EditShowForm() {
             [e.target.name] : e.target.value
         })
     }
-    console.log(dataShow);
-    console.log(id);
+
     const navigate = useNavigate()
 
 async function SendDataShow(e){

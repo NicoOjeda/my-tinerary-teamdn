@@ -22,7 +22,6 @@ export default function Burguer() {
   let hide = () => {
     setViewHide(!viewHide);//viewHide = mostrarOcultar
 
-    console.log(viewHide)
 
   };
 

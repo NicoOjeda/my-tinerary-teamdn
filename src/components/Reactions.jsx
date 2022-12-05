@@ -4,30 +4,26 @@ import { useDispatch, useSelector } from "react-redux";
 import reactionActions from "../redux/actions/reactionAction";
 
 export default function Reaction(props) {
-  let { eventid, type } = props;
+  let { eventid, type , changed } = props;
   const dispatch = useDispatch();
   let id = useSelector((store) => store.tokenReducer.tokenList)._id;
   const { getReaction, updateReaction } = reactionActions;
   const [reactions, setReaction] = useState([]);
-  const [change, setChange] = useState(false);  
-  let [jWTToken , setJWTToken] = useState();
+  const [change, setChange] = useState(false);
+  let [jWTToken, setJWTToken] = useState();
 
   useEffect(() => {
     reactioness();
-    if (JSON.parse(localStorage.getItem("token"))) {    
-
-      
-    let  token = JSON.parse(localStorage.getItem("token"));
-    setJWTToken(token?.token.user)
+    if (JSON.parse(localStorage.getItem("token"))) {
+      let token = JSON.parse(localStorage.getItem("token"));
+      setJWTToken(token?.token.user);
     }
-  }, [change]);
+  }, [change , changed]);
 
   async function reactioness() {
     let res = await dispatch(getReaction({ type, eventid }));
     setReaction(res.payload.response);
   }
-
-  // console.log(reactions);
 
   async function likeEvent(e) {
     let name;
@@ -40,7 +36,6 @@ export default function Reaction(props) {
         iconBack = react.iconBack;
       }
     });
-    console.log(jWTToken);
     let data = {
       name,
       type,
@@ -48,21 +43,17 @@ export default function Reaction(props) {
       token: jWTToken,
     };
     try {
-      console.log(data);
       await dispatch(updateReaction(data));
       setChange(!change);
     } catch (error) {
       console.log(error);
     }
   }
-
   return (
     <>
-      {reactions.success &&
+      {reactions?.success &&
         reactions?.data.map((reaction) => {
           let res = reaction.userId.find((user) => user._id === id);
-          console.log(reactions);
-
           return res ? (
             <>
               <img
@@ -73,7 +64,9 @@ export default function Reaction(props) {
                 width="25px"
                 onClick={likeEvent}
               />
-              <p>{reactions.length}</p>
+              <div className="number-reaction">
+              <div id="number-reaction" >{reaction.userId?.length}</div>
+              </div>
             </>
           ) : (
             <>
@@ -85,7 +78,9 @@ export default function Reaction(props) {
                 width="25px"
                 onClick={likeEvent}
               />
-              <p>{reactions.data.userId?.length}</p>
+              <div className="number-reaction">
+              <div id="number-reaction">{reaction.userId?.length}</div>
+              </div>
             </>
           );
         })}

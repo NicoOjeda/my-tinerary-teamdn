@@ -13,7 +13,7 @@ export default function Navbar() {
   let [viewHide, setViewHide] = useState(false);
   let hide = () => {
     setViewHide(!viewHide); //viewHide = mostrarOcultar
-    // console.log(viewHide);
+
   };
 
 
@@ -25,7 +25,6 @@ export default function Navbar() {
   
   async function signOut(event){
     let res = await dispatch(signout(token))
-    console.log(res);
   }
   
   async function SignOut(event) {
@@ -42,6 +41,10 @@ export default function Navbar() {
         onClick: () => console.log("Click no")
       }]
     })}
+
+
+  let user= useSelector(store => store.users)
+
 
 
   return (
