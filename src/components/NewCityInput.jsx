@@ -18,7 +18,6 @@ export default function NewCityInput() {
      event.preventDefault();
     try{
      let sendCity = await axios.post('http://localhost:8000/api/cities',data)
-      console.log(sendCity.data.id._id)
       if(sendCity.data.success){
       nav('/cities')
         swal({

@@ -17,8 +17,7 @@ export default function Cities (){
   const [valueInput, setvalueInput] = useState("");
   const [dataCity, setdataCity] = useState([]);
   
-  useEffect(() => {
-  console.log(initial)    
+  useEffect(() => { 
     if (initial)
     {
       dispatch(getCards());
@@ -27,7 +26,6 @@ export default function Cities (){
   const handleInputChange = () => {
     setvalueInput(inputRef.current.value);
     dispatch(getSelect({select:inputRef.current.value,checks:check}));
-    console.log(inputRef);
   };
 
   const handleCheckboxChange = (event) => {

@@ -11,7 +11,7 @@ const Reaction = (props) => {
   return (
     <div className='icon-01'> 
     
-      <img className='img-reaction' src={reaction.icon} onClick=""></img>
+      <img className='img-reaction' src={reaction.icon}></img>
       <p>{reaction.userId.lenght}</p>
     </div>
     

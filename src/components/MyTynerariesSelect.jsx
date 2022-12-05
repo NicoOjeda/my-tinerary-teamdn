@@ -30,7 +30,6 @@ const MyTynerariesSelect = () => {
   
 // console.log(citiesData);
   const handleInputChange = (event) => {
-    console.log(event.target.value);
     setData({
       ...data,
       [event.target.name]: event.target.value,
@@ -42,7 +41,6 @@ const MyTynerariesSelect = () => {
     try {
       let sendIti = await axios.post(
         `http://localhost:8000/api/itineraries`,data);
-      console.log(sendIti);
       if (sendIti.data.success) {
         nav("/myitineraries");
         swal({

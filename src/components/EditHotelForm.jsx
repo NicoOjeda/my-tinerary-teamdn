@@ -27,9 +27,6 @@ export default function EditHotelForm() {
         })
     }
 
-    console.log(token.token.user);
-    console.log(dataHotel);
-    console.log(id);
     const navigate = useNavigate()
 
 async function SendData(e){

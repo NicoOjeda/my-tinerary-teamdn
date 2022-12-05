@@ -1,13 +1,33 @@
-.img-like{
+.img-like {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    
-    
 }
 
-.img-reaction{
-    width: 40px;
+.img-like>img {
+    cursor: pointer;
+    transform: scale(120%);
 
-  
+}
+
+.number-reaction > #number-reaction {
+    cursor: pointer;
+    transform: scale(100%);
+    position: absolute;
+    top: -10%;
+    right: 20% !important;
+}
+
+.number-reaction {
+    position: relative;
+}
+
+.img-like>img:hover {
+    transform: scale(140%);
+    transition: 0.2s;
+
+}
+
+.img-reaction {
+    width: 40px;
 }

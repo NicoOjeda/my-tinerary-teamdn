@@ -29,10 +29,7 @@ export default function DetailsH() {
         .then(res=> setData2( res.data.response))
         .catch(err=> console.log( err))
     },[id])
-    
-    
-    // console.log(data);
-    console.log(data2);
+   
 return (
     <div className='DetailsH-container'>
         <h2 className='DetailsH-h2'>Hotel's Details</h2>

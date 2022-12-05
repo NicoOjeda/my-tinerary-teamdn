@@ -7,29 +7,29 @@ import Reaction from "../components/Reactions";
 
 export default function MyReactions() {
   const store = useSelector((store) => store.tokenReducer.tokenList);
-  const id = store._id
-  
+  const id = store._id;
+
   const { getUserReactions, deleteReaction } = reactionActions;
   const [reactions, setReaction] = useState([]);
-  const [change, setChange] = useState(false);
+  const [change, setChange] = useState(true);
   const dispatch = useDispatch();
-  const token = JSON.parse(localStorage.getItem("token"));
+  const [token, setToken] = useState();
   useEffect(() => {
     reactioness();
-    // if (JSON.parse(localStorage.getItem("token"))) {
-    // }
-  },
-   []);
+    if (localStorage.getItem("token")) {
+      let localToken = JSON.parse(localStorage.getItem("token")).token.user;
+      setToken(localToken);
+    }
+  }, [change]);
   async function reactioness() {
-
-  let data = {id:id, token:token.token.user}
+    let data = { id: id, token: token };
+    console.log(data)
     let res = await dispatch(getUserReactions(data));
     setReaction(res.payload.response);
-   
   }
 
- 
-  async function pullReaction(e) {
+  async function pullReaction(e, h) {
+    console.log(h);
     try {
       Swal.fire({
         title: "Sure?",
@@ -40,42 +40,39 @@ export default function MyReactions() {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire("Deleted!", "Your reaction has been deleted.", "success");
-          dispatch(deleteReaction({ id: e.target.name,token:token.token.user }));
+          dispatch(deleteReaction({ id: h._id, token: token })).then(() => setChange(!change));
         }
       });
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     }
   }
-
   return (
     <div className="cont-h2">
       <h2>My Reactions</h2>
       <div className="cont-cities">
         <div className="Cities-card-container">
-          {reactions.map((e) => (
-          
+          {reactions?.map((e) => (
             <>
-            
               <div className="d-activity-card cityImageDetails  ">
                 <div className="container-activity-detailc">
                   <div className="activity-title ">{e.name}</div>
                   <img
-                      className="activity-img detail-img1"
-                      src={e.itineraryId?.photo}
-                      alt={e.itineraryId?.name}
-                    ></img>
+                    className="activity-img detail-img1"
+                    src={e.itineraryId?.photo}
+                    alt={e.itineraryId?.name}
+                  ></img>
                   <div className="activity-info">{e.itineraryId?.name}</div>
                   <div className="reaction-emoji">
-                  <Reaction type="itinerary" eventid={e.itineraryId?._id} />
+                    <Reaction type="itineraryId" eventid={e.itineraryId?._id} changed={change}  />
                   </div>
+                  <button onClick={(h) => pullReaction(h, e)}>
+                    Delete Reaction
+                  </button>
                 </div>
               </div>
             </>
-          )   
-          
-          
-          )}
+          ))}
         </div>
       </div>
     </div>
