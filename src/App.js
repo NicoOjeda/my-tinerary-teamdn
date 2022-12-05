@@ -63,6 +63,8 @@ function App() {
           <Route path='/editcity/:id' element={<EditCityForm />} />
           <Route path="/mycities" element={<MyCitiesget />} />
           <Route path='/edithotel/:id/' element={<EditHotel />} />
+          <Route path="/myreactions" element={<MyReactions />} />
+          <Route path='/newreaction' element={<NewReaction />} />
           {/* <Route path="/myreactions" element={<MyReactions />} /> */}
           {/* <Route path='/newreaction' element={<NewReaction />} /> */}
         </Route>
@@ -71,8 +73,6 @@ function App() {
           <Route path='/myshows' element={<MyShows />} />
           <Route path="/myitineraries" element={<Myitinerariesget />} />
           <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
-          <Route path="/myreactions" element={<MyReactions />} />
-          <Route path='/newreaction' element={<NewReaction />} />
           <Route path='/editshow/:id/' element={<EditShow />} />
           <Route path="/mycities" element={<MyCitiesget />} />
           
