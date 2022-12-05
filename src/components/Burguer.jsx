@@ -147,32 +147,32 @@ export default function Burguer() {
                     onClick={hide}
                   />
                   <LinkRouter to="/">
-                    <button className="btn-burguer-1">
+                    <button className="btn-burguer">
                       Home
                     </button>
                   </LinkRouter>
                   <LinkRouter to="/Cities">
-                    <button className="btn-burguer-2">
+                    <button className="btn-burguer">
                       Cities
                     </button>
                   </LinkRouter>
                   <LinkRouter to="/Hotels">
-                    <button className="btn-burguer-3">
+                    <button className="btn-burguer">
                       Hotels
                     </button>
                   </LinkRouter>
                   <LinkRouter to="/myhotels">
-                    <button className="btn-burguer-3">
+                    <button className="btn-burguer">
                     {btn7}
                     </button>
                   </LinkRouter>
                   <LinkRouter  to="/mycities">
-                    <button className="btn-burguer-3">
+                    <button className="btn-burguer">
                     My cities
                     </button>
                   </LinkRouter>
                   <LinkRouter  to="/NewCity">
-                    <button className="btn-burguer-3">
+                    <button className="btn-burguer">
                     New City
                     </button>
                   </LinkRouter>
@@ -202,28 +202,28 @@ export default function Burguer() {
                     onClick={hide}
                   />
                   <LinkRouter to="/">
-                    <button className="btn-burguer-1">
+                    <button className="btn-burguer">
                       Home
                     </button>
                   </LinkRouter>
                   <LinkRouter to="/Cities">
-                    <button className="btn-burguer-2">
+                    <button className="btn-burguer">
                       Cities
                     </button>
                   </LinkRouter>
                   <LinkRouter to="/Hotels">
-                    <button className="btn-burguer-3">
+                    <button className="btn-burguer">
                       Hotels
                     </button>
                   </LinkRouter>
                   <LinkRouter to="/myitineraries">
-                    <button className="btn-burguer-1"> {btn4}</button>
+                    <button className="btn-burguer"> {btn4}</button>
                   </LinkRouter>
                   <LinkRouter to="/myshows">
-                    <button className="btn-burguer-1"> {btn5}</button>
+                    <button className="btn-burguer"> {btn5}</button>
                   </LinkRouter>
                   <LinkRouter to="/MyTynerariesCreate">
-                    <button className="btn-burguer-1"> {btn6}</button>
+                    <button className="btn-burguer"> {btn6}</button>
                   </LinkRouter>
 
                 </div>
@@ -256,17 +256,17 @@ export default function Burguer() {
                     onClick={hide}
                   />
                   <LinkRouter to="/">
-                    <button className="btn-burguer-1">
+                    <button className="btn-burguer">
                       Home
                     </button>
                   </LinkRouter>
                   <LinkRouter to="/Cities">
-                    <button className="btn-burguer-2">
+                    <button className="btn-burguer">
                       Cities
                     </button>
                   </LinkRouter>
                   <LinkRouter to="/Hotels">
-                    <button className="btn-burguer-3">
+                    <button className="btn-burguer">
                       Hotels
                     </button>
                   </LinkRouter>
