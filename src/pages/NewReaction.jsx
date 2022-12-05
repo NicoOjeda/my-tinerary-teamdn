@@ -84,7 +84,7 @@ export default function NewReaction() {
       <div className="cont-h2">
         <h2>New Reaction</h2>
       </div>
-      <form className="form" ref={form}>
+      <form className="form1" ref={form}>
         <input
           className="input-text"
           type="text"
