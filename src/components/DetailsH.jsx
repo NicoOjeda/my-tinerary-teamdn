@@ -1,23 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import '../styles/DetailsH.css'
-// import itineraryHotel from '../data/itineraryHotel'
-// import dataHotelCasino from '../data/dataHotelCasino'
 import axios from 'axios'
 import { BASE_URL } from '../api/url';
+import Comments from "../components/Comments"
 
 
 export default function DetailsH() {
 
-
-    let [mostrarOcultar, setMostrarOcultar] = useState(false)
     let [data, setData] = useState([])
     let [data2, setData2] = useState([])
-
-    let hide = ()=>{
-        setMostrarOcultar(!mostrarOcultar)
-        // console.log(mostrarOcultar);
-    }
 
     let {id} = useParams()
     useEffect(()=>{
@@ -29,7 +21,7 @@ export default function DetailsH() {
         .then(res=> setData2( res.data.response))
         .catch(err=> console.log( err))
     },[id])
-   
+
 return (
     <div className='DetailsH-container'>
         <h2 className='DetailsH-h2'>Hotel's Details</h2>
@@ -62,19 +54,9 @@ return (
                     <img img className="DetailsH-photo" src={show.userId.photo} alt="userphoto"></img>
                     <div>{show.userId.name}</div>
                 </div>
-                {
-                   mostrarOcultar? 
-                   (
-                    <>
-                        <button className='Btn-detailsH' onClick={hide}>View Less</button>
-                        <p>Comments</p>
-                        <div className='comments'>
-                            <p>This is a comment</p>
-                        </div>
-                    </>
-                   ): 
-                   (<button className='Btn-detailsH' onClick={hide}>View More</button>) 
-                }
+                <div className="DetailsH-commentBox">
+                    <Comments data={show._id}/>
+                </div>
             </div> 
             </>
         )
