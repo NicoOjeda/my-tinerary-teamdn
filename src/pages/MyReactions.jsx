@@ -4,7 +4,7 @@ import reactionActions from "../redux/actions/reactionAction";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import Reaction from "../components/Reactions";
-
+import '../styles/MyReaction.css'
 export default function MyReactions() {
   const store = useSelector((store) => store.tokenReducer.tokenList);
   const id = store._id;
@@ -48,9 +48,9 @@ export default function MyReactions() {
     }
   }
   return (
-    <div className="cont-h2">
-      <h2>My Reactions</h2>
-      <div className="cont-cities">
+    <div className="mr-container">
+      <h2 className="mr-h2">My Reactions</h2>
+      <div className="mr-box">
         <div className="Cities-card-container">
           {reactions?.map((e) => (
             <>
@@ -66,7 +66,7 @@ export default function MyReactions() {
                   <div className="reaction-emoji">
                     <Reaction type="itineraryId" eventid={e.itineraryId?._id} changed={change}  />
                   </div>
-                  <button onClick={(h) => pullReaction(h, e)}>
+                  <button className="btn-mr" onClick={(h) => pullReaction(h, e)}>
                     Delete Reaction
                   </button>
                 </div>
