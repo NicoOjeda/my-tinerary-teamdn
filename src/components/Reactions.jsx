@@ -27,7 +27,7 @@ export default function Reaction(props) {
     setReaction(res.payload.response);
   }
 
-  console.log(reactions);
+  // console.log(reactions);
 
   async function likeEvent(e) {
     let name;

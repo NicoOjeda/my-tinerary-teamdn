@@ -36,7 +36,7 @@ const updateReaction = createAsyncThunk("updateReaction", async ( datos ) => {
     let headers = { headers: { Authorization: `Bearer ${datos.token}` } };
     console.log(datos)
     try {
-        const response = await axios.put(`${BASE_URL}/api/reactions?${datos.type}Id=${datos.id}&name=${datos.name}`,null, headers);
+        const response = await axios.put(`${BASE_URL}/api/reactions?${datos.type}=${datos.id}&name=${datos.name}`,null, headers);
         return response.data.response;
     }
     catch (error) {
