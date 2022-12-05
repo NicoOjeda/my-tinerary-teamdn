@@ -105,12 +105,12 @@ export default function Cities (){
         <div>
           <input
             type="checkbox"
-            name="America del Sur"
-            value="America del Sur"
+            name="America del sur"
+            value="America del sur"
             onChange={handleCheckboxChange}
-            defaultChecked={check.includes("America del Sur")}
+            defaultChecked={check.includes("America del sur")}
           />
-          America del Sur
+          America del sur
         </div>
       </div>
       <div className="Cities-form" id="form">
