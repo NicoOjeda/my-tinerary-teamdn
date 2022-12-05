@@ -1,0 +1,13 @@
+.img-like{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+    
+}
+
+.img-reaction{
+    width: 40px;
+
+  
+}
