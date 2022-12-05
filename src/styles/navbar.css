@@ -1,19 +1,12 @@
 *{
     box-sizing: border-box;
     margin: 0px;
-    padding: 0px;
-
-    
+    padding: 0px;   
 }
 .nav-container1{
     display: flex;
-
-
-
 }
-
 .nav-container{
- 
     width: 100%;
     color: black;
     background-color: rgb(40,40,40);
@@ -23,25 +16,15 @@
     height: 15vh;
     align-content: flex-start;
     font-family: 'Merienda', cursive;
-
-    
-    
 }
-
 .nav1{
     display: flex;
     justify-content: space-between;
     margin: 0.2rem;
-
 }
-
-
-
-
 .nav-0{
     display: flex;
 }
-
 .nav-1{
     border: 2px solid black;
     padding: 10px;
@@ -63,17 +46,11 @@
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
-    
 }
-
 .logo1{
     /* margin: 5px; */
-       height: 60px;
-       display: flex;
-
-   
-       
- 
+    height: 60px;
+    display: flex;
    }
 .logo2{
     height: 6vh!important;
@@ -82,14 +59,13 @@
     padding: 1px;
     width: 4vw;
     cursor: pointer;
-
 }
 .nameContainer{
     /* position: absolute;
     left: 70%; */
     color: #E7C621;
+    font-size: 10px;
 }
- 
 
 .icon-login{
     display: flex;

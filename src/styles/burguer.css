@@ -20,39 +20,41 @@
 .burguer-container{
     display: flex;
     flex-direction: column;
-    color: black;
-    background-color: rgb(40,40,40);
-    align-content: flex-start;
+    align-items: center;
+    min-height: 40vh;
+    width: 50vw;
+    /* background-color: rgb(40,40,40); */
+    /* align-content: flex-start; */
     font-family: 'Merienda', cursive;
-    gap: 40px;
-  
-
-
-    margin-top: 12rem;
-    z-index: 1;
+    gap: 10px;
+    margin-top: 18rem;
+    z-index: 2;
     transition: all 0.5s;
-background-color: rgba(0, 0, 0, 0.444);
+    background-color: rgba(0, 0, 0, 0.444);
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
-    background-size: 200% auto;
-    color: rgb(163, 98, 38);         
+    background-size: 200% auto;        
     border-radius: 10px;
     border: 1px solid rgba(245, 245, 220, 0);
-    box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
+    /* box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321); */
     padding: 5px 25px 27px ;
+    position: fixed;
 }
 
-.btn-burguer-1{
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 15px;
+.btn-burguer{
+    /* border: 2px solid black; */
+    padding: 5px;
+    border-radius: 10px;
     background-color: #E7C621;
-    color:black;
+    color: black;
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
-
+    font-size: 15px;
+    border: none;
+    border: 1px solid black;
+    
 }
 
 .btn-burguer-2{
@@ -64,7 +66,7 @@ background-color: rgba(0, 0, 0, 0.444);
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
-
+    
 }
 .btn-burguer-3{
     border: 2px solid black;
@@ -87,7 +89,7 @@ background-color: rgba(0, 0, 0, 0.444);
         display: none;
     }
     .burger-img {
-        display: block!important;
+        /* display: block!important; */
      }
     
 }
