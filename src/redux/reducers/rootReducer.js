@@ -23,8 +23,8 @@ const rootReducer = {
         myItinerariesReducer,
         users: SignInReducer,
         profileReducer,
-
-        activityReactionReducer
+        tokenReducer,
+        activityReactionReducer,
 
         commentReducer
 

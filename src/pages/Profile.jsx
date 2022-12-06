@@ -23,7 +23,7 @@ export default function Profile() {
         age:""
         
     });
-    console.log(data);
+    // console.log(data);
         const handleInputChange = (e) => {
        
         setData({
@@ -68,22 +68,7 @@ export default function Profile() {
           },],})
     }
 
-    // async function sendData(e){
-    //     swal({
-    //         title: "Edit profile",
-    //         text:  "Are you sure?",
-    //         icon: "warning",
-    //         buttons: ["no","yes"],
-    //     })
-    //     e.preventDefault()
-    //     try{
-    //         let res = await axios.patch(`${BASE_URL}/api/auth/me/${id}` , data)
-    //         console.log(res);
-    // }catch(err){
-    //     console.log( err)
-    // }
-    // e.target.reset()
-    // }
+  
 
   return (
     <>
@@ -91,15 +76,15 @@ export default function Profile() {
     <div className="Profile-container">
         <h2 className="Profile-h2">Profile</h2>
         <div className="Profile-box">
-            <div className="Profile-form">
+            <div className="Profile-form2">
                 <p>Name: {profileUser.name}</p>
                 <p>Last Name: {profileUser.lastName}</p>
-                <p>Photo: {profileUser.photo}</p>
+                <p className='hola'>Photo: {profileUser.photo}</p>
                 <p>Age: {profileUser.age}</p>
                 <p>Email: {profileUser.email}</p>
                 {/* <p>Password: {profileUser.password}</p> */}
             </div>
-            <form action="/show_data.html" className="Profile-form" onSubmit={sendData} id="form">
+            <form className="Profile-form" onSubmit={sendData} >
                 <label htmlFor="name">Name:</label>
                 <input className="Profile-input" id="name" name="name" type="text" placeholder="Please Enter Your Name" onChange={handleInputChange} required/>
 
@@ -114,14 +99,10 @@ export default function Profile() {
 
                 <label htmlFor="email">Email:</label>
                 <input className="Profile-input" id="email" name="email" type="email" placeholder="Please Enter Your Email" onChange={handleInputChange} required/>
-
-  
-            <div className="Profile-button">
-            
+            <div className="Profile-button">           
                 <button className="Profile-button2" type="submit" > Update</button>
             </div>
           </form>
-
           </div>
         </div>
     </>
