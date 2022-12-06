@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', cursive;
+}
+.Profile-container{
+    min-height: 100vh ;
+    width: 100%;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+  
+}
+.Profile-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+.Profile-form{
+    background-color: rgba(0, 0, 0, 0.644);
+    display: flex;
+    width: 22rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 35px;
+    color: #e7c621;
+    /* flex-wrap: wrap; */
+    font-size: 18px;
+}
+.Profile-form2{
+    background-color: rgba(0, 0, 0, 0.644);
+    display: flex;
+    min-height: 80vh;
+    width: 26rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 35px;
+    color: #e7c621;
+    flex-wrap: wrap;
+    font-size: 18px;
+    text-align: justify;
+}
+.Profile-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.hola{
+    text-align: justify;
+    word-break: break-word;
+}
+.Profile-button2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 5rem;
+    cursor: pointer;
+
+}
+
+.Profile-h2{
+    background-color: #1b2021;
+    text-align: center;
+    color: #e7c621;
+    font-size: 35px;
+    padding: 0.5rem;
+}
+.Profile-input{
+    width: 15rem;
+    border-radius: 6px;
+}
+
+
+
+@media (max-width: 550px){
+    .Profile-form{
+
+        width: 80%;
+    }
+    .Profile-input{
+        width: 12rem;
+    }
+    .Profile-box{
+    flex-direction: column;
+    }
+    .Profile-form2{
+        width: 95%;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 425px){
+    .Profile-form{
+        width: 70%;
+    }
+    .Profile-input{
+        width: 10rem;
+    }
+}
+
+
+
+@media (max-width: 375px){
+    .Profile-form{
+        width: 95%;
+        padding: 1rem;
+    }
+    .Profile-input{
+        width: 13rem;
+    }
+}

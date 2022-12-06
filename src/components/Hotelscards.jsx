@@ -1,38 +1,40 @@
 import {Link} from 'react-router-dom'
 import '../styles/hotelscards.css'
-// import dataHotelCasino from '../data/dataHotelCasino'
-// import InputHotels from './InputHotels'
 import {useEffect, useState, useRef} from 'react'
-import { BASE_URL } from '../api/url';
-import axios from 'axios'
 import React from 'react'
 import '../styles/inputHotels.css'
-
+import { useSelector, useDispatch } from 'react-redux';
+import hotelsAction from '../redux/actions/hotelsAction';
 
 export default function Hotelscards() {
     const inputRef1 = useRef(null)
     const inputRef2 = useRef(null)
     const [valueInput, setvalueInput] = useState('')
     const [valueInput2, setvalueInput2] = useState('')
-
-    // console.log(valueInput) 
-    // console.log(valueInput2)
+    const hotels = useSelector(state => state.hotelsReducer.listHotels)
+    let dispatch = useDispatch();
     
-    const [dataHotel, setDatahotel] = useState([])
-
-
     const MakeThings = ()=>{
         setvalueInput(inputRef1.current.value)
         setvalueInput2(inputRef2.current.value)
     } 
-    
     useEffect(()=>{
-        axios.get(`${BASE_URL}/api/hotels/?name=${valueInput}&order=${valueInput2}`)
-        .then(res=> setDatahotel(res.data.response))
-    },[valueInput,valueInput2])
+        
+        if(valueInput === "" && valueInput2 === "" ){
+            dispatch(hotelsAction.getHotels())
+        } else {
+            let search = {
+                name: valueInput,
+                order: valueInput2
+            }
+            // console.log(search);
+            dispatch(hotelsAction.getHotelsNameOrder(search))
+        }
+        // console.log(hotels);
+    },[valueInput,valueInput2]) 
     
-
-    // console.log(dataHotel);
+    // console.log(hotels);
+    
 
 const cardview = (card)=> (
     <div className="hotel-card">
@@ -43,9 +45,6 @@ const cardview = (card)=> (
             </Link>
     </div>
 )
-
-
-
 
 return (
     <div className='Hotelscards-box'>
@@ -61,9 +60,23 @@ return (
                 </div>
         </div>
         <div className='Hotelscards-container'>
-                {
-                    dataHotel.map(card=> cardview(card))   
+        {
+            hotels.length === 0 ? 
+                    (
+                    <div className='Hotelscard-empty'>
+                        <p>We didn't found this place. Try other!</p>
+                    </div>
+                    ): 
+                    (
+                   
+                    <>
+                    {hotels.map(card=> cardview(card))} 
+                    </>
+                    ) 
                 }
+                {/* {
+                    dataHotel.map(card=> cardview(card))   
+                } */}
             </div>
     </div>
   )

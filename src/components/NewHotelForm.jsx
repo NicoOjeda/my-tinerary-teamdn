@@ -1,20 +1,21 @@
-import axios from 'axios'
-import React, {useState } from 'react'
+import React from 'react';
+import axios from 'axios';
+import {useState } from 'react';
 import '../styles/newhotelform.css' 
 import { BASE_URL } from '../api/url';
 import { useNavigate } from 'react-router-dom';
+import swal from 'sweetalert'
+import { useSelector } from 'react-redux';
 
 
 export default function NewHotelForm() {
-
-    console.log(BASE_URL);
-
+    const tokenList = useSelector(store => store.tokenReducer.tokenList)
     const [dataHotel, setDataHotel] = useState({
         name: '',
         photo:'',
         capacity:'',
         citiId : '',
-        userId : ''
+        userId : `${tokenList._id}`
     })
 
     const handleInplut = (e) =>{
@@ -29,16 +30,35 @@ export default function NewHotelForm() {
 
 const navigate = useNavigate()
 
-const SendDataHotel = (e) =>{
-    console.log(dataHotel);
+async function SendDataHotel(e){
+    // console.log(dataHotel);
     e.preventDefault()
-    e.target.reset()
     localStorage.setItem("data", JSON.stringify(dataHotel))
     
-        axios.post(`${BASE_URL}/api/hotels/` , dataHotel )
-        .then(response => console.log(response.data)) 
-        .catch(err=> console.log( err))
-        navigate('/')
+    try{
+       let res = await axios.post(`${BASE_URL}/api/hotels/` , dataHotel )
+        // console.log(res.data) 
+       if(res.data.success){
+        swal({
+            title: "Excelent",
+            text:  "Hotel created",
+            icon: "success",
+            timer: "3000"
+        })
+        navigate(`/detailshotels/${res.data.id}`)
+       } else {
+        swal({
+            text: res.data.message.join(" | "),
+            icon: "warning",
+            dangerMode: true,
+            timer: "5000" 
+        })
+       }
+    } catch(err){
+        console.log( err)
+    }
+   
+    // e.target.reset()
  }
 
 
@@ -84,21 +104,16 @@ const SendDataHotel = (e) =>{
                 placeholder='Enter city id'
                 onChange={handleInplut}  
                 required />
-            <label for='userId'>User Id</label>
-            <input 
-                className='NewHotel-input' 
-                id="userId" 
-                name="userId" 
-                type="text"
-                placeholder='Enter user id'
-                onChange={handleInplut}  
-                required />
             
             <div className='NewHotel-button'>
                 <button className='NewHotel-button2' type='submit'>Enter</button>
             </div>
         </form>
         </div>
+       
         </div>
       )
     }
+
+
+

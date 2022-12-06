@@ -1,7 +1,7 @@
 let dataActivity = [
   {
     id: "it1",
-    citiId: "city6",
+    citiId: "636d52b11b58293a27c69f22",
     name: "🏮Samurai Museum🏮",
     photo:
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/b4/48/29/samurai-museum.jpg?w=1200&h=-1&s=1,https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/9c/b9/6a/caption.jpg?w=1200&h=-1&s=1,https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/05/f3/c5/20170726-142040-largejpg.jpg?w=1200&h=-1&s=1",
@@ -13,7 +13,7 @@ let dataActivity = [
   },
   {
     id: "it1",
-    citiId: "city6",
+    citiId: "636d52b11b58293a27c69f22",
     name: "🏮Tour in Tokyo🏮",
     photo:"https://www.10wallpaper.com/wallpaper/1366x768/1712/Japan_Yokohama_Skyscrapers_4K_HD_1366x768.jpg",
     description: "Full-Day Private and Custom Walking Tour in Tokyo",
@@ -24,7 +24,7 @@ let dataActivity = [
 
   {
     id:"it2",
-    citiId:"city8",
+    citiId:"636d52b11b58293a27c69f24",
     name:"Stonehenge, el Castillo de Windsor",
     photo:"https://media.revistavanityfair.es/photos/60e8381cb710ef1e877f7a00/master/w_1600,c_limit/208342.jpg",
     description:
@@ -35,7 +35,7 @@ let dataActivity = [
   },
   {
     id: "it2",
-    citiId: "city8",
+    citiId: "636d52b11b58293a27c69f24",
     name: "Tour Warner Bross - Harry Potter",
     photo:"https://cdn.getyourguide.com/img/tour/576c066b489d9.jpeg/145.jpg",
     description:
@@ -47,7 +47,7 @@ let dataActivity = [
 
   {
     id: "it3",
-    citiId: "city9",
+    citiId: "636d52b11b58293a27c69f25",
     name: "Temple of the Reclining Buddha",
     photo:"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/fa/67/3c/temple-of-the-reclining.jpg?w=1200&h=-1&s=1,https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/fc/12/4f/temple-of-the-reclining.jpg?w=1200&h=-1&s=1,https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/a0/e4/2f/caption.jpg?w=1200&h=-1&s=1",
     description:
@@ -58,7 +58,7 @@ let dataActivity = [
   },
   {
     id: "it3",
-    citiId: "city9",
+    citiId: "636d52b11b58293a27c69f25",
     name: "Bangkok City Tour of the Three Temples (SHA Plus)",
     photo:"https://sightseeingbangkok.com/img/bangkok-grand-palace.jpg",
     description:
@@ -70,7 +70,7 @@ let dataActivity = [
 
   {
     id: "it4",
-    citiId: "city3",
+    citiId: "636d52b11b58293a27c69f1f",
     photo:"https://c4.wallpaperflare.com/wallpaper/611/680/49/berlin-wallpaper-preview.jpg",
     name: "Full-Day Private Tour of Berlin History",
     description: "Tour of Berlin History",
@@ -80,7 +80,7 @@ let dataActivity = [
   },
   {
     id: "it4",
-    citiId: "city3",
+    citiId: "636d52b11b58293a27c69f1f",
     name: " Berlin Wall",
     photo:"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/ba/3b/01/photo0jpg.jpg?w=1200&h=-1&s=1,https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/2c/14/27/what-is-left.jpg?w=1200&h=-1&s=1,https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/33/00/7d/berlin-whats-left-of.jpg?w=600&h=-1&s=1",
     description:
@@ -91,7 +91,7 @@ let dataActivity = [
   },
   {
     id: "it5",
-    citiId: "city2",
+    citiId: "636d52b11b58293a27c69f1e",
     name: "COLOSSEUM",
     photo:"https://c4.wallpaperflare.com/wallpaper/909/110/386/photo-of-westminster-palace-london-uk-wallpaper-preview.jpg",
     description:
@@ -102,7 +102,7 @@ let dataActivity = [
   },
   {
     id: "it5",
-    citiId: "city2",
+    citiId: "636d52b11b58293a27c69f1e",
     name: "VATICAN TOUR",
     photo:"https://c4.wallpaperflare.com/wallpaper/246/471/675/rome-italy-vatican-st-peters-basilica-wallpaper-preview.jpg",
     description:
@@ -113,7 +113,7 @@ let dataActivity = [
   },
   {
     id: "it6",
-    citiId: "city1",
+    citiId: "636d52b11b58293a27c69f1d",
     name: "The National September 11 Memorial & Museum",
     photo: "https://c4.wallpaperflare.com/wallpaper/326/249/144/new-york-buildings-skyscrapers-9-11-memorial-hd-wallpaper-preview.jpg",
     description:
@@ -124,7 +124,7 @@ let dataActivity = [
   },
   {
     id:"it6",
-    citiId:"city1",
+    citiId:"636d52b11b58293a27c69f1d",
     name:"The Statue of Liberty",
     photo:"https://images5.alphacoders.com/574/574052.jpg",
     description:"Liberty Enlightening the World, known as the Statue of Liberty, is one of the most famous landmarks in New York, the United States, and around the world. It is located on Liberty Island south of Manhattan Island, next to the mouth of the Hudson River and near Ellis Island. The Statue of Liberty was a gift from the French people to the American people in 1886 to commemorate the centennial of the United States Declaration of Independence and as a sign of friendship between the two nations.",

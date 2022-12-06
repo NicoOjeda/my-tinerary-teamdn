@@ -5,7 +5,7 @@
     font-family: 'Merienda', cursive;
 }
 .Signup-box{
-    height: 70vh ;
+    height: 97vh ;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -14,21 +14,22 @@
     background-image: url("/public/img/flat.jpg");
     background-position: center;
     background-size: cover;
-    gap: 0.5rem;
+    gap: 8.5rem;
 }
 .Signup-form{
     background-color: rgba(0, 0, 0, 0.644);
     display: flex;
-    width: 20rem;
+    /* width: 20rem; */
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding: 2rem;
+    /* align-items: flex-start; */
+    padding: 3rem;
     gap: 1rem;
     border-radius: 35px;
     color: #e7c621;
 
     font-size: 18px;
+    align-items: center;
 }
 .Signup-button{
     display: flex;
