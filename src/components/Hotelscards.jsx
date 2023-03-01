@@ -33,11 +33,9 @@ export default function Hotelscards() {
         // console.log(hotels);
     },[valueInput,valueInput2]) 
     
-    // console.log(hotels);
-    
 
 const cardview = (card)=> (
-    <div className="hotel-card">
+    <div className="hotel-card" key={card._id}>
             <div className="hotelcard-title">{card.name}</div>
             <img className="hotelcard-img" src={card.photo} alt={card.photo}></img>
             <Link to={`/detailshotels/${card._id}`}>
@@ -68,15 +66,11 @@ return (
                     </div>
                     ): 
                     (
-                   
                     <>
                     {hotels.map(card=> cardview(card))} 
                     </>
                     ) 
                 }
-                {/* {
-                    dataHotel.map(card=> cardview(card))   
-                } */}
             </div>
     </div>
   )
