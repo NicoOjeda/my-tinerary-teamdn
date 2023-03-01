@@ -15,6 +15,27 @@
     justify-content: space-evenly;
     
 }
+.Newcity-btn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 15vw;
+    font-weight: bold;
+    text-decoration: none;    
+    font-style: italic;
+}
+.imagen-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 .mc-oneContainer{
     display: flex;
     opacity: 0.9;
