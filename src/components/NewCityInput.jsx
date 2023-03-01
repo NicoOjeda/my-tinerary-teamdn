@@ -32,11 +32,7 @@ export default function NewCityInput() {
       swal( "Error in created",error.response.data.message.join("\n"))
       
     }
-      
   }
- 
-
-
 
   return (
     <>
