@@ -36,7 +36,7 @@ export default function MyHotelslist() {
 
 
 const hotelView = (myHotel)=> (
-    <div className="MyHotels-card  ">
+            <div className="MyHotels-card" key={myHotel._id}>
                 <div className="MyHotels-title">{myHotel.name}</div>
                 <img className="MyHotels-img" src={myHotel.photo} alt="nada"></img>
                 <div className="MyHotels-title2">Capacity: {myHotel.capacity}</div>

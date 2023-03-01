@@ -15,14 +15,14 @@ export default function MyCitieslist() {
     
   const tokenList= useSelector(store => store.tokenReducer.tokenList)
       const userIdToken = tokenList._id
-    console.log(tokenList)
+    // console.log(tokenList)
     let token = JSON.parse(localStorage.getItem('token'))
     useEffect(() => {
   axios.get()
     dispatch(myCitiesActions.citiesList(tokenList.id));
   }, []);
 
-  console.log(listCities);
+  // console.log(listCities);
   const navigate = useNavigate()
   const deleteCities = (e) => {
       
@@ -44,10 +44,9 @@ export default function MyCitieslist() {
     <div className="mc-oneContainer">
     <div className="mc-container">
       <div className="mc-title">{myCity.name}</div>
-      <img className="mc-img" src={myCity.photo}></img>
+      <img className="mc-img" src={myCity.photo} alt={myCity.photo}></img>
       <div className="mc-continent"> {myCity.continent}</div>
       <div className="containerbuttonscities">
-
       <Link to={`/editcity/${myCity._id}`}>
         <button className="mc-btn2">Edit City</button>
       </Link>
@@ -56,6 +55,14 @@ export default function MyCitieslist() {
     </div>
     </div>
   );
-  return (<div className="imagebckcities">
-  {listCities.map((myCity) => cityView(myCity))}</div>);
+  return (
+  <div className="imagebckcities">
+    <div>
+      <Link to={`/NewCity` } style={{ textDecoration:'none' }}><div className='Newcity-btn2'>New City</div></Link>
+    </div>  
+    <div className="imagen-box">
+      {listCities.map((myCity) => cityView(myCity))}
+    </div>
+  </div>
+  );
 }
