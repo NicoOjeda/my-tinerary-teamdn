@@ -24,14 +24,6 @@ width: 100%;
 flex-wrap: wrap;
 padding: 0.5rem;
 }
-.Hotels-h2{
-    background-color: #1b2021;
-    text-align: center;
-    color: #e7c621;
-    font-size: 35px;
-    padding: 0.5rem;
-    width: 100%;
-}
 .hotel-card{
     display: flex;
     flex-direction: row-reverse;
@@ -46,13 +38,12 @@ padding: 0.5rem;
     box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
     border-radius: 25px;
 }
-
 .hotelcard-img {
     object-fit: cover;
     height: 377px;
     width: 300px;
+    border-radius: 20px;
 }
-
 .hotelcard-title {
     font-size: 20px;
     font-weight: 500;
