@@ -3,9 +3,7 @@
     margin: 0px;
     padding: 0px;   
 }
-.nav-container1{
-    display: flex;
-}
+
 .nav-container{
     width: 100%;
     color: black;
@@ -14,7 +12,7 @@
     justify-content: space-around;
     align-items: center;
     height: 15vh;
-    align-content: flex-start;
+    /* align-content: flex-start; */
     font-family: 'Merienda', cursive;
 }
 .nav1{
@@ -75,7 +73,7 @@
     margin-top: 12rem;
     z-index: 1;
     transition: all 0.5s;
-background-color: rgba(0, 0, 0, 0.444);
+    background-color: rgba(0, 0, 0, 0.444);
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
@@ -89,25 +87,17 @@ background-color: rgba(0, 0, 0, 0.444);
 }
 .icon-login:hover{
     background-color: rgba(236, 247, 35, 0.444);
-  
 }
 .btn-1{
-    
     background-color: #E7C621;
-        
-        transition: 0.5;
-        text-transform: uppercase;
-        margin-left: 20px!important;
-    
-}
-.btn-2{
- 
-    background-color: #E7C621;
-        
     transition: 0.5;
     text-transform: uppercase;
-
-
+    margin-left: 20px!important;
+}
+.btn-2{
+    background-color: #E7C621;    
+    transition: 0.5;
+    text-transform: uppercase;
 }
 
 .btn-1:hover{
@@ -131,7 +121,6 @@ background-color: rgba(0, 0, 0, 0.444);
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
-
 }
 .btn-signin:hover{
     background-color: orangered;
@@ -157,22 +146,10 @@ background-color: rgba(0, 0, 0, 0.444);
     text-transform: uppercase;
 }
 
-
-
 @media (min-width: 600px) {
 
-    nav{
-        
-       width: 100%;
+    nav{   
+    width: 100%;
     }
 }
-
-
-/* @media (max-width: 600px) {
-
-    .logo2{
-        
-       margin-left: 5rem;
-    }
-} */
 

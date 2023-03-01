@@ -48,7 +48,7 @@ const cardview = (card)=> (
 
 return (
     <div className='Hotelscards-box'>
-    <h2 className='Hotels-h2'>Hotels</h2>
+    <h1>Hotels</h1>
         <div className='inputHotels-container'>
                 <input className='inputHotels-input' type="text" ref={inputRef1} onChange={MakeThings} placeholder='Search Hotel' ></input>
                 <div>

@@ -16,32 +16,10 @@ export default function Navbar() {
 
   };
 
-
-
-  //   let { online,token} = useSelector(store => store.usuario)
-  //   let dispatch = useDispatch()
-  //   let { salir } = LoginAction 
-
-  //   async function cerrarSesion(event) {
-  //     let res = await dispatch(salir(token))
-  //     console.log(res)
-
-  //   }
-
-  // const link = (page) => <LinkRouter className="'NavBar-link "  to={page.to} key={page.name}>{page.name}</LinkRouter>
-
   let { logged, token, photo, name} = useSelector(store => store.users)
   let dispatch = useDispatch()
   let { signout } = userActions
-  // const [token2, setToken2] = useState("")
-
-
-  // useEffect(() => {
-  //   setToken2(token)
-  // }, [token2])
-
-  // console.log(token2);
-  
+ 
   async function signOut(event){
     let res = await dispatch(signout(token))
   }
@@ -64,8 +42,6 @@ export default function Navbar() {
 
   let user= useSelector(store => store.users)
 
-
-
   return (
     <div className="nav-container1">
       <div className="nav-container">
@@ -81,12 +57,10 @@ export default function Navbar() {
                   alt="accountIcon"
                   onClick={hide}
                 />
-
                 <LinkRouter to={'/profile'}>
                   <button className="btn-signin">Profile</button>
                 </LinkRouter>
-           
-                <button onClick={()=>SignOut(token)} className="btn-signin">Log Out</button>
+                  <button onClick={()=>SignOut(token)} className="btn-signin">Log Out</button>
               </div>
             </>
           ) : (
