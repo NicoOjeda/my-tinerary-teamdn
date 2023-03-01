@@ -52,9 +52,9 @@ export default function Burguer() {
             <LinkRouter to="/mycities">
               <button className="nav-2">My Cities</button>
             </LinkRouter>
-            <LinkRouter to="/NewCity">
+            {/* <LinkRouter to="/NewCity">
               <button className="nav-2">New City</button>
-            </LinkRouter>
+            </LinkRouter> */}
             <LinkRouter to="/myreactions">
               <button className="nav-2">My Reactions</button>
             </LinkRouter>
