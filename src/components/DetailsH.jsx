@@ -29,7 +29,7 @@ return (
                 data.map((datah)=>{ 
         return(
             <>
-            <div className="DetailsH-card  ">
+            <div className="DetailsH-card" key={datah._id}>
                 <div className="DetailsH-title">{datah.name}</div>
                 <img className="DetailsH-img" src={datah.photo} alt="nada"></img>
                 <div className="DetailsH-title2">Capacity: {datah.capacity}</div>
@@ -42,7 +42,7 @@ return (
                 data2.map(show=>{ 
             return(
             <>
-            <div className="DetailsH-card">
+            <div className="DetailsH-card" key={show._id} >
                 <div className="DetailsH-title ">Show: {show.name}</div>
                 <img className="DetailsH-img" src={show.photo} alt="nada"></img>
                 <div className="DetailsH-title2">
