@@ -45,23 +45,7 @@
     background-color: #e7c621;
     border:1px solid #1b2021;
     width: 5rem;
-    
-}
-.NewHotel-google{
-    height: 100%;
-    object-fit: cover;
     cursor: pointer;
-}
-.NewHotel-google2{
-    height: 1.5rem;
-    width: 12rem;
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0.2rem;
-    padding: 0.2rem;
-    border-radius: 8px;
 }
 .NewHotel-h2{
     background-color: #1b2021;
