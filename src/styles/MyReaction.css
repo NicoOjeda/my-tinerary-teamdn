@@ -2,23 +2,15 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-
-
 }
-
 .mr-container{
-    /* width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
     background-image: url("/public/img/flat.jpg");
-    /* background-position: center;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
     background-size: cover;
-    gap: 0.5rem;
-    min-height: 100vh; */
-
-
+    display: flex;
+    flex-direction: column
+    ;
 }
 /* .mr-box{
     background-color: rgba(0, 0, 0, 0.644);
@@ -31,30 +23,29 @@
     gap: 1rem;
     border-radius: 35px;
     color: #e7c621;
-
     font-size: 18px;
     margin-bottom: 14rem;
 }
 */
 .mr-h2{
-
     background-color: #1b2021;
     text-align: center;
     color: #e7c621;
     font-size: 35px;
     padding: 0.5rem;
     width: 100%;
-    
 } 
 .activity-info{
     display: flex;
     justify-content: center;
-
-
 }
 .btn-mr{
     color: black;
     background-color: #c4c407;
     padding: 10px;
     border-radius: 9px;
+}
+.mr-title{
+    font-size: 30px;
+    text-align: center;
 }
