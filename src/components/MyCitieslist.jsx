@@ -42,17 +42,17 @@ export default function MyCitieslist() {
 
   const cityView = (myCity) => (
     <div className="mc-oneContainer">
-    <div className="mc-container">
-      <div className="mc-title">{myCity.name}</div>
-      <img className="mc-img" src={myCity.photo} alt={myCity.photo}></img>
-      <div className="mc-continent"> {myCity.continent}</div>
-      <div className="containerbuttonscities">
-      <Link to={`/editcity/${myCity._id}`}>
-        <button className="mc-btn2">Edit City</button>
-      </Link>
-      <button className="mc-btn1" onClick={() => deleteCities(myCity._id)}>Delete</button>
+      <div className="mc-container">
+        <div className="mc-title">{myCity.name}</div>
+        <img className="mc-img" src={myCity.photo} alt={myCity.photo}></img>
+        <div className="mc-continent"> {myCity.continent}</div>
+        <div className="containerbuttonscities">
+          <Link to={`/editcity/${myCity._id}`}>
+            <button className="mc-btn1">Edit City</button>
+          </Link>
+          <button className="mc-btn1" onClick={() => deleteCities(myCity._id)}>Delete</button>
+        </div>
       </div>
-    </div>
     </div>
   );
   return (
