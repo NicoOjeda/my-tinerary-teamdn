@@ -40,8 +40,10 @@ const hotelView = (myHotel)=> (
                 <div className="MyHotels-title">{myHotel.name}</div>
                 <img className="MyHotels-img" src={myHotel.photo} alt="nada"></img>
                 <div className="MyHotels-title2">Capacity: {myHotel.capacity}</div>
+                <div className="containerbuttonscities">
                 <Link to={`/edithotel/${myHotel._id}`} style={{ textDecoration:'none' }}><button className='MyHotels-btn'>Edit Hotel</button></Link>
                 <button className='MyHotels-btn' onClick={()=>deleteHotel(myHotel._id)}>Delete</button>
+                </div>
             </div>
 )
 
