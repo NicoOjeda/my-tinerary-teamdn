@@ -4,9 +4,7 @@ import "../styles/NewCity.css"
 
 
 const NewCity = () => {
-
   return (
-
 <NewCityInput/>
   )
 }
