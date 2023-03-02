@@ -25,7 +25,7 @@ export default function NewReaction() {
     let token = JSON.parse(localStorage.getItem("token"))
 
     setJWTToken(token.token.user);
-    console.log(setJWTToken)
+    // console.log(setJWTToken)
   }, []);
 
   let events = [...itinerariesAdmlist];
@@ -81,8 +81,8 @@ export default function NewReaction() {
 
   return ( 
     <div className="card-form">
-      <div className="cont-h2">
-        <h2>New Reaction</h2>
+      <div>
+        <h2 className="cont-h2">New Reaction</h2>
       </div>
       <form className="form1" ref={form}>
         <input
