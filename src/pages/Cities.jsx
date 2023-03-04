@@ -3,7 +3,6 @@ import "../styles/Cities.css";
 import { useState, useRef, useEffect } from "react";
 import "../styles/Cards.css";
 import { Link as LinkRouter } from "react-router-dom";
-import "../styles/NotFound.css";
 import cardsActions from "../redux/actions/cardsActions";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -127,15 +126,13 @@ export default function Cities (){
       </div>
       {cities.length === 0 ? (
         <div className="cities-nofound">
-          {" "}
-          <p>We didn't found this city. Try other!</p>{" "}
+          <p>We didn't found this city. Try other!</p>
         </div>
       ) : (
         <>
           <div className="Cit-Container">
             {cities.map((City) => (
-              <div className="card-container">
-                <div className="card">
+                <div className="card" key={City._id}>
                   <div className="card-title">{City.name}</div>
                   <img
                     className="card-img"
@@ -146,7 +143,6 @@ export default function Cities (){
                     <button className="card-button">view more! </button>
                   </LinkRouter>
                 </div>
-              </div>
             ))}
             <div></div>
           </div>

@@ -63,7 +63,7 @@ gap: 2rem;
     border: 1px solid rgba(245, 245, 220, 0);
     box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
     padding: 8px 45px;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .hotelcard-button:hover {
@@ -80,4 +80,28 @@ gap: 2rem;
     align-items: center;
     font-size: 30px;
     font-weight: bold;
+}
+@media (max-width: 375px) {
+    .hotel-card{
+        height: 420px;
+        width: 320px;
+    }
+    .hotelcard-img {
+        object-fit: cover;
+        height: 295px;
+        width: 94%;
+        border-radius: 12px;
+    }
+}
+@media (max-width: 320px) {
+    .hotel-card{
+        height: 399px;
+        width: 340px;
+    }
+    .hotelcard-img {
+        object-fit: cover;
+        height: 295px;
+        width: 94%;
+        border-radius: 12px;
+    }
 }
