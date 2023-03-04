@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom'
-import '../styles/hotelscards.css'
 import {useEffect, useState, useRef} from 'react'
-import React from 'react'
-import '../styles/inputHotels.css'
 import { useSelector, useDispatch } from 'react-redux';
 import hotelsAction from '../redux/actions/hotelsAction';
+import React from 'react'
+import '../styles/hotelscards.css'
+import '../styles/inputHotels.css'
 
 export default function Hotelscards() {
     const inputRef1 = useRef(null)
