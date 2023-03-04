@@ -82,6 +82,7 @@
     border-radius: 8px;
     background-color: #e7c621b6;
     color: black;
+    text-decoration: none;
 }
 .links:hover{
     background-color: #e7c621;
