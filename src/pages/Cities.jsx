@@ -52,7 +52,7 @@ export default function Cities (){
     <div className="Cities-container">
       <h1>Cities</h1>
       <div className="check-container">
-        <div>
+        <label>
           <input
             type="checkbox"
             name="Europa"
@@ -61,8 +61,8 @@ export default function Cities (){
             defaultChecked={check.includes("Europa")}
           />
           Europa
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="Asia"
@@ -71,8 +71,8 @@ export default function Cities (){
             defaultChecked={check.includes("Asia")}
           />
           Asia
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="America"
@@ -81,8 +81,8 @@ export default function Cities (){
             defaultChecked={check.includes("America")}
           />
           America del Norte
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="Africa"
@@ -91,8 +91,8 @@ export default function Cities (){
             defaultChecked={check.includes("Africa")}
           />
           Africa
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="Oceania"
@@ -101,8 +101,8 @@ export default function Cities (){
             defaultChecked={check.includes("Oceania")}
           />
           Oceania
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="America del sur"
@@ -111,7 +111,7 @@ export default function Cities (){
             defaultChecked={check.includes("America del sur")}
           />
           America del sur
-        </div>
+        </label>
       </div>
       <div className="Cities-form" id="form">
         <label for="name">Start your adventure</label>

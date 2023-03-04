@@ -56,13 +56,14 @@ export default function MyCitieslist() {
     </div>
   );
   return (
-  <div className="imagebckcities">
-    <div>
-      <Link to={`/NewCity` } style={{ textDecoration:'none' }}><div className='Newcity-btn2'>New City</div></Link>
-    </div>  
-    <div className="imagen-box">
-      {listCities.map((myCity) => cityView(myCity))}
-    </div>
+    <div className="imagebckcities">
+      <div>
+      <h1>My Cities</h1>
+        <Link to={`/NewCity` } style={{ textDecoration:'none' }}><div className='Newcity-btn2'>New City</div></Link>
+      </div>  
+      <div className="imagen-box">
+        {listCities.map((myCity) => cityView(myCity))}
+      </div>
   </div>
   );
 }

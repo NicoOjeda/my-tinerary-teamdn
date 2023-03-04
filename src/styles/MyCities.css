@@ -29,6 +29,7 @@
     text-decoration: none;    
     font-style: italic;
 }
+
 .imagen-box{
     display: flex;
     flex-direction: row;
@@ -103,6 +104,41 @@
     cursor: pointer;
 }
 
+
+@media (max-width: 550px){
+    .mc-container {
+        padding: 0.5rem;
+        min-height: 600px;
+        width: 80%; 
+    }  
+    .Newcity-btn2{
+       
+        width: 20vw;
+        font-size: 15px;
+    }
+}
+@media (max-width: 425px){
+    .mc-container {
+        padding: 0.5rem;
+        min-height: 350px;
+        width: 90%; 
+    } 
+    .Newcity-btn2{
+        width: 30vw;
+        font-size: 15px;
+    }
+}
+@media (max-width: 375px){
+    .mc-container {
+        width: 90%; 
+    }  
+    .mc-img{
+        object-fit: cover;
+        height: 300px;
+        width: 280px;
+        border-radius: 20px;
+    }
+}
 
 
 
