@@ -49,6 +49,7 @@ const hotelView = (myHotel)=> (
 
     return (
     <div className='MyHotels-container'>
+    <h1>My Hotels</h1>
     <Link to={`/newhotel` } style={{ textDecoration:'none' }}><div className='MyHotels-btn2'>New Hotel</div></Link>
         {listHotel.map((myHotel)=> hotelView(myHotel))}
     </div>
