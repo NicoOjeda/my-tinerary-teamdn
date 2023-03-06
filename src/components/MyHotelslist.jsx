@@ -50,10 +50,10 @@ const hotelView = (myHotel)=> (
     return (
     <div className='MyHotels-box'>
     <h1>My Hotels</h1>
-    <Link to={`/newhotel` } style={{ textDecoration:'none' }}><div className='MyHotels-btn2'>New Hotel</div></Link>
-    <div className='MyHotels-container'>
-        {listHotel.map((myHotel)=> hotelView(myHotel))}
-    </div>
+      <Link to={`/newhotel` } style={{ textDecoration:'none' }}><div className='MyHotels-btn2'>New Hotel</div></Link>
+      <div className='MyHotels-container'>
+          {listHotel.map((myHotel)=> hotelView(myHotel))}
+      </div>
     </div>
   )
 }
