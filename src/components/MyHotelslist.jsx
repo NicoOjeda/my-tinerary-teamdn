@@ -40,7 +40,7 @@ const hotelView = (myHotel)=> (
                 <div className="MyHotels-title">{myHotel.name}</div>
                 <img className="MyHotels-img" src={myHotel.photo} alt="nada"></img>
                 <div className="MyHotels-title2">Capacity: {myHotel.capacity}</div>
-                <div className="containerbuttonscities">
+                <div className="MyHotels-containerbuttons">
                 <Link to={`/edithotel/${myHotel._id}`} style={{ textDecoration:'none' }}><button className='MyHotels-btn'>Edit Hotel</button></Link>
                 <button className='MyHotels-btn' onClick={()=>deleteHotel(myHotel._id)}>Delete</button>
                 </div>
@@ -48,10 +48,12 @@ const hotelView = (myHotel)=> (
 )
 
     return (
-    <div className='MyHotels-container'>
+    <div className='MyHotels-box'>
     <h1>My Hotels</h1>
     <Link to={`/newhotel` } style={{ textDecoration:'none' }}><div className='MyHotels-btn2'>New Hotel</div></Link>
+    <div className='MyHotels-container'>
         {listHotel.map((myHotel)=> hotelView(myHotel))}
+    </div>
     </div>
   )
 }
