@@ -41,8 +41,7 @@ export default function MyCitieslist() {
   };
 
   const cityView = (myCity) => (
-    <div className="mc-oneContainer">
-      <div className="mc-container">
+      <div className="mc-card">
         <div className="mc-title">{myCity.name}</div>
         <img className="mc-img" src={myCity.photo} alt={myCity.photo}></img>
         <div className="mc-continent"> {myCity.continent}</div>
@@ -53,15 +52,12 @@ export default function MyCitieslist() {
           <button className="mc-btn1" onClick={() => deleteCities(myCity._id)}>Delete</button>
         </div>
       </div>
-    </div>
   );
   return (
-    <div className="imagebckcities">
-      <div>
+    <div className="MyCities-box">
       <h1>My Cities</h1>
         <Link to={`/NewCity` } style={{ textDecoration:'none' }}><div className='Newcity-btn2'>New City</div></Link>
-      </div>  
-      <div className="imagen-box">
+      <div className="MyCities-container">
         {listCities.map((myCity) => cityView(myCity))}
       </div>
   </div>
