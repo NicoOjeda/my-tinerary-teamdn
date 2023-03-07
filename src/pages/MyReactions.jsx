@@ -50,7 +50,6 @@ export default function MyReactions() {
   }
   return (
     <div className="mr-container">
-    <NewReaction/>
       <h2 className="mr-title">My Reactions</h2>
       <div className="mr-box">
         <div className="Cities-card-container">
