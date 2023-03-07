@@ -52,12 +52,6 @@ export default function Burguer() {
             <LinkRouter to="/mycities">
               <button className="nav-2">My Cities</button>
             </LinkRouter>
-            {/* <LinkRouter to="/NewCity">
-              <button className="nav-2">New City</button>
-            </LinkRouter> */}
-            <LinkRouter to="/myreactions">
-              <button className="nav-2">My Reactions</button>
-            </LinkRouter>
             <LinkRouter to="/newreaction">
               <button className="nav-2">New Reaction</button>
             </LinkRouter>
@@ -84,12 +78,6 @@ export default function Burguer() {
             </LinkRouter>
             <LinkRouter  to="/myreactions">
               <button className="btn-burguer-3">My Reaction</button>
-            </LinkRouter>
-            <LinkRouter to="/mycities">
-              <button className="nav-2">My cities</button>
-            </LinkRouter>
-            <LinkRouter  to="/NewReaction">
-              <button className="btn-burguer-3">New Reaction</button>
             </LinkRouter>
           </div>
           </>) : (
