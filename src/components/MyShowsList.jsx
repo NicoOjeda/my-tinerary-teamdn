@@ -96,13 +96,12 @@ const hotelView = (myShow)=> (
 )
 
     return (
-    <div className='MyHotels-container'>
-      <div>
-    <div className='newShowFrom-box' >
-        <form className='newShowFrom-form' onSubmit={SendDataShow} >
+      <>
+      <div className='newShowFrom-box' >
+      <h1>My Shows</h1>
+        <form className='NewShow-form' onSubmit={SendDataShow} >
         <label  for='hotelId'>Select a Hotel:</label>
-          <select  id='hotelId' name='hotelId' onChange={getInplut}>
-
+          <select  id='hotelId' className='NewShow-select' name='hotelId' onChange={getInplut}>
             <option value="636d6fe9fe85fb66a3614788">Select</option>
             <option value="636d6fe9fe85fb66a3614789">Andronis Luxury Suites</option>
             <option value="636d6fe9fe85fb66a361478a">Holland Casino Amsterdam Centrum</option>
@@ -119,7 +118,7 @@ const hotelView = (myShow)=> (
           </select> 
             <label for='name'>Name</label>
             <input 
-                className='newShowFrom-input' 
+                className='NewShow-input' 
                 id="name" 
                 name="name" 
                 type="text"
@@ -128,7 +127,7 @@ const hotelView = (myShow)=> (
                 required />
             <label for='description'>description</label>
             <input 
-                className='newShowFrom-input' 
+                className='NewShow-input' 
                 id="description" 
                 name="description" 
                 type="text"
@@ -137,7 +136,7 @@ const hotelView = (myShow)=> (
                 required />
             <label for='photo'>Photo</label>
             <input 
-                className='newShowFrom-input' 
+                className='NewShow-input' 
                 id="photo" 
                 name="photo" 
                 type="text"
@@ -146,7 +145,7 @@ const hotelView = (myShow)=> (
                 required />
             <label for='price'>Price</label>
             <input 
-                className='newShowFrom-input' 
+                className='NewShow-input' 
                 id="price" 
                 name="price" 
                 type="number"
@@ -155,7 +154,7 @@ const hotelView = (myShow)=> (
                 required />
             <label for='date'>Date</label>
             <input 
-                className='newShowFrom-input' 
+                className='NewShow-input' 
                 id="date" 
                 name="date" 
                 type="date"
@@ -163,14 +162,13 @@ const hotelView = (myShow)=> (
                 onChange={getInplut}  
                 required />
             
-            <div className='newShowFrom-button'>
-                <button className='newShowFrom-button2' type='submit'>Create</button>
+            <div className='NewShow-button'>
+                <button className='NewShow-button2' type='submit'>Create</button>
             </div>
         </form>
-        </div>
-      </div>
         {listShow.map((myShow)=> hotelView(myShow))}
-    </div>
+      </div>
+    </>
   )
 }
  
