@@ -46,17 +46,19 @@
     font-weight: 500;
 }
 .MyShows-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.2rem;
-    border-radius: 8px;
-    background-color: #e7c621;
-    border:1px solid #1b2021;
-    width: 5rem;
-    font-weight: bold;
-    text-decoration: none;    
-    font-style: italic;
+    background-image: linear-gradient(to right, #eacda3 0%, #d6ae7b 51%, #eacda3 100%);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: nunito, sans-serif;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color:  rgba(0, 0, 0, 0.644);
+    border-radius: 10px;
+    border: 1px solid rgba(245, 245, 220, 0);
+    box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
+    padding: 8px 35px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 .MyShows-title2{
     text-align:start;
@@ -64,7 +66,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 1rem;
 }
 .NewShow-form{
     background-color: rgba(0, 0, 0, 0.644);
@@ -101,7 +102,18 @@
     width: 5rem;
     cursor: pointer;
 }
-
+.MyShows-containerbuttons{
+    display: flex;
+    gap: 20px;
+}
+@media (max-width: 768px){
+    .MyShows-card {
+        min-height: 600px;
+        width: 80%;
+        padding: 8px;
+        margin: 2rem;
+    }
+}
 @media (max-width: 550px){
     .MyShows-card {
         padding: 0.5rem;
@@ -131,22 +143,59 @@
     .NewShow-input{
         width: 20rem;
     }
+    .MyShows-card {
+        min-height:450px;
+        width: 95%;
+        padding: 5px;
+        margin: 1rem;
+    }
 }
 @media (max-width: 375px){
     .MyShows-card {
         width: 90%; 
     }  
     .NewShow-form{
-        width: 90%;
+        width: 95%;
         padding: 1rem;
     }
     .NewShow-input{
         width: 18rem;
     }
+    .MyShows-card {
+        min-height:450px;
+        width: 95%;
+        padding: 5px;
+        margin: 1rem;
+    }
+    .MyHotels-btn{
+        font-size: 12px;
+        padding: 8px 32px;
+        margin-bottom: 5px;
+    }
+    .MyShows-btn{
+        font-size: 12px;
+        padding: 6px 20px;
+        margin-bottom: 5px;
+    }
+    .MyShows-title {
+        font-size: 22px;
+    }
+    .MyShows-title2 {
+        font-size: 14px;
+    }
+    
 }
 @media (max-width: 320px){
+    .MyShows-img {
+        object-fit: cover;
+        height: 270px;
+        width: 96%;
+    }
     .NewShow-input{
         width: 16rem;
+    }
+    h1{
+        font-size: 38px;
     }
 }
 

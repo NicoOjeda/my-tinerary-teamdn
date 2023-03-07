@@ -82,7 +82,7 @@ async function SendDataShow(e){
 }
 
 const hotelView = (myShow)=> (
-    <div className="MyShows-card  ">
+    <div className="MyShows-card" key={myShow._id}>
                 <div className="MyShows-title">Show: {myShow.name}</div>
                 <img className="MyShows-img" src={myShow.photo} alt="nada"></img>
                 <div className="MyShows-title2">
@@ -90,8 +90,10 @@ const hotelView = (myShow)=> (
                     <div>Price: USD {myShow.price}</div>
                     <div>Date: {myShow.date}</div>
                 </div>
+                <div className="MyShows-containerbuttons">
                 <Link to={`/editshow/${myShow._id}`}><button className='MyShows-btn'>Edit Hotel</button></Link>
                 <button className='MyShows-btn' onClick={()=>deleteShow(myShow._id)}>Delete</button>
+                </div>
             </div>
 )
 
