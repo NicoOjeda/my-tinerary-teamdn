@@ -65,9 +65,8 @@ async function SendDataHotel(e){
 
     return (
         <>
-        <div className='NewHotel-container'>
-            <h2 className='NewHotel-h2'>New Hotel</h2>
             <div className='NewHotel-box' >
+            <h1>New Hotel</h1>
             <form className='NewHotel-form' onSubmit={SendDataHotel} >
                 <label for='name'>Name</label>
                 <input 
@@ -110,9 +109,8 @@ async function SendDataHotel(e){
                 </div>
             </form>
             </div>
-        </div>
         </>
-      )
+        )
     }
 
 
