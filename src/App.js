@@ -58,33 +58,28 @@ function App() {
         <Route element={<ProtectedRoute isAllowed={user.logged === true && user.role === "user" } reDirect={"/"} />}>
           <Route path='/newhotel' element={<NewHotel />} />
           <Route path='/NewCity' element={<NewCity />} />
-         
           <Route path='/myhotels' element={<MyHotels />} />
-          <Route path='/editcity/:id' element={<EditCityForm />} />
           <Route path="/mycities" element={<MyCitiesget />} />
+          <Route path='/editcity/:id' element={<EditCityForm />} />
           <Route path='/edithotel/:id/' element={<EditHotel />} />
-          <Route path="/myreactions" element={<MyReactions />} />
           <Route path='/newreaction' element={<NewReaction />} />
           {/* <Route path="/myreactions" element={<MyReactions />} /> */}
-          {/* <Route path='/newreaction' element={<NewReaction />} /> */}
         </Route>
         <Route element={<ProtectedRoute isAllowed={user.logged === true && user.role === "admin" } reDirect={"/"} />}>
+          <Route path="/myitineraries" element={<Myitinerariesget />} />
           <Route path="/edititinerary/:id" element={<EditItineraryForm />} />
           <Route path='/myshows' element={<MyShows />} />
-          <Route path="/myitineraries" element={<Myitinerariesget />} />
-          <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
           <Route path='/editshow/:id/' element={<EditShow />} />
-          <Route path="/mycities" element={<MyCitiesget />} />
-          
+          <Route path="/myreactions" element={<MyReactions />} />
+          <Route path="/mytynerariescreate" element={<MyTynerariesCreate/>}></Route>
+          {/* <Route path="/mycities" element={<MyCitiesget />} /> */}
         </Route>
         <Route element={<ProtectedRoute isAllowed={user.logged === true} reDirect={"/"} />}>
-
           <Route path='/signin' element={<Signin />} />
           <Route path='/SignUp' element={<SignUp />} />
         </Route>
         <Route element={<ProtectedRoute isAllowed={user.logged === false} reDirect={"/"} />}>
           <Route path="/profile" element={<Profile />} />
-
         </Route>
         {/* <Route path="/mycities/:id" element={<MyCitiesget />}></Route> */}
         {/* <Route path="/myitineraries/:id" element={<Myitinerariesget />}></Route> */}
