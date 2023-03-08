@@ -50,80 +50,79 @@ return(
         <h2 className="tin-h2">Edit Itineraries</h2>
         <div className="tin-box">
         <form className="tin-form" onSubmit={SendDataCity}>
-        <label for="name">citiId</label>
-    <input 
-     className="tin-input"
-    type="text"
-    id="citiId"
-    name="citiId"
-    placeholder="Enter the citiId"
-    onChange={getInplutCity}
-    required
-    />
-    <label for="name">Name</label>
-    <input 
-     className="tin-input"
-    type="text"
-    id="name"
-    name="name"
-    placeholder="Enter the Name"
-    onChange={getInplutCity}
-    required
-    />
-      <label for="photo">Photo</label>
-    <input 
-     className="tin-input"
-    type="text"
-    id="photo"
-    name="photo"
-    placeholder="Enter Url"
-    onChange={getInplutCity}
-    required
-    />
-    <label for="description">description</label>
-    <input 
-     className="tin-input"
-    type="text"
-    id="description"
-    name="description"
-    placeholder="Enter description"
-    onChange={getInplutCity}
-    required
-    />
-      <label for="price">Price</label>
-    <input 
-     className="tin-input"
-    type="text"
-    id="price"
-    name="price"
-    placeholder="Enter price"
-    onChange={getInplutCity}
-    required
-    />
-     <label for="Duration">Duration</label>
-    <input 
-     className="tin-input"
-    type="text"
-    id="Duration"
-    name="Duration"
-    placeholder="Enter Duration"
-    onChange={getInplutCity}
-    required
-    />
-     <label for="userId">userId</label>
-    <input 
-     className="tin-input"
-    type="text"
-    id="userId"
-    name="userId"
-    placeholder="Enter User Id"
-    onChange={getInplutCity}
-    required
-    />
-         
-         <div className='tin-btn'>
-                <button className='tin-btn2' type='submit'>Edit</button>
-            </div>
+            <label for="name">Citi Id</label>
+            <input 
+            className="tin-input"
+            type="text"
+            id="citiId"
+            name="citiId"
+            placeholder="Enter the citiId"
+            onChange={getInplutCity}
+            required
+            />
+            <label for="name">Name</label>
+            <input 
+            className="tin-input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter the Name"
+            onChange={getInplutCity}
+            required
+            />
+            <label for="photo">Photo</label>
+            <input 
+            className="tin-input"
+            type="text"
+            id="photo"
+            name="photo"
+            placeholder="Enter Url"
+            onChange={getInplutCity}
+            required
+            />
+            <label for="description">Description</label>
+            <input 
+            className="tin-input"
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Enter description"
+            onChange={getInplutCity}
+            required
+            />
+            <label for="price">Price</label>
+            <input 
+            className="tin-input"
+            type="text"
+            id="price"
+            name="price"
+            placeholder="Enter price"
+            onChange={getInplutCity}
+            required
+            />
+            <label for="Duration">Duration</label>
+            <input 
+            className="tin-input"
+            type="text"
+            id="Duration"
+            name="Duration"
+            placeholder="Enter Duration"
+            onChange={getInplutCity}
+            required
+            />
+            <label for="userId">User Id</label>
+            <input 
+            className="tin-input"
+            type="text"
+            id="userId"
+            name="userId"
+            placeholder="Enter User Id"
+            onChange={getInplutCity}
+            required
+            />
+        <div className='tin-btn'>
+            <button className='tin-btn2' type='submit'>Edit</button>
+        </div>
         </form>
         </div>
     </div>
