@@ -53,9 +53,8 @@ navigate('/myshows')
 }
 
 return (
-    <div className='EditShowFrom-container'>
+    <div className='EditShowFrom-box'>
         <h2 className='EditShowFrom-h2'>Edit Show</h2>
-        <div className='EditShowFrom-box' >
         <form className='EditShowFrom-form' onSubmit={SendDataShow} >
             <label for='hotelId'>Hotel Id</label>
             <input 
@@ -126,7 +125,5 @@ return (
             </div>
         </form>
         </div>
-       
-        </div>
-  )
+    )
 }

@@ -8,14 +8,13 @@
     min-height: 100vh ;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     background-image: url("/public/img/flat.jpg");
     background-position: center;
     background-size: cover;
-    gap: 0.5rem;
-    padding: 2rem;
+    gap: 1rem;
 }
 .EditShowFrom-form{
     background-color: rgba(0, 0, 0, 0.644);
@@ -48,32 +47,24 @@
     width: 5rem;
     
 }
-.EditShowFrom-google{
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-}
-.EditShowFrom-google2{
-    height: 1.5rem;
-    width: 12rem;
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0.2rem;
-    padding: 0.2rem;
-    border-radius: 8px;
-}
 .EditShowFrom-h2{
+    display: flex;
+    justify-content: center;
     background-color: #1b2021;
     text-align: center;
     color: #e7c621;
     font-size: 35px;
     padding: 0.5rem;
+    width: 100%;
 }
 .EditShowFrom-input{
     width: 25rem;
     border-radius: 8px;
+}
+@media (max-width: 768px){
+    .EditShowFrom-form{
+        margin-bottom: 1rem;
+    }
 }
 @media (max-width: 550px){
     .EditShowFrom-form{
@@ -85,18 +76,33 @@
 }
 @media (max-width: 425px){
     .EditShowFrom-form{
-        width: 70%;
+        width: 90%;
+        gap: 0.3rem;
+        padding: 1rem;
     }
     .EditShowFrom-input{
-        width: 14rem;
+        width: 20rem;
     }
 }
 @media (max-width: 375px){
     .EditShowFrom-form{
-        width: 80%;
+        width: 95%;
         padding: 1rem;
     }
     .EditShowFrom-input{
-        width: 14rem;
+        width: 18rem;
+    }
+}
+@media (max-width: 320px){
+    .MyShows-img {
+        object-fit: cover;
+        height: 250px;
+        width: 96%;
+    }
+    .EditShowFrom-input{
+        width: 16rem;
+    }
+    .MyShows-title3{
+        font-size: 20px;
     }
 }
