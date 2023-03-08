@@ -16,10 +16,6 @@
     background-size: cover;
     gap: 1rem;
 }
-.MyShows-input{
-    width: 10rem;
-    border-radius: 8px;
-}
 .MyShows-card {
     color: #e7c621;
     display: flex;
