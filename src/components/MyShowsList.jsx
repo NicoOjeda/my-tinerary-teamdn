@@ -84,15 +84,13 @@ async function SendDataShow(e){
 const hotelView = (myShow)=> (
     <div className="MyShows-card" key={myShow._id}>
                 <div className="MyShows-title">Show: {myShow.name}</div>
-                <img className="MyShows-img" src={myShow.photo} alt="nada"></img>
-                <div className="MyShows-title2">
-                    <div>Description: {myShow.description}</div>
-                    <div>Price: USD {myShow.price}</div>
-                    <div>Date: {myShow.date}</div>
-                </div>
+                <img className="MyShows-img" src={myShow.photo} alt={myShow.name}></img>
+                    <div className="MyShows-title3">Price: USD {myShow.price}</div>
+                    <div className="MyShows-title2">Date: {myShow.date}</div>
+                    <div className="MyShows-title2">{myShow.description}</div>
                 <div className="MyShows-containerbuttons">
-                <Link to={`/editshow/${myShow._id}`}><button className='MyShows-btn'>Edit Hotel</button></Link>
-                <button className='MyShows-btn' onClick={()=>deleteShow(myShow._id)}>Delete</button>
+                  <Link to={`/editshow/${myShow._id}`} className="myshows-link"><button className='NewShow-button2'>Edit Show</button></Link>
+                  <button className='NewShow-button2' onClick={()=>deleteShow(myShow._id)}>Delete</button>
                 </div>
             </div>
 )
@@ -100,7 +98,7 @@ const hotelView = (myShow)=> (
     return (
       <>
       <div className='newShowFrom-box' >
-      <h1>My Shows</h1>
+      <h2 className="my-price">My Shows</h2>
         <form className='NewShow-form' onSubmit={SendDataShow} >
         <label  for='hotelId'>Select a Hotel:</label>
           <select  id='hotelId' className='NewShow-select' name='hotelId' onChange={getInplut}>
