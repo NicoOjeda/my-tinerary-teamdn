@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Merienda', cursive;
-
 }
 .imagebckcities{
     background-image: url("/public/img/flat.jpg");
@@ -14,7 +13,15 @@
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+.MyTinerary-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 .my-container{
     opacity: 0.9;
@@ -23,15 +30,7 @@
     align-items: center;
     flex-direction: column;
     gap: 30px;  
-    
-
-    /* height: 100%;  */
-
-
-    
 }
-
-
 .my-box{
     width: 100%;
     display: flex;
@@ -43,9 +42,7 @@
     background-size: cover;
     gap: 0.5rem;
     min-height: 100vh;
-  
 }
-
 .my-h2{
     display: flex;
     justify-content: center;
@@ -55,10 +52,7 @@
     font-size: 35px;
     padding: 0.5rem;
     width: 100%;
-
 }
-
-
 .my-btn{
     display: flex;
     justify-content: center;
@@ -67,35 +61,15 @@
     border-radius: 8px;
     background-color: #e7c621;
     border:1px solid #1b2021;
-    width: 5rem;
+    width: 7rem;
     cursor: pointer;
-    font-family:monospace;
-    font-size: 15px;
-    border: 2px solid black;
-    font-weight: bold;
-    margin-left: 5rem;
-}
-.my-btn2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.2rem;
-    border-radius: 8px;
-    background-color: #e7c621;
-    border:1px solid #1b2021;
-    width: 5rem;
-    cursor: pointer;
-    font-family:monospace;
-    font-size: 15px;
-    border: 2px solid black;
-    font-weight: bold;
-    margin-left: 5rem;
+    margin-top: 1rem;
 }
 .my-img{
     width: 300px;
 }
 .my-price{
-   display: flex;
+    display: flex;
     justify-content: center;
     background-color: #1b2021;
     text-align: center;
@@ -103,15 +77,48 @@
     font-size: 35px;
     padding: 0.5rem;
     width: 100%;
-
+}
+.my-price2{
+    display: flex;
+    justify-content: center;
+    background-color: #1b2021;
+    text-align: center;
+    color: #e7c621;
+    font-size: 30px;
+    padding: 0.5rem;
+    width: 100%;
 }
 .my-img{
-
     object-fit: cover;
     height: 377px;
     width: 300px;
     border-radius: 20px;
 }
-.my-price{
-    
+.mytinerary-link{
+    text-decoration: none;
+}
+@media (max-width: 375px){
+    .my-price2{
+        font-size: 25px;
+    }
+    .my-text{
+        font-size: 14px; 
+    }
+    .my-btn{
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+}
+@media (max-width: 320px){
+    .MyShows-img {
+        object-fit: cover;
+        height: 250px;
+        width: 96%;
+    }
+    .my-text{
+        font-size: 12px; 
+    }
+    .my-price2{
+        font-size: 20px;
+    }
 }
