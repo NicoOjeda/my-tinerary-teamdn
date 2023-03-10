@@ -85,9 +85,9 @@ const hotelView = (myShow)=> (
     <div className="MyShows-card" key={myShow._id}>
                 <div className="MyShows-title">Show: {myShow.name}</div>
                 <img className="MyShows-img" src={myShow.photo} alt={myShow.name}></img>
-                    <div className="MyShows-title3">Price: USD {myShow.price}</div>
-                    <div className="MyShows-title2">Date: {myShow.date}</div>
-                    <div className="MyShows-title2">{myShow.description}</div>
+                    <p className="MyShows-title3">Price: USD {myShow.price}</p>
+                    <p className="MyShows-title2">Date: {myShow.date}</p>
+                    <p className="MyShows-title2">{myShow.description}</p>
                 <div className="MyShows-containerbuttons">
                   <Link to={`/editshow/${myShow._id}`} className="myshows-link"><button className='NewShow-button2'>Edit Show</button></Link>
                   <button className='NewShow-button2' onClick={()=>deleteShow(myShow._id)}>Delete</button>
