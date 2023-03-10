@@ -121,11 +121,17 @@
         height: 8vh;
         width: 10vw;
     } 
-   
+
 }
 @media (max-width: 425px){
-    
+    .comments{
+        padding: 0.5rem;
+        font-size: 14px;
+    }
 }
 @media (max-width: 375px){
-   
+    .comments{
+        padding: 0.5rem;
+        font-size: 12px;
+    }
 }

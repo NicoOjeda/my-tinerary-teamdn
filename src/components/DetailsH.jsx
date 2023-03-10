@@ -51,7 +51,7 @@ return (
                     <p>Date: {show.date}</p>
                 </div>
                 <div className="DetailsH-user">
-                    <img img className="DetailsH-photo" src={show.userId.photo} alt="userphoto"></img>
+                    <img className="DetailsH-photo" src={show.userId.photo} alt="userphoto"></img>
                     <p className="DetailsH-title3">{show.userId.name}</p>
                 </div>
                 <div className="DetailsH-commentBox">
