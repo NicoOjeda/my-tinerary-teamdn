@@ -73,9 +73,6 @@ export default function Burguer() {
             <LinkRouter to="/myshows">
               <button className="nav-2">My Shows</button>
             </LinkRouter>
-            <LinkRouter to="/MyTynerariesCreate">
-              <button className="nav-2">MyTynerariesCreate</button>
-            </LinkRouter>
             <LinkRouter  to="/myreactions">
               <button className="btn-burguer-3">My Reaction</button>
             </LinkRouter>
@@ -167,9 +164,6 @@ export default function Burguer() {
                   </LinkRouter>
                   <LinkRouter to="/myshows">
                     <button className="btn-burguer">My Shows</button>
-                  </LinkRouter>
-                  <LinkRouter to="/MyTynerariesCreate">
-                    <button className="btn-burguer">MyTynerariesCreate</button>
                   </LinkRouter>
                 </div>
               </>
