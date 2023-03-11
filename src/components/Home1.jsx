@@ -8,22 +8,15 @@ export default function Home1() {
   const slogan = "To travel is to live"
 return(
 
-<>
-        
-<div className="home-container">
-
-            <h1 className="tittle-home"><span className='my-style'> {tittle}</span></h1>
-            <p className='slogan-home'> {slogan}</p>
-       <div>
-
-          <CallToAction/>
-       </div>
-
- </div>
-
+<>      
+  <div className="home-container">
+              <h1 className="tittle-home">{tittle}</h1>
+              <p className='slogan-home'> {slogan}</p>
+        <div className="call-container">
+            <CallToAction/>
+        </div>
+  </div>
 </>
-
-
 )
 }
 
