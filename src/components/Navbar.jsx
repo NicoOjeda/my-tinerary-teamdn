@@ -10,11 +10,10 @@ import { confirmAlert } from "react-confirm-alert";
 
 
 export default function Navbar() {
-  let [viewHide, setViewHide] = useState(false);
-  let hide = () => {
-    setViewHide(!viewHide); //viewHide = mostrarOcultar
-
-  };
+  // let [viewHide, setViewHide] = useState(false);
+  // let hide = () => {
+  //   setViewHide(!viewHide); //viewHide = mostrarOcultar
+  // };
 
   let { logged, token, photo, name} = useSelector(store => store.users)
   let dispatch = useDispatch()
@@ -46,67 +45,35 @@ export default function Navbar() {
     <div className="nav-container1">
       <div className="nav-container">
         <Burguer></Burguer>
+        <div className="d-flex justify-content-center align-items-center g-1">
         {logged ? (<>
-
-          {viewHide ? (
-            <>
-              <div className="icon-login">
-                <img
-                  className="logo2"
-                  src={photo}
-                  alt="accountIcon"
-                  onClick={hide}
-                />
-                <LinkRouter to={'/profile'}>
-                  <button className="btn-signin">Profile</button>
-                </LinkRouter>
-                  <button onClick={()=>SignOut(token)} className="btn-signin">Log Out</button>
-              </div>
+          
+              <div className="dropdown icon-login">
+                  <button className="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img className="logo2" src={photo} alt="accountIcon" />
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li><LinkRouter to={'/profile'} className="dropdown-item">Profile</LinkRouter></li>
+                    <li><LinkRouter to="/SignUp" className="dropdown-item"><button onClick={()=>SignOut(token)} className="btn">Log Out</button></LinkRouter></li>
+                  </ul>
+                  </div>
             </>
-          ) : (
-            <>
-              <img
-                className="logo2"
-                src={photo}
-                alt="accountIcon"
-                onClick={hide}
-              />
-            </>
-          )}
-        </>) : (
-          <>
-            {viewHide ? (
+          ):(
               <>
-                <div className="icon-login">
-                  <img
-                    className="logo2"
-                    src="/img/user.svg"
-                    alt="accountIcon"
-                    onClick={hide}
-                  />
-
-                  <LinkRouter to="/SignUp">
-                    <button className="btn-signin">SignUp</button>
-                  </LinkRouter>
-                  <LinkRouter to="/signin">
-                    <button className="btn-Login">Login</button>
-                  </LinkRouter>
+                <div className="dropdown icon-login">
+                  <button className="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img className="logo2" src="/img/user.svg" alt="accountIcon"/>
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li><LinkRouter to="/SignUp" className="dropdown-item">SignUp</LinkRouter></li>
+                    <li><LinkRouter to="/signin" className="dropdown-item">Login</LinkRouter></li>
+                  </ul>
                 </div>
               </>
-            ) : (
-              <>
-                <img
-                  className="logo2"
-                  src="/img/user.svg"
-                  alt="accountIcon"
-                  onClick={hide}
-                />
-              </>
             )}
-          </>
-        )}
-        <div className="nameContainer">
-        <h2>{name}</h2>
+          <div >
+          <h2 className="nameContainer p-2">{name}</h2>
+          </div>
         </div>
       </div>
     </div>
