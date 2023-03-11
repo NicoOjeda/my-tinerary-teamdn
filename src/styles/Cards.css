@@ -146,6 +146,13 @@
         width: 16rem;
         height: 8rem;
     }
+    .check-container {
+        margin-left: 45px;
+        margin:0;
+        padding: 0;
+        gap: 0;
+        display: flex;
+    }
 }
 
 @media (max-width: 375px) {
