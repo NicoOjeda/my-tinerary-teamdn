@@ -4,11 +4,18 @@
     padding: 0px;   
 }
 .nav-container{
+    display: flex;
+    align-items: center;
+    font-family: 'Merienda', cursive;
+    flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
+}
+.nav-container0{
     color: black;
     background-color: rgb(40,40,40);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     height: 15vh;
     font-family: 'Merienda', cursive;
@@ -18,12 +25,9 @@
     justify-content: space-between;
     margin: 0.2rem;
 }
-.nav-0{
-    display: flex;
-}
 .nav-1{
     border: 2px solid black;
-    padding: 10px;
+    padding: 0;
     border-radius: 15px;
     background-color: #E7C621;
     color:black;
@@ -40,6 +44,7 @@
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
+    font-size: 14px;
 }
 .logo1{
     height: 60px;
@@ -65,9 +70,7 @@
 }
 .btn-1{
     background-color: #E7C621;
-    transition: 0.5;
     text-transform: uppercase;
-    margin-left: 20px!important;
 }
 .btn{
     --bs-btn-color: #E7C621;
@@ -133,13 +136,15 @@
 .dropdown-item {
     color:  #E7C621;
 }
+
 @media (max-width: 768px) {
-    nav{   
-    width: 100%;
-    }
     .logo2{
         height: 6vh;
         width: 4vw;
+    }
+    .nav-2{
+        border: 2px solid black;
+        padding: 5px 8px;
     }
 }
 @media (max-width: 425px) {

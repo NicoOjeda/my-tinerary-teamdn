@@ -33,10 +33,9 @@ export default function Burguer() {
   return (
     <>
       <img className="logo1" src="https://i.imgur.com/lGiu6NV.png" alt="" />
-      <div className="nav-container1">
         <div className="nav-container">
-          {(user.logged && user.role === "admin") ?(<>
-            <div className="nav-0">
+          {(user.logged && user.role === "admin") ?(
+          <>
             <LinkRouter to="/">
               <button className="nav-2">Home</button>
             </LinkRouter>
@@ -55,9 +54,9 @@ export default function Burguer() {
             <LinkRouter to="/newreaction">
               <button className="nav-2">New Reaction</button>
             </LinkRouter>
-          </div>
-          </>) : (user.logged && user.role === "user") ? (<>
-            <div className="nav-0">
+          </>
+          ) : (user.logged && user.role === "user") ? (
+          <>           
             <LinkRouter to="/">
               <button className="nav-1">Home</button>
             </LinkRouter>
@@ -76,19 +75,19 @@ export default function Burguer() {
             <LinkRouter  to="/myreactions">
               <button className="nav-2">My Reaction</button>
             </LinkRouter>
-          </div>
-          </>) : (
-            <div className="nav-0">
-            <LinkRouter to="/">
-              <button className="nav-1">Home</button>
-            </LinkRouter>
-            <LinkRouter to="/Cities">
-              <button className="nav-2">Cities</button>
-            </LinkRouter>
-            <LinkRouter to="/hotels">
-              <button className="nav-2">Hotels</button>
-            </LinkRouter>
-          </div>
+          </>
+          ) : (
+            <>
+              <LinkRouter to="/">
+                <button className="nav-1">Home</button>
+              </LinkRouter>
+              <LinkRouter to="/Cities">
+                <button className="nav-2">Cities</button>
+              </LinkRouter>
+              <LinkRouter to="/hotels">
+                <button className="nav-2">Hotels</button>
+              </LinkRouter>
+            </>
           )}
 
           {
@@ -213,7 +212,6 @@ export default function Burguer() {
             </>)
           }
         </div>
-      </div>
     </>
   );
 }

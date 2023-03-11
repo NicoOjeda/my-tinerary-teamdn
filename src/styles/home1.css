@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0PX;
     padding: 0PX;
-   
 }
 .home-container{
     width: 100%;
@@ -17,30 +16,32 @@
     align-items: center;
     flex-direction: column;
     gap: 30px;
-   
-    
 }
-.btn-1{
+.home-btn{
     border: 2px solid black;
-    padding: 10px;
-    border-radius: 15px;
+    padding: 8px 10px;
+    border-radius: 10px;
     background-color: #E7C621;
     color:black;
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
-    
+    margin: 0;
+    font-size: 20px;
+}
+.call-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 1rem;
 }
 h1{
     font-size: 50px;
-    /* font-family:Arial, Helvetica, sans-serif; */
     font-weight: bold;
-    
 }
-
 .btn-container{
     display: flex;
-    
     gap: 30px;
     width: 130px;
     height: 50px;
@@ -50,24 +51,38 @@ h1{
     font-weight: bold;
     font-size: 21px;
     font-family: cursive;
-
 }
-
-/* .title-slogan{
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-margin: 50px;
-
-} */
-/* @font-face {
-    font-family: 'Merienda', cursive;
-    src: url(./Merienda-Bold.ttf);
-} */
-
 h1{
     font-family: 'Merienda', cursive;
 }
-/* .slogan-home{
-    font-family: 'Merienda';
-} */
+.tittle-home{
+    font-size: 45px;
+}
+@media (max-width: 768px) {
+    .home-container{
+        height: 90vh;
+        gap: 30px;
+    }
+    .home-btn{
+        border: 2px solid black;
+        padding: 5px 10px;
+        font-size: 18px;
+    }
+}
+@media (max-width: 375px) {
+    .home-btn{
+        border: 1px solid black;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    .home-container{
+        height: 85vh;
+        gap: 18px;
+    }
+    .tittle-home{
+        font-size: 40px;
+    }
+    .slogan-home{
+        font-size: 18px;
+    }
+}

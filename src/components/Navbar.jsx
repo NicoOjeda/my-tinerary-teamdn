@@ -42,8 +42,7 @@ export default function Navbar() {
   let user= useSelector(store => store.users)
 
   return (
-    <div className="nav-container1">
-      <div className="nav-container">
+      <div className="nav-container0">
         <Burguer></Burguer>
         <div className="d-flex justify-content-center align-items-center g-1">
         {logged ? (<>
@@ -76,8 +75,5 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </div>
-
-    
   );
 }
