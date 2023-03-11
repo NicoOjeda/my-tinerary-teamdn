@@ -3,7 +3,6 @@
     margin: 0px;
     padding: 0px;   
 }
-
 .nav-container{
     width: 100%;
     color: black;
@@ -12,7 +11,6 @@
     justify-content: space-around;
     align-items: center;
     height: 15vh;
-    /* align-content: flex-start; */
     font-family: 'Merienda', cursive;
 }
 .nav1{
@@ -32,8 +30,6 @@
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
-
-    
 }
 .nav-2{
     border: 2px solid black;
@@ -46,47 +42,26 @@
     font-family: 'Merienda', cursive;
 }
 .logo1{
-    /* margin: 5px; */
     height: 60px;
     display: flex;
-   }
+}
 .logo2{
-    height: 6vh!important;
-    border-radius: 6px;
+    height: 6vh;
+    border-radius: 20px;
     background-color: #E7C621;
     padding: 1px;
-    width: 4vw;
+    width: 2.7vw;
     cursor: pointer;
 }
 .nameContainer{
-    /* position: absolute;
-    left: 70%; */
     color: #E7C621;
-    font-size: 10px;
-}
-
-.icon-login{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 60px;
-    margin-top: 12rem;
-    z-index: 1;
-    transition: all 0.5s;
-    background-color: rgba(0, 0, 0, 0.444);
+    font-size: 12px;
     text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: rgb(163, 98, 38);         
+}
+.icon-login{
+    color: #E7C621;         
     border-radius: 10px;
     border: 1px solid rgba(245, 245, 220, 0);
-    box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
-    padding: 5px 25px 27px ;
-
-}
-.icon-login:hover{
-    background-color: rgba(236, 247, 35, 0.444);
 }
 .btn-1{
     background-color: #E7C621;
@@ -94,12 +69,15 @@
     text-transform: uppercase;
     margin-left: 20px!important;
 }
+.btn{
+    --bs-btn-color: #E7C621;
+    --bs-btn-padding-x: 0;
+}
 .btn-2{
     background-color: #E7C621;    
     transition: 0.5;
     text-transform: uppercase;
 }
-
 .btn-1:hover{
     background-color: orangered;
     color: white;
@@ -128,7 +106,6 @@
     transition: 0.5;
     text-transform: uppercase;
 }
-
 .btn-Login{
     border: 2px solid black;
     padding: 10px;
@@ -145,11 +122,42 @@
     color: white;
     text-transform: uppercase;
 }
-
-@media (min-width: 600px) {
-
+.dropdown-menu{
+    --bs-dropdown-bg: rgba(40, 40, 40, 0.74);
+    color:  #E7C621;
+    --bs-dropdown-link-active-color:  black;
+    --bs-dropdown-link-active-bg: #E7C621;
+    --bs-dropdown-link-hover-color: black;
+    --bs-dropdown-link-hover-bg: #E7C621;
+}
+.dropdown-item {
+    color:  #E7C621;
+}
+@media (max-width: 768px) {
     nav{   
     width: 100%;
+    }
+    .logo2{
+        height: 6vh;
+        width: 4vw;
+    }
+}
+@media (max-width: 425px) {
+    .logo2{
+        height: 6vh;
+        width: 7.5vw;
+    }
+}
+@media (max-width: 375px) {
+    .logo2{
+        height: 6vh;
+        width: 8vw;
+    }
+}
+@media (max-width: 320px) {
+    .logo2{
+        height: 6vh;
+        width: 10vw;
     }
 }
 
