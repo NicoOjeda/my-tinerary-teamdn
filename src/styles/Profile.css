@@ -17,38 +17,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
     gap: 2rem;
 }
 .Profile-form{
     background-color: rgba(0, 0, 0, 0.644);
     display: flex;
-    width: 22rem;
+    width: 30rem;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 2rem;
     gap: 1rem;
-    border-radius: 35px;
+    border-radius: 8px;
     color: #e7c621;
-    /* flex-wrap: wrap; */
+    font-style: italic;
     font-size: 18px;
 }
 .Profile-form2{
     background-color: rgba(0, 0, 0, 0.644);
-    display: flex;
-    min-height: 80vh;
-    width: 26rem;
+    /* display: flex; */
+    width: 30rem;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 2rem;
     gap: 1rem;
-    border-radius: 35px;
+    border-radius: 8px;
     color: #e7c621;
-    flex-wrap: wrap;
     font-size: 18px;
-    text-align: justify;
 }
 .Profile-button{
     display: flex;
@@ -70,9 +67,7 @@
     border:1px solid #1b2021;
     width: 5rem;
     cursor: pointer;
-
 }
-
 .Profile-h2{
     background-color: #1b2021;
     text-align: center;
@@ -81,47 +76,80 @@
     padding: 0.5rem;
 }
 .Profile-input{
-    width: 15rem;
-    border-radius: 6px;
+    width: 25rem;
+    border-radius: 8px;
 }
-
-
-
-@media (max-width: 550px){
+.Profile-res{
+    width: 25rem;
+    border-radius: 8px;
+    background-color: #1b20216b;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.1rem;
+    font-size: 16px;
+    font-weight:lighter;
+    text-align: justify;
+    word-break: break-word;
+}
+.Profile-text{
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 18px;
+}
+@media (max-width: 768px){
+    .Profile-box{
+        flex-direction: column;
+        }
+}
+@media (max-width: 425px){
     .Profile-form{
-
-        width: 80%;
+        width: 95%;
+        gap: 0.3rem;
+        padding: 1rem;
+        font-size: 16px;
+    }
+    .Profile-form2{
+        padding: 1rem;
     }
     .Profile-input{
-        width: 12rem;
+        width: 20rem;
     }
-    .Profile-box{
-    flex-direction: column;
+    .Profile-res{
+        width: 20rem;
     }
     .Profile-form2{
         width: 95%;
         font-size: 14px;
     }
+    .Profile-box{
+        flex-direction: column;
+        }
 }
-
-
-@media (max-width: 425px){
-    .Profile-form{
-        width: 70%;
-    }
-    .Profile-input{
-        width: 10rem;
-    }
-}
-
-
-
 @media (max-width: 375px){
     .Profile-form{
         width: 95%;
         padding: 1rem;
     }
     .Profile-input{
-        width: 13rem;
+        width: 18rem;
+    }
+    .Profile-res{
+        width: 18rem;
+        font-size: 14px;
+    }
+    .Profile-button2{
+       font-size: 14px;
+    }
+}
+@media (max-width: 320px){
+    
+    .Profile-input{
+        width: 17rem;
+    }
+    .Profile-box{
+        padding: 0;
+        padding-bottom: 1rem;
+        }
+    .Profile-res{
+        width: 17rem;
     }
 }

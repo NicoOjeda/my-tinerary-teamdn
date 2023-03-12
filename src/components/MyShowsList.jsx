@@ -117,51 +117,15 @@ const hotelView = (myShow)=> (
             <option value="636d6fe9fe85fb66a361478c">Dear Hotel Madrid</option>
           </select> 
             <label for='name'>Name</label>
-            <input 
-                className='NewShow-input' 
-                id="name" 
-                name="name" 
-                type="text"
-                placeholder='Enter name'
-                onChange={getInplut}  
-                required />
+            <input className='NewShow-input' id="name" name="name" type="text" placeholder='Enter name' onChange={getInplut} required />
             <label for='description'>description</label>
-            <input 
-                className='NewShow-input' 
-                id="description" 
-                name="description" 
-                type="text"
-                placeholder='Enter description'
-                onChange={getInplut}  
-                required />
+            <input className='NewShow-input' id="description" name="description" type="text" placeholder='Enter description' onChange={getInplut} required />
             <label for='photo'>Photo</label>
-            <input 
-                className='NewShow-input' 
-                id="photo" 
-                name="photo" 
-                type="text"
-                placeholder='Enter Url'
-                onChange={getInplut}  
-                required />
+            <input className='NewShow-input' id="photo" name="photo" type="text" placeholder='Enter Url' onChange={getInplut} required />
             <label for='price'>Price</label>
-            <input 
-                className='NewShow-input' 
-                id="price" 
-                name="price" 
-                type="number"
-                placeholder='Enter price'
-                onChange={getInplut}  
-                required />
+            <input className='NewShow-input' id="price" name="price" type="number" placeholder='Enter price' onChange={getInplut} required />
             <label for='date'>Date</label>
-            <input 
-                className='NewShow-input' 
-                id="date" 
-                name="date" 
-                type="date"
-                placeholder='Enter date'
-                onChange={getInplut}  
-                required />
-            
+            <input className='NewShow-input'  id="date"  name="date"  type="date" placeholder='Enter date' onChange={getInplut} required />
             <div className='NewShow-button'>
                 <button className='NewShow-button2' type='submit'>Create</button>
             </div>

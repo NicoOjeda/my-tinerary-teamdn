@@ -77,28 +77,39 @@ export default function Profile() {
         <h2 className="Profile-h2">Profile</h2>
         <div className="Profile-box">
             <div className="Profile-form2">
-                <p>Name: {profileUser.name}</p>
-                <p>Last Name: {profileUser.lastName}</p>
-                <p className='hola'>Photo: {profileUser.photo}</p>
-                <p>Age: {profileUser.age}</p>
-                <p>Email: {profileUser.email}</p>
+            <div>
+                <p className="Profile-text d-inline">Name: </p>
+                <p className="Profile-res">{profileUser.name}</p>
+            </div>
+            <div>
+                <p className="Profile-text d-inline">Last Name: </p>
+                <p className="Profile-res">{profileUser.lastName}</p>
+            </div>
+            <div>
+                <p className='Profile-text d-inline'>Photo: </p>
+                <p className="Profile-res">{profileUser.photo}</p>
+            </div>
+            <div>
+                <p className="Profile-text d-inline">Age: </p>
+                <p className="Profile-res">{profileUser.age}</p>
+            </div>
+            <div>
+                <p className="Profile-text d-inline">Email: </p>
+                <p className="Profile-res">{profileUser.email}</p>
+            </div>
                 {/* <p>Password: {profileUser.password}</p> */}
             </div>
             <form className="Profile-form" onSubmit={sendData} >
                 <label htmlFor="name">Name:</label>
-                <input className="Profile-input" id="name" name="name" type="text" placeholder="Please Enter Your Name" onChange={handleInputChange} required/>
-
+                  <input className="Profile-input" id="name" name="name" type="text" placeholder="Please enter your name" onChange={handleInputChange} required/>
                 <label htmlFor="name">LastName:</label>
-                <input className="Profile-input" id="lastName" name="lastName" type="text" placeholder="Please Enter Your LastName"   onChange={handleInputChange} required/>
-
+                  <input className="Profile-input" id="lastName" name="lastName" type="text" placeholder="Please enter your lastname"   onChange={handleInputChange} required/>
                 <label htmlFor="photo">Photo:</label>
-                <input className="Profile-input" id="photo" name="photo" type="url" placeholder="Please Enter url photo" onChange={handleInputChange} required/>
-
+                  <input className="Profile-input" id="photo" name="photo" type="url" placeholder="Please enter url photo" onChange={handleInputChange} required/>
                 <label htmlFor="age">Age:</label>
-                <input className="Profile-input" id="age" name="age" type="text" placeholder="Please Enter your Age" onChange={handleInputChange} required/>
-
+                  <input className="Profile-input" id="age" name="age" type="text" placeholder="Please enter your age" onChange={handleInputChange} required/>
                 <label htmlFor="email">Email:</label>
-                <input className="Profile-input" id="email" name="email" type="email" placeholder="Please Enter Your Email" onChange={handleInputChange} required/>
+                  <input className="Profile-input" id="email" name="email" type="email" placeholder="Please enter your email" onChange={handleInputChange} required/>
             <div className="Profile-button">           
                 <button className="Profile-button2" type="submit" > Update</button>
             </div>
