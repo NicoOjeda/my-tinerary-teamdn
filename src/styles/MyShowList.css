@@ -127,6 +127,10 @@
     padding: 0.5rem;
     width: 100%;
 }
+.NewShow-select{
+    width: 25rem;
+    border-radius: 8px;
+}
 @media (max-width: 768px){
     .MyShows-card {
         min-height: 600px;
@@ -145,6 +149,7 @@
         width: 80%;
         gap: 0.5rem;
         padding: 1rem;
+        font-size: 16px;
     }
     .NewShow-input{
         width: 22rem;
@@ -167,6 +172,9 @@
     }
     .MyShows-title3{
         font-size: 25px;
+    }
+    .NewShow-select{
+        width: 20rem;
     }
 }
 @media (max-width: 375px){
@@ -200,6 +208,9 @@
     .MyShows-title3{
         font-size: 25px;
     }
+    .NewShow-select{
+        width: 18rem;
+    }
 }
 @media (max-width: 320px){
     .MyShows-img {
@@ -208,10 +219,13 @@
         width: 96%;
     }
     .NewShow-input{
-        width: 16rem;
+        width: 17rem;
     }
     .MyShows-title3{
         font-size: 20px;
+    }
+    .NewShow-select{
+        width: 17rem;
     }
 }
 
