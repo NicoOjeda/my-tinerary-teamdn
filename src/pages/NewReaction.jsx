@@ -80,45 +80,25 @@ export default function NewReaction() {
   }
 
   return ( 
-    <div className="card-form">
-      <div>
-        <h2 className="cont-h2">New Reaction</h2>
-      </div>
-      <form className="form1" ref={form}>
-        <input
-          className="input-text"
-          type="text"
-          placeholder=" Name"
-          ref={nameRef}
-        />
-        <select ref={eventId} className="input-text" id="eventId">
-          <option>Select the event</option>
-          {events.map((event) => (
-            <option key={event._id} value={event._id}>
-              {" "}
-              {event.name}
-            </option>
-          ))}
-        </select>
-        <input
-          className="input-text"
-          type="text"
-          placeholder=" Icon"
-          ref={iconRef}
-        />
-        <input
-          className="input-text"
-          type="text"
-          placeholder=" IconBack"
-          ref={iconBackBack}
-        />
-        <input
-          className="input-button"
-          type="submit"
-          value="Create Reaction"
-          onClick={(e) => createReaction(e)}
-        />
-      </form>
+    <div className='NewReaction-box'>
+        <h1>New Reaction</h1>
+        <form className="NewReaction-form" ref={form}>
+          <input className="NewReaction-input" type="text" placeholder=" Name" ref={nameRef}/>
+          <select ref={eventId} className="NewReaction-input" id="eventId">
+            <option>Select the event</option>
+            {events.map((event) => (
+              <option key={event._id} value={event._id}>
+                {" "}
+                {event.name}
+              </option>
+            ))}
+          </select>
+          <input className="NewReaction-input" type="text" placeholder=" Icon" ref={iconRef}/>
+          <input className="NewReaction-input" type="text" placeholder=" IconBack" ref={iconBackBack}/>
+          <div className='NewReaction-button'>
+            <input className="NewReaction-button2" type="submit" value="Create Reaction" onClick={(e) => createReaction(e)}/>
+          </div>
+        </form>
     </div>
   );
 }
