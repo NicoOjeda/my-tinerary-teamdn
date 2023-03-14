@@ -15,10 +15,11 @@
     color: black;
     background-color: rgb(40,40,40);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    height: 15vh;
+    min-height: 15vh;
     font-family: 'Merienda', cursive;
+    padding: 0.5rem;
 }
 .nav1{
     display: flex;
@@ -76,39 +77,6 @@
     --bs-btn-color: #E7C621;
     --bs-btn-padding-x: 0;
 }
-.btn-2{
-    background-color: #E7C621;    
-    transition: 0.5;
-    text-transform: uppercase;
-}
-.btn-1:hover{
-    background-color: orangered;
-    color: white;
-    transition: 0.5;
-    text-transform: uppercase;
-}
-.bnt-2:hover{
-    background-color: orangered;
-    color: white;
-    transition: 0.5;
-    text-transform: uppercase;
-}
-.btn-signin{
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 15px;
-    background-color: #E7C621;
-    color:black;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: 'Merienda', cursive;
-}
-.btn-signin:hover{
-    background-color: orangered;
-    color: white;
-    transition: 0.5;
-    text-transform: uppercase;
-}
 .btn-Login{
     border: 2px solid black;
     padding: 10px;
@@ -126,7 +94,7 @@
     text-transform: uppercase;
 }
 .dropdown-menu{
-    --bs-dropdown-bg: rgba(40, 40, 40, 0.74);
+    --bs-dropdown-bg: rgba(40, 40, 40, 0.877);
     color:  #E7C621;
     --bs-dropdown-link-active-color:  black;
     --bs-dropdown-link-active-bg: #E7C621;
@@ -136,7 +104,24 @@
 .dropdown-item {
     color:  #E7C621;
 }
-
+.dropdown-item:hover{
+    background-color:  #E7C621;
+    color: rgb(40,40,40);
+}
+.nav-link{
+    color:  #E7C621;
+    padding: 0.7rem;
+    font-weight: bold;
+}
+.dropdown-toggle{
+    font-size: 20px;
+}
+.nav{
+    --bs-nav-link-hover-color:  #E7C621;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 768px) {
     .logo2{
         height: 6vh;
@@ -145,6 +130,9 @@
     .nav-2{
         border: 2px solid black;
         padding: 5px 8px;
+    }
+    .nav-link{
+        padding: 0.2rem .7rem;
     }
 }
 @media (max-width: 425px) {

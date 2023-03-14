@@ -65,10 +65,10 @@
     cursor: pointer;
     font-family: 'Merienda', cursive;
 }
-
-@media (min-width: 768px) {
-   
+.burger-menu{
+    display: none;
 }
+
 @media (max-width: 600px) {
     .burguer-container{ 
         display: none;
@@ -90,4 +90,11 @@
         margin-top: 2px;
     }
 }
-
+@media (max-width: 425px) {
+    .burger-desktop{
+        display: none;
+       }
+       .burger-menu{
+        display: flex;
+    }
+}
