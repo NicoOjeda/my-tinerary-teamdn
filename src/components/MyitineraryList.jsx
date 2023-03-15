@@ -51,7 +51,7 @@ export default function MyitineraryList () {
                 <div className="my-text">{myItinerary.description}</div>
                 <div className="containerbuttonscities">
                     <Link to={`/edititinerary/${myItinerary._id}`} className="mytinerary-link">
-                        <button className="my-btn">Edit Itinerary</button>
+                        <button className="my-btn">Edit</button>
                     </Link>
                     <button className="my-btn" onClick={()=>deleteItineraries(myItinerary._id)}>Delete</button>
                 </div>
