@@ -89,7 +89,7 @@ const hotelView = (myShow)=> (
                     <p className="MyShows-title2">Date: {myShow.date}</p>
                     <p className="MyShows-title2">{myShow.description}</p>
                 <div className="MyShows-containerbuttons">
-                  <Link to={`/editshow/${myShow._id}`} className="myshows-link"><button className='NewShow-button2'>Edit Show</button></Link>
+                  <Link to={`/editshow/${myShow._id}`} className="myshows-link"><button className='NewShow-button2'>Edit</button></Link>
                   <button className='NewShow-button2' onClick={()=>deleteShow(myShow._id)}>Delete</button>
                 </div>
             </div>
@@ -98,7 +98,7 @@ const hotelView = (myShow)=> (
     return (
       <>
       <div className='newShowFrom-box' >
-      <h2 className="my-price">My Shows</h2>
+      <h1>My Shows</h1>
         <form className='NewShow-form' onSubmit={SendDataShow} >
         <label  for='hotelId'>Select a Hotel:</label>
           <select  id='hotelId' className='NewShow-select' name='hotelId' onChange={getInplut}>
