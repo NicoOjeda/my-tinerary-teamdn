@@ -60,9 +60,7 @@ export default function MyitineraryList () {
 
     return(
         <div className="imagebckcities">
-            <h2 className="my-price">
-                MyItineraries
-            </h2>  
+            <h1>MyItineraries</h1>  
                 <Link to={'/MyTynerariesCreate'} className="mytinerary-link">
                 <button className="my-btn">New Itinerary</button>
                 </Link>
