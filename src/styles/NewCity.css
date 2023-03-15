@@ -83,6 +83,7 @@
     .New-form{
         width: 90%;
         padding: 1rem;
+        font-size: 16px;
     }
     .New-input{
         width: 19rem;
