@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: 'Merienda', cursive;
 }
-
 .detail-container{
     width: 100%;
     background-image: url("/public/img/flat.jpg");
@@ -31,19 +30,19 @@
     margin-bottom: 8%;
 }
 .d-btn2{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.2rem;
-        border-radius: 8px;
-        background-color: #e7c621;
-        border:1px solid #1b2021;
-        width: 7rem;
-        cursor: pointer;
-        font-family:monospace;
-        border: 2px solid black;
-        font-weight: bold;
-        margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 7rem;
+    cursor: pointer;
+    font-family:monospace;
+    border: 2px solid black;
+    font-weight: bold;
+    margin: 0.5rem;
 }
 .d-btn3{
     display: flex;
@@ -257,7 +256,7 @@
         width: 90%; 
     }
     .container-activity-detailc {
-        height:430px;
+        min-height:430px;
         width: 95%;
         padding: 5px;
         margin: 1rem;
