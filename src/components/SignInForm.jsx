@@ -56,35 +56,29 @@ export default function SignInForm() {
 
 
   return (
-    <div className='Signin-container'>
-    <h2 className='Signin-h2'>Sign in</h2>
     <div className='Signin-box' >
-    <form className='Signin-form' onSubmit={sendData}>
-        <label for='email'>Email:</label>
-        <input 
-            className='Signin-input' 
-            id="email" 
-            name="email" 
-            type="email"
-            onChange={handleInplutChange}  
-            required />
-        <label>Password</label>
-        <input 
-            className='Signin-input' 
-            name="password" 
-            type="password" 
-            onChange={handleInplutChange} 
-            required/>
-        <div className='Signin-button'>
-            <button className='Signin-button2' type='submit'>Enter</button>
-        </div>
-    </form>
+        <h1>Sign in</h1>
+        <form className='Signin-form' onSubmit={sendData}>
+            <label for='email'>Email:</label>
+            <input 
+                className='Signin-input' 
+                id="email" 
+                name="email" 
+                type="email"
+                onChange={handleInplutChange}  
+                required />
+            <label>Password</label>
+            <input 
+                className='Signin-input' 
+                name="password" 
+                type="password" 
+                onChange={handleInplutChange} 
+                required/>
+            <div className='Signin-button'>
+                <button className='Signin-button2' type='submit'>Enter</button>
+            </div>
+        </form>
     {/* <h3>{data.email} + {data.password} </h3> */}
-    <button className='Signin-google2'>
-        <img className='Signin-google' src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/240px-Google_%22G%22_Logo.svg.png' alt='google'/>
-        <p>Sign in with google</p>
-    </button>
-    </div>
     </div>
   )
 }
