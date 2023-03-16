@@ -44,7 +44,7 @@ export default function SignUp() {
               if (sendUser.data.success) {
                 swal({
                   title:
-                    "Successfully Created!!, please check your email for verify account ^^ ",
+                    "Successfully Created!! please check your email for verify account",
                   icon: "success",
                   timer: "3000",
                 });
