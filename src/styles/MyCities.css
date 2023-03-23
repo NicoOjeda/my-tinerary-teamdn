@@ -3,58 +3,68 @@
     margin: 0px;
     padding: 0px;
 }
-.imagebckcities{
-    background-image: url("/public/img/flat.jpg");
-    object-fit: cover;
-    background-position: center;
-    background-size: cover;
+.MyCities-box{
+    min-height: 100vh ;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    
-}
-.mc-oneContainer{
-    display: flex;
-    opacity: 0.9;
-    display: flex;
-    justify-content:center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    gap: 30px;  
-    background-repeat: no-repeat;
-    /* height: 100%;  */
-   
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+    gap: 0.5rem;
+    
 }
-.mc-container{ 
+.Newcity-btn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    background-color: #e7c621;
+    border:1px solid #1b2021;
+    width: 15vw;
+    font-weight: bold;
+    text-decoration: none;    
+    font-style: italic;
+}
+
+.MyCities-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    gap: 2rem;
+}
+.mc-card{ 
     display: flex;
     flex-direction: row-reverse;
     height: 500px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 8px;
     margin: 8px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 6px 31px -1px rgb(0 0 0 / 63%);
+    box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
     border-radius: 25px;
-    /* margin-left: 50px; */
-    width: 346px;
-    align-items: center;
 }
 .containerbuttonscities{
     display: flex;
     gap: 20px;
 }
-
-
 .mc-title{
     font-size: 30px;
     font-weight: 500;
     font-family: adobe-handwriting-ernie;
+    text-align: center;
 }
-
 .mc-img{
     object-fit: cover;
     height: 377px;
@@ -65,8 +75,8 @@
     font-size: 30px;
     font-weight: 500;
     font-family: adobe-handwriting-ernie;
+    padding: .3rem;
 }
-
 .mc-btn1{
     background-image: linear-gradient(to right, #eacda3 0%, #d6ae7b 51%, #eacda3 100%);
     text-align: center;
@@ -78,27 +88,76 @@
     border-radius: 10px;
     border: 1px solid rgba(245, 245, 220, 0);
     box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
-    padding: 8px 45px;
+    padding: 8px 35px;
     margin-bottom: 10px;
-
-}
-.mc-btn2{
-
-    background-image: linear-gradient(to right, #eacda3 0%, #d6ae7b 51%, #eacda3 100%);
-    text-align: center;
-    text-transform: uppercase;
-    font-family: nunito, sans-serif;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: rgb(242, 250, 96);
-    border-radius: 10px;
-    border: 1px solid rgba(245, 245, 220, 0);
-    box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
-    padding: 8px 45px;
-    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-
+@media (max-width: 550px){
+    .mc-container {
+        padding: 0.5rem;
+        min-height: 600px;
+        width: 80%; 
+    }  
+    .Newcity-btn2{
+        width: 20vw;
+        font-size: 15px;
+    }
+}
+@media (max-width: 425px){
+    .mc-container {
+        padding: 0.5rem;
+        min-height: 350px;
+        width: 90%; 
+    } 
+    .Newcity-btn2{
+        width: 30vw;
+        font-size: 15px;
+    }
+}
+@media (max-width: 375px){
+    .mc-card {
+        height: 420px;
+        width: 320px;
+    } 
+    .mc-img{
+        object-fit: cover;
+        height: 295px;
+        width: 94%;
+        border-radius: 12px;
+    }
+    .mc-btn1{
+        font-size: 12px;
+        padding: 8px 32px;
+        margin-bottom: 5px;
+    }
+    .mc-title {
+        font-size: 25px;
+    }
+    .mc-continent{
+        font-size: 25px;
+    }
+}
+@media (max-width: 320px) {
+    .mc-card{
+        height: 399px;
+        width: 340px;
+    }
+    .mc-img {
+        object-fit: cover;
+        height: 295px;
+        width: 94%;
+        border-radius: 12px;
+    }
+    .mc-btn1{
+        font-size: 10px;
+        padding: 8px 32px;
+        margin-bottom: 5px;
+    }
+    h1{
+        font-size: 38px;
+    }
+}
 
 
 

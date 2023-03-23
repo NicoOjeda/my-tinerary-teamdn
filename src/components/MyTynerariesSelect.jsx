@@ -56,114 +56,93 @@ const MyTynerariesSelect = () => {
   }
 
 
-
-// citiesData.map((e) =>console.log(e));
-
-
-
-
   return (
-    <div className="mts1-container">
-      <h2 className="mts1-h2">New Itinerary</h2>
-
+    <>
       <div className="mts1-box">
-        <form id="form" className="mts1-form" onSubmit={sendData}>
-          <label htmlFor="citiId">Choice the City</label>
-          <select
-            className="mts1-input"
-            id="citiId"
-            name="citiId"
-            type="text"
-            placeholder=" Enter the Name City"
-            onChange={handleInputChange}
-            required
-          >
-          <option>Select City</option>
-            {citiesData.map((e,index) => (
-              <option value={e._id} key={index}> {e.name} </option>
-            ))}
-          </select>
-          <label for="name">Name</label>
-          <input
-            className="mts1-input"
-            id="name"
-            name="name"
-            type="text"
-            placeholder=" Enter the Name City"
-            onChange={handleInputChange}
-            required
-          />
-          <label for="photo">photo</label>
-          <input
-            className="mts1-input"
-            id="photo"
-            name="photo"
-            type="text"
-            placeholder="Enter the Image"
-            onChange={handleInputChange}
-            required
-          />
-          <label for="description">Description</label>
-          <input
-            className="mts1-input"
-            id="description"
-            name="description"
-            type="text"
-            placeholder="Enter the description"
-            onChange={handleInputChange}
-            required
-          />
-
-          <label for="price">Price</label>
-          <input
-            className="mts1-input"
-            name="price"
-            id="price"
-            type="text"
-            placeholder="Enter the price: "
-            onChange={handleInputChange}
-            required
-          />
-          <label for="duration">Duration</label>
-          <input
-            className="mts1-input"
-            name="duration"
-            id="duration"
-            type="text"
-            placeholder="Enter the Usser Id: "
-            onChange={handleInputChange}
-            required
-          />
-           <label for="userId">userId</label>
-            <input
-              className="New-input"
-              name="userId"
-              id="userId"
-              defaultValue={user.id}
+        <h2 className="mts1-h2">New Itinerary</h2>
+          <form id="form" className="mts1-form" onSubmit={sendData}>
+            <label htmlFor="citiId">Choice the City</label>
+            <select
+              className="mts1-input"
+              id="citiId"
+              name="citiId"
               type="text"
-              placeholder={user.id}
-              onChange={handleInputChange} required/>
-{/* <label htmlFor="userId">Choice the City</label>
- <select
-            className="mts1-input"
-            id="userId"
-            name="userId"
-            type="text"
-            placeholder=" Enter the Name City"
-            onChange={handleInputChange}
-            required
-          >
-              <option value={user.id} > {user.name} </option>
-          
-          </select> */}
-          <div className="mts1-button">
-            <button className="mts1-button2" type="submit">
-              Create
-            </button>
-          </div>
-        </form>
+              placeholder=" Enter the Name City"
+              onChange={handleInputChange}
+              required
+            >
+            <option>Select City</option>
+              {citiesData.map((e,index) => (
+                <option value={e._id} key={index}> {e.name} </option>
+              ))}
+            </select>
+            <label for="name">Name</label>
+            <input
+              className="mts1-input"
+              id="name"
+              name="name"
+              type="text"
+              placeholder=" Enter the Name City"
+              onChange={handleInputChange}
+              required
+            />
+            <label for="photo">photo</label>
+            <input
+              className="mts1-input"
+              id="photo"
+              name="photo"
+              type="text"
+              placeholder="Enter the Image"
+              onChange={handleInputChange}
+              required
+            />
+            <label for="description">Description</label>
+            <input
+              className="mts1-input"
+              id="description"
+              name="description"
+              type="text"
+              placeholder="Enter the description"
+              onChange={handleInputChange}
+              required
+            />
+            <label for="price">Price</label>
+            <input
+              className="mts1-input"
+              name="price"
+              id="price"
+              type="text"
+              placeholder="Enter the price: "
+              onChange={handleInputChange}
+              required
+            />
+            <label for="duration">Duration</label>
+            <input
+              className="mts1-input"
+              name="duration"
+              id="duration"
+              type="text"
+              placeholder="Enter the Usser Id: "
+              onChange={handleInputChange}
+              required
+            />
+            <label for="userId">userId</label>
+              <input
+                className="mts1-input"
+                name="userId"
+                id="userId"
+                defaultValue={user.id}
+                type="text"
+                placeholder={user.id}
+                onChange={handleInputChange} required/>
+            <div className="mts1-button">
+              <button className="mts1-button2" type="submit">
+                Create
+              </button>
+            </div>
+          </form>
       </div>
-    </div>
+    </>
   );
 };
 

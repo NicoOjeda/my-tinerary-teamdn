@@ -3,39 +3,38 @@
     margin: 0px;
     padding: 0px;   
 }
-.nav-container1{
-    display: flex;
-}
 .nav-container{
+    display: flex;
+    align-items: center;
+    font-family: 'Merienda', cursive;
+    flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
+}
+.nav-container0{
     color: black;
     background-color: rgb(40,40,40);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 15vh;
-    align-content: flex-start;
+    min-height: 15vh;
     font-family: 'Merienda', cursive;
+    padding: 0.5rem;
 }
 .nav1{
     display: flex;
     justify-content: space-between;
     margin: 0.2rem;
 }
-.nav-0{
-    display: flex;
-}
 .nav-1{
     border: 2px solid black;
-    padding: 10px;
+    padding: 0;
     border-radius: 15px;
     background-color: #E7C621;
     color:black;
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
-
-    
 }
 .nav-2{
     border: 2px solid black;
@@ -46,100 +45,38 @@
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
+    font-size: 14px;
 }
 .logo1{
-    /* margin: 5px; */
     height: 60px;
     display: flex;
-   }
+}
 .logo2{
-    height: 6vh!important;
-    border-radius: 6px;
+    height: 6vh;
+    border-radius: 20px;
     background-color: #E7C621;
     padding: 1px;
-    width: 4vw;
+    width: 2.7vw;
     cursor: pointer;
 }
 .nameContainer{
-    /* position: absolute;
-    left: 70%; */
     color: #E7C621;
-    font-size: 10px;
-}
-
-.icon-login{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 60px;
-    margin-top: 12rem;
-    z-index: 1;
-    transition: all 0.5s;
-background-color: rgba(0, 0, 0, 0.444);
+    font-size: 12px;
     text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: rgb(163, 98, 38);         
+}
+.icon-login{
+    color: #E7C621;         
     border-radius: 10px;
     border: 1px solid rgba(245, 245, 220, 0);
-    box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
-    padding: 5px 25px 27px ;
-
-}
-.icon-login:hover{
-    background-color: rgba(236, 247, 35, 0.444);
-  
 }
 .btn-1{
-    
     background-color: #E7C621;
-        
-        transition: 0.5;
-        text-transform: uppercase;
-        margin-left: 20px!important;
-    
-}
-.btn-2{
- 
-    background-color: #E7C621;
-        
-    transition: 0.5;
-    text-transform: uppercase;
-
-
-}
-
-.btn-1:hover{
-    background-color: orangered;
-    color: white;
-    transition: 0.5;
     text-transform: uppercase;
 }
-.bnt-2:hover{
-    background-color: orangered;
-    color: white;
-    transition: 0.5;
-    text-transform: uppercase;
+.btn{
+    --bs-btn-color: #E7C621;
+    --bs-btn-padding-x: 0;
 }
-.btn-signin{
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 15px;
-    background-color: #E7C621;
-    color:black;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: 'Merienda', cursive;
-
-}
-.btn-signin:hover{
-    background-color: orangered;
-    color: white;
-    transition: 0.5;
-    text-transform: uppercase;
-}
-
 .btn-Login{
     border: 2px solid black;
     padding: 10px;
@@ -156,23 +93,64 @@ background-color: rgba(0, 0, 0, 0.444);
     color: white;
     text-transform: uppercase;
 }
-
-
-
-@media (min-width: 600px) {
-
-    nav{
-        
-       width: 100%;
+.dropdown-menu{
+    --bs-dropdown-bg: rgba(40, 40, 40, 0.877);
+    color:  #E7C621;
+    --bs-dropdown-link-active-color:  black;
+    --bs-dropdown-link-active-bg: #E7C621;
+    --bs-dropdown-link-hover-color: black;
+    --bs-dropdown-link-hover-bg: #E7C621;
+}
+.dropdown-item {
+    color:  #E7C621;
+}
+.dropdown-item:hover{
+    background-color:  #E7C621;
+    color: rgb(40,40,40);
+}
+.nav-link{
+    color:  #E7C621;
+    padding: 0.7rem;
+    font-weight: bold;
+}
+.dropdown-toggle{
+    font-size: 20px;
+}
+.nav{
+    --bs-nav-link-hover-color:  #E7C621;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .logo2{
+        height: 6vh;
+        width: 4vw;
+    }
+    .nav-2{
+        border: 2px solid black;
+        padding: 5px 8px;
+    }
+    .nav-link{
+        padding: 0.2rem .7rem;
     }
 }
-
-
-/* @media (max-width: 600px) {
-
+@media (max-width: 425px) {
     .logo2{
-        
-       margin-left: 5rem;
+        height: 6vh;
+        width: 7.5vw;
     }
-} */
+}
+@media (max-width: 375px) {
+    .logo2{
+        height: 6vh;
+        width: 8vw;
+    }
+}
+@media (max-width: 320px) {
+    .logo2{
+        height: 6vh;
+        width: 10vw;
+    }
+}
 

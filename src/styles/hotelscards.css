@@ -23,19 +23,13 @@ align-items: center;
 width: 100%;
 flex-wrap: wrap;
 padding: 0.5rem;
-}
-.Hotels-h2{
-    background-color: #1b2021;
-    text-align: center;
-    color: #e7c621;
-    font-size: 35px;
-    padding: 0.5rem;
-    width: 100%;
+gap: 2rem;
 }
 .hotel-card{
     display: flex;
     flex-direction: row-reverse;
     height: 500px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,17 +40,17 @@ padding: 0.5rem;
     box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
     border-radius: 25px;
 }
-
 .hotelcard-img {
     object-fit: cover;
     height: 377px;
     width: 300px;
+    border-radius: 20px;
 }
-
 .hotelcard-title {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
     font-family: adobe-handwriting-ernie;
+    text-align: center;
 }
 
 .hotelcard-button {
@@ -71,7 +65,7 @@ padding: 0.5rem;
     border: 1px solid rgba(245, 245, 220, 0);
     box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
     padding: 8px 45px;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .hotelcard-button:hover {
@@ -88,4 +82,31 @@ padding: 0.5rem;
     align-items: center;
     font-size: 30px;
     font-weight: bold;
+}
+@media (max-width: 375px) {
+    .hotel-card{
+        height: 420px;
+        width: 320px;
+    }
+    .hotelcard-img {
+        object-fit: cover;
+        height: 295px;
+        width: 94%;
+        border-radius: 12px;
+    }
+    .hotelcard-title {
+        font-size: 20px;
+    }
+}
+@media (max-width: 320px) {
+    .hotel-card{
+        height: 399px;
+        width: 340px;
+    }
+    .hotelcard-img {
+        object-fit: cover;
+        height: 295px;
+        width: 94%;
+        border-radius: 12px;
+    }
 }

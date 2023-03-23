@@ -5,32 +5,33 @@
     font-family: 'Merienda', cursive;
 }
 .New-box{
+    min-height: 85vh ;
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-image: url("/public/img/flat.jpg");
     background-position: center;
     background-size: cover;
-    gap: 0.5rem;
-    min-height: 100vh;
-  
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 .New-form{
     background-color: rgba(0, 0, 0, 0.644);
     display: flex;
-    width: 20rem;
+    width: 30rem;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 2rem;
     gap: 1rem;
-    border-radius: 35px;
+    border-radius: 8px;
     color: #e7c621;
-
+    font-style: italic;
     font-size: 18px;
-    margin-bottom: 14rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
 }
 .New-button{
     display: flex;
@@ -48,24 +49,6 @@
     border:1px solid #1b2021;
     width: 5rem;
     cursor: pointer;
-
-}
-.New-google{
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-}
-.New-google2{
-    height: 1.5rem;
-    width: 12rem;
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0.2rem;
-    padding: 0.2rem;
-    border-radius: 8px;
-    cursor: pointer;
 }
 .New-h2{
     background-color: #1b2021;
@@ -75,36 +58,38 @@
     padding: 0.5rem;
 }
 .New-input{
-    width: 15rem;
-    border-radius: 6px;
+    width: 25rem;
+    border-radius: 8px;
 }
-
-
-
 
 @media (max-width: 550px){
     .New-form{
-
-        width: 58%;
+        width: 60%;
     }
     .New-input{
-        width: 12rem;
+        width: 14rem;
     }
 }
-
-
 @media (max-width: 425px){
     .New-form{
-        width: 70%;
+        width: 80%;
+        gap: 0.5rem;
     }
     .New-input{
-        width: 12rem;
+        width: 17rem;
     }
 }
-
-
-
 @media (max-width: 375px){
+    .New-form{
+        width: 90%;
+        padding: 1rem;
+        font-size: 16px;
+    }
+    .New-input{
+        width: 19rem;
+    }
+}
+@media (max-width: 320px){
     .New-form{
         width: 90%;
         padding: 1rem;

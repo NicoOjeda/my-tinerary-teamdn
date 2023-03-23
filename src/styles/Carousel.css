@@ -11,7 +11,6 @@
     flex-direction: column;
     align-items: center;
     margin:  10px 20px;
-    
 }
 .Carousel-img{
     height: 100%;
@@ -45,13 +44,12 @@
     color: black;
 }
 @media (max-width: 768px) {
-
     .Carousel-container2{
         width: 100%; 
         margin: 0;
     }
     .Carousel-box{
-        height: 30vh;
+        height: 40vh;
         width: 50vw;
     }
     .Carousel-arrow{
@@ -59,5 +57,22 @@
         width: 5rem;
         display: none;
     }
-   
+}
+@media (max-width: 425px) {
+    .Carousel-box{
+        height: 40vh;
+        width: 70vw;
+    }
+    .Carousel-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin:  5px 10px;
+    }
+}
+@media (max-width: 425px) {
+    .Carousel-box{
+        height: 40vh;
+        width: 90vw;
+    }
 }

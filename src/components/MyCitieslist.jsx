@@ -15,14 +15,14 @@ export default function MyCitieslist() {
     
   const tokenList= useSelector(store => store.tokenReducer.tokenList)
       const userIdToken = tokenList._id
-    console.log(tokenList)
+    // console.log(tokenList)
     let token = JSON.parse(localStorage.getItem('token'))
     useEffect(() => {
   axios.get()
     dispatch(myCitiesActions.citiesList(tokenList.id));
   }, []);
 
-  console.log(listCities);
+  // console.log(listCities);
   const navigate = useNavigate()
   const deleteCities = (e) => {
       
@@ -41,21 +41,25 @@ export default function MyCitieslist() {
   };
 
   const cityView = (myCity) => (
-    <div className="mc-oneContainer">
-    <div className="mc-container">
-      <div className="mc-title">{myCity.name}</div>
-      <img className="mc-img" src={myCity.photo}></img>
-      <div className="mc-continent"> {myCity.continent}</div>
-      <div className="containerbuttonscities">
-
-      <Link to={`/editcity/${myCity._id}`}>
-        <button className="mc-btn2">Edit City</button>
-      </Link>
-      <button className="mc-btn1" onClick={() => deleteCities(myCity._id)}>Delete</button>
+      <div className="mc-card">
+        <div className="mc-title">{myCity.name}</div>
+        <img className="mc-img" src={myCity.photo} alt={myCity.photo}></img>
+        <div className="mc-continent"> {myCity.continent}</div>
+        <div className="containerbuttonscities">
+          <Link to={`/editcity/${myCity._id}`}>
+            <button className="mc-btn1">Edit City</button>
+          </Link>
+          <button className="mc-btn1" onClick={() => deleteCities(myCity._id)}>Delete</button>
+        </div>
       </div>
-    </div>
-    </div>
   );
-  return (<div className="imagebckcities">
-  {listCities.map((myCity) => cityView(myCity))}</div>);
+  return (
+    <div className="MyCities-box">
+      <h1>My Cities</h1>
+        <Link to={`/NewCity` } style={{ textDecoration:'none' }}><div className='Newcity-btn2'>New City</div></Link>
+      <div className="MyCities-container">
+        {listCities.map((myCity) => cityView(myCity))}
+      </div>
+  </div>
+  );
 }

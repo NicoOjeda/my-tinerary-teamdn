@@ -1,13 +1,9 @@
 *{
     box-sizing: border-box;
     margin: 0px;
-    padding: 0px;
-
-    
+    padding: 0px; 
 }
-
 .burguer-img{
-   
     margin-top: 4px;
     border-radius: 6px;
     background-color: #E7C621;
@@ -16,15 +12,12 @@
     cursor: pointer;
     display: none;
 }
-
 .burguer-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 40vh;
     width: 50vw;
-    /* background-color: rgb(40,40,40); */
-    /* align-content: flex-start; */
     font-family: 'Merienda', cursive;
     gap: 10px;
     margin-top: 18rem;
@@ -37,13 +30,10 @@
     background-size: 200% auto;        
     border-radius: 10px;
     border: 1px solid rgba(245, 245, 220, 0);
-    /* box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321); */
     padding: 5px 25px 27px ;
     position: fixed;
 }
-
 .btn-burguer{
-    /* border: 2px solid black; */
     padding: 5px;
     border-radius: 10px;
     background-color: #E7C621;
@@ -54,9 +44,7 @@
     font-size: 15px;
     border: none;
     border: 1px solid black;
-    
 }
-
 .btn-burguer-2{
     border: 2px solid black;
     padding: 10px;
@@ -66,7 +54,6 @@
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
-    
 }
 .btn-burguer-3{
     border: 2px solid black;
@@ -77,42 +64,37 @@
     font-weight: bold;
     cursor: pointer;
     font-family: 'Merienda', cursive;
-
+}
+.burger-menu{
+    display: none;
 }
 
-
-
-@media (min-width: 600px) {
-
-    .burguer-container{
-        
+@media (max-width: 600px) {
+    .burguer-container{ 
         display: none;
     }
-    .burger-img {
-        /* display: block!important; */
-     }
-    
-}
-@media (max-width: 600px) {
- 
     .nav-1{
         display: none;
     }
     .nav-2{
         display: none;
-
     }
     .nav-3{
         display: none;
     }
     .hide{
         display: flex;
-    
     }
     .burguer-img{
         display: flex;
         margin-top: 2px;
     }
-    
 }
-
+@media (max-width: 425px) {
+    .burger-desktop{
+        display: none;
+       }
+       .burger-menu{
+        display: flex;
+    }
+}

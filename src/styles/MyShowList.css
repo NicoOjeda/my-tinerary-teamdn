@@ -4,18 +4,19 @@
     box-sizing: border-box;
     font-family: 'Merienda', cursive;
 }
-.MyShows-container{
-
+.newShowFrom-box{
     min-height: 100vh ;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-}
-.MyShows-input{
-    width: 10rem;
-    border-radius: 8px;
+    background-image: url("/public/img/flat.jpg");
+    background-position: center;
+    background-size: cover;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 .MyShows-card {
     color: #e7c621;
@@ -27,36 +28,37 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 8px;
+    padding: 1rem;
     margin: 2rem;
     background-color: rgba(0, 0, 0, 0.644);
     box-shadow: 0px 6px 31px -1px rgba(0, 0, 0, 0.63);
     border-radius: 25px;
 }
-
 .MyShows-img {
     object-fit: cover;
     width: 100%;
-    height: 70%;
+    height: 300px;
 }
-
 .MyShows-title {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
+    text-align: center;
+    padding: 4px;
 }
-
 .MyShows-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.2rem;
-    border-radius: 8px;
-    background-color: #e7c621;
-    border:1px solid #1b2021;
-    width: 5rem;
-    font-weight: bold;
-    text-decoration: none;    
-    font-style: italic;
+    background-image: linear-gradient(to right, #eacda3 0%, #d6ae7b 51%, #eacda3 100%);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: nunito, sans-serif;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color:  rgba(0, 0, 0, 0.644);
+    border-radius: 10px;
+    border: 1px solid rgba(245, 245, 220, 0);
+    box-shadow: 0px 3px 31px rgba(0, 0, 0, 0.321);
+    padding: 8px 35px;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 .MyShows-title2{
     text-align:start;
@@ -64,20 +66,21 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 1rem;
 }
-
-.newShowFrom-box{
-    min-height: 100vh ;
-    width: 100%;
+.MyShows-title3{
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 2rem;
+    background-color: #1b2021;
+    text-align: center;
+    color: #e7c621;
+    font-size: 30px;
+    padding: 0.5rem;
+    width: 100%;
 }
-.newShowFrom-form{
+.myshows-link{
+    text-decoration: none;
+}
+.NewShow-form{
     background-color: rgba(0, 0, 0, 0.644);
     display: flex;
     width: 30rem;
@@ -91,13 +94,17 @@
     font-style: italic;
     font-size: 18px;
 }
-.newShowFrom-button{
+.NewShow-input{
+    width: 25rem;
+    border-radius: 8px;
+}
+.NewShow-button{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.newShowFrom-button2{
+.NewShow-button2{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,43 +113,24 @@
     background-color: #e7c621;
     border:1px solid #1b2021;
     width: 5rem;
-    
-}
-.newShowFrom-google{
-    height: 100%;
-    object-fit: cover;
     cursor: pointer;
 }
-.newShowFrom-google2{
-    height: 1.5rem;
-    width: 12rem;
-    background-color: white;
+.MyShows-containerbuttons{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0.2rem;
-    padding: 0.2rem;
-    border-radius: 8px;
+    gap: 20px;
+    padding-bottom: 0.5rem;
 }
-.newShowFrom-h2{
-    background-color: #1b2021;
-    text-align: center;
-    color: #e7c621;
-    font-size: 35px;
-    padding: 0.5rem;
-}
-.newShowFrom-input{
+.NewShow-select{
     width: 25rem;
     border-radius: 8px;
 }
-@media (max-width: 550px){
-   
-}
-@media (max-width: 425px){
-    
-}
-@media (max-width: 375px){
-    
+@media (max-width: 768px){
+    .MyShows-card {
+        min-height: 600px;
+        width: 80%;
+        padding: 8px;
+        margin: 2rem;
+    }
 }
 @media (max-width: 550px){
     .MyShows-card {
@@ -150,35 +138,84 @@
         min-height: 600px;
         width: 80%; 
     }
-    .newShowFrom-form{
-        width: 60%;
+    .NewShow-form{
+        width: 80%;
+        gap: 0.5rem;
+        padding: 1rem;
+        font-size: 16px;
     }
-    .newShowFrom-input{
-        width: 14rem;
-    }  
+    .NewShow-input{
+        width: 22rem;
+    }
 }
 @media (max-width: 425px){
-    .MyShows-card {
-        padding: 0.5rem;
-        min-height: 600px;
-        width: 90%; 
-    } 
-    .newShowFrom-form{
-        width: 70%;
+    .NewShow-form{
+        width: 90%;
+        gap: 0.3rem;
+        padding: 1rem;
     }
-    .newShowFrom-input{
-        width: 14rem;
+    .NewShow-input{
+        width: 20rem;
+    }
+    .MyShows-card {
+        min-height:450px;
+        width: 95%;
+        padding: 5px;
+        margin: 1rem;
+    }
+    .MyShows-title3{
+        font-size: 25px;
+    }
+    .NewShow-select{
+        width: 20rem;
     }
 }
 @media (max-width: 375px){
-    .MyShows-card {
-        width: 90%; 
-    }  
-    .newShowFrom-form{
-        width: 80%;
+    .NewShow-form{
+        width: 95%;
         padding: 1rem;
     }
-    .newShowFrom-input{
-        width: 14rem;
+    .NewShow-input{
+        width: 18rem;
+    }
+    .MyShows-card {
+        min-height:430px;
+        width: 95%;
+        padding: 5px;
+        margin: 1rem;
+    }
+    .MyShows-btn{
+        font-size: 12px;
+        padding: 6px 20px;
+        margin: 5px;
+    }
+    .MyShows-title {
+        font-size: 22px;
+    }
+    .MyShows-title2 {
+        font-size: 14px;
+    }
+    .MyShows-title3{
+        font-size: 25px;
+    }
+    .NewShow-select{
+        width: 18rem;
     }
 }
+@media (max-width: 320px){
+    .MyShows-img {
+        object-fit: cover;
+        height: 250px;
+        width: 96%;
+    }
+    .NewShow-input{
+        width: 17rem;
+    }
+    .MyShows-title3{
+        font-size: 20px;
+    }
+    .NewShow-select{
+        width: 17rem;
+    }
+}
+

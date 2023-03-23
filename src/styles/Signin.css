@@ -5,16 +5,17 @@
     font-family: 'Merienda', cursive;
 }
 .Signin-box{
-    height: 70vh ;
+    min-height: 85vh ;
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-image: url("/public/img/flat.jpg");
     background-position: center;
     background-size: cover;
-    gap: 0.5rem;
+    gap: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 .Signin-form{
     background-color: rgba(0, 0, 0, 0.644);
@@ -47,29 +48,6 @@
     width: 5rem;
     
 }
-.Signin-google{
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-}
-.Signin-google2{
-    height: 1.5rem;
-    width: 12rem;
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0.2rem;
-    padding: 0.2rem;
-    border-radius: 8px;
-}
-.Signin-h2{
-    background-color: #1b2021;
-    text-align: center;
-    color: #e7c621;
-    font-size: 35px;
-    padding: 0.5rem;
-}
 .Signin-input{
     width: 25rem;
     border-radius: 8px;
@@ -82,18 +60,29 @@
 }
 @media (max-width: 425px){
     .Signin-form{
-        width: 70%;
+        width: 80%;
+        gap: 0.5rem;
     }
     .Signin-input{
-        width: 14rem;
+        width: 17rem;
     }
 }
 @media (max-width: 375px){
     .Signin-form{
-        width: 80%;
+        width: 90%;
+        padding: 1rem;
+        font-size: 16px;
+    }
+    .Signin-input{
+        width: 19rem;
+    }
+}
+@media (max-width: 320px){
+    .Signin-form{
+        width: 90%;
         padding: 1rem;
     }
     .Signin-input{
-        width: 14rem;
+        width: 16rem;
     }
 }

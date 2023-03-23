@@ -29,10 +29,10 @@ return (
                 data.map((datah)=>{ 
         return(
             <>
-            <div className="DetailsH-card  ">
+            <div className="DetailsH-card2" key={datah._id}>
                 <div className="DetailsH-title">{datah.name}</div>
-                <img className="DetailsH-img" src={datah.photo} alt="nada"></img>
-                <div className="DetailsH-title2">Capacity: {datah.capacity}</div>
+                <img className="DetailsH-img2" src={datah.photo} alt="nada"></img>
+                <p className="DetailsH-title2">Capacity: {datah.capacity}</p>
             </div>
             </>
         )  
@@ -42,20 +42,20 @@ return (
                 data2.map(show=>{ 
             return(
             <>
-            <div className="DetailsH-card">
+            <div className="DetailsH-card" key={show._id} >
                 <div className="DetailsH-title ">Show: {show.name}</div>
                 <img className="DetailsH-img" src={show.photo} alt="nada"></img>
-                <div className="DetailsH-title2">
-                    <div>Description: {show.description}</div>
-                    <div>Price: USD {show.price}</div>
-                    <div>Date: {show.date}</div>
+                <div className="DetailsH-title3">
+                    <p>Description: {show.description}</p>
+                    <p>Price: USD {show.price}</p>
+                    <p>Date: {show.date}</p>
                 </div>
                 <div className="DetailsH-user">
-                    <img img className="DetailsH-photo" src={show.userId.photo} alt="userphoto"></img>
-                    <div>{show.userId.name}</div>
+                    <img className="DetailsH-photo" src={show.userId.photo} alt="userphoto"></img>
+                    <p className="DetailsH-title3">{show.userId.name}</p>
                 </div>
                 <div className="DetailsH-commentBox">
-                    <Comments data={show._id}/>
+                    <Comments data={show._id}/> 
                 </div>
             </div> 
             </>

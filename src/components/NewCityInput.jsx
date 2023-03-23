@@ -32,17 +32,12 @@ export default function NewCityInput() {
       swal( "Error in created",error.response.data.message.join("\n"))
       
     }
-      
   }
- 
-
-
 
   return (
     <>
-      <div className="New-container">
-        <h2 className="New-h2">New City</h2>
-        <div className="New-box">
+      <div className="New-box">
+          <h1>New City</h1>
           <form id="form" className="New-form" onSubmit={sendData}>
             <label for="name">Name</label>
             <input
@@ -54,44 +49,44 @@ export default function NewCityInput() {
               onChange={handleInputChange}
               required
             />
-            <label for="photo">photo</label>
+            <label for="photo">Photo</label>
             <input
               className="New-input"
               id="photo"
               name="photo"
               type="text"
-              placeholder="Enter the Image"
+              placeholder="Enter the url"
               onChange={handleInputChange}
               required
             />
-            <label for="continent">continent</label>
+            <label for="continent">Continent</label>
             <input
               className="New-input"
               id="continent"
               name="continent"
               type="text"
-              placeholder="Enter the Continent"
+              placeholder="Enter the continent"
               onChange={handleInputChange}
               required
             />
 
-            <label for="population">population</label>
+            <label for="population">Population</label>
             <input
               className="New-input"
               name="population"
               id="population"
               type="text"
-              placeholder="Enter the Usser: "
+              placeholder="Enter the user"
               onChange={handleInputChange}
               required
             />
-            <label for="userId">userId</label>
+            <label for="userId">User Id</label>
             <input
               className="New-input"
               name="userId"
               id="userId"
               type="text"
-              placeholder="Enter the Usser Id: "
+              placeholder="Enter the user id"
               onChange={handleInputChange} required/>
               
             <div className="New-button">
@@ -100,7 +95,7 @@ export default function NewCityInput() {
               </button>
             </div>
           </form>
-        </div>
+        
       </div>
     </>
   )

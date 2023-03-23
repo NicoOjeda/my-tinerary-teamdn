@@ -3,7 +3,6 @@ import "../styles/Cities.css";
 import { useState, useRef, useEffect } from "react";
 import "../styles/Cards.css";
 import { Link as LinkRouter } from "react-router-dom";
-import "../styles/NotFound.css";
 import cardsActions from "../redux/actions/cardsActions";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -52,7 +51,7 @@ export default function Cities (){
     <div className="Cities-container">
       <h1>Cities</h1>
       <div className="check-container">
-        <div>
+        <label>
           <input
             type="checkbox"
             name="Europa"
@@ -61,8 +60,8 @@ export default function Cities (){
             defaultChecked={check.includes("Europa")}
           />
           Europa
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="Asia"
@@ -71,8 +70,8 @@ export default function Cities (){
             defaultChecked={check.includes("Asia")}
           />
           Asia
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="America"
@@ -81,8 +80,8 @@ export default function Cities (){
             defaultChecked={check.includes("America")}
           />
           America del Norte
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="Africa"
@@ -91,8 +90,8 @@ export default function Cities (){
             defaultChecked={check.includes("Africa")}
           />
           Africa
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="Oceania"
@@ -101,8 +100,8 @@ export default function Cities (){
             defaultChecked={check.includes("Oceania")}
           />
           Oceania
-        </div>
-        <div>
+        </label>
+        <label>
           <input
             type="checkbox"
             name="America del sur"
@@ -111,7 +110,7 @@ export default function Cities (){
             defaultChecked={check.includes("America del sur")}
           />
           America del sur
-        </div>
+        </label>
       </div>
       <div className="Cities-form" id="form">
         <label for="name">Start your adventure</label>
@@ -127,15 +126,13 @@ export default function Cities (){
       </div>
       {cities.length === 0 ? (
         <div className="cities-nofound">
-          {" "}
-          <p>We didn't found this city. Try other!</p>{" "}
+          <p>We didn't found this city. Try other!</p>
         </div>
       ) : (
         <>
           <div className="Cit-Container">
             {cities.map((City) => (
-              <div className="card-container">
-                <div className="card">
+                <div className="card" key={City._id}>
                   <div className="card-title">{City.name}</div>
                   <img
                     className="card-img"
@@ -146,7 +143,6 @@ export default function Cities (){
                     <button className="card-button">view more! </button>
                   </LinkRouter>
                 </div>
-              </div>
             ))}
             <div></div>
           </div>

@@ -26,8 +26,7 @@ export default function MyitineraryList () {
         let objeto = {
             id:e,
             newToken
-            
-          }
+        }
         dispatch(myItinerariesActions.deleteItineraries(objeto))
         swal({
             tittle:"Excelent",
@@ -38,52 +37,35 @@ export default function MyitineraryList () {
         navigate('/cities')
     }  
     const itineraryView = (myItinerary) =>(
-        <div className="d-activity-card cityImageDetails">
-         <div className="container-activity-detailc">
-
-            <div className="activity-title">
-            {myItinerary.name}
+            <div className="container-activity-detailc" key={myItinerary._id}>
+                <div className="activity-title">
+                {myItinerary.name}
+                </div>
+                <img  className="activity-img" src={myItinerary.photo} alt={myItinerary.name}></img>
+                <div className="my-price2">
+                    Price: ${myItinerary.price}
+                </div>
+                <div className="my-text">
+                    Duration: ⌚{myItinerary.duration}
+                </div>
+                <div className="my-text">{myItinerary.description}</div>
+                <div className="containerbuttonscities">
+                    <Link to={`/edititinerary/${myItinerary._id}`} className="mytinerary-link">
+                        <button className="my-btn">Edit</button>
+                    </Link>
+                    <button className="my-btn" onClick={()=>deleteItineraries(myItinerary._id)}>Delete</button>
+                </div>
             </div>
-            <img  className="activity-img detail-img1" src={myItinerary.photo}></img>
-            <div className="my-price">
-                Price: ${myItinerary.price}
-            </div>
-            <div className="my-duration">
-                Duration: ⌚{myItinerary.duration}
-            </div>
-            <div className="my-description">{myItinerary.description}</div>
-            <div className="containerbuttonscities">
-            <Link to={`/edititinerary/${myItinerary._id}`}>
-                <button className="my-btn">Edit Itinerary</button>
-            </Link>
-            <button className="my-btn2" onClick={()=>deleteItineraries(myItinerary._id)}>Delete</button>
-            </div>
-         </div>
-        </div>
     )
-
-    
-        
 
     return(
         <div className="imagebckcities">
-            <div className="my-price">
-                MyItineraries
-            </div>  
-            <div>
-
-            <div className="createItineraries">
-               {/* <h3>
-                 Crea Itinerarios !!
-                </h3> */}
-                {/* <Link className="containerCreateItinerary">
-                <button className="my-btn createButton">Create Itinerary</button>
-                </Link> */}
-            </div>
-            <div>
-         
-             {listItinerary.map((myItinerary,) => itineraryView(myItinerary))}
-            </div>
+            <h1>My Itineraries</h1>  
+                <Link to={'/MyTynerariesCreate'} className="mytinerary-link">
+                <button className="my-btn">New Itinerary</button>
+                </Link>
+            <div className='MyTinerary-container'>
+                {listItinerary.map((myItinerary,) => itineraryView(myItinerary))}
             </div>
         </div>
     )

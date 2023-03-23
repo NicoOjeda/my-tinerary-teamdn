@@ -5,16 +5,17 @@
     font-family: 'Merienda', cursive;
 }
 .NewHotel-box{
-    min-height: 100vh ;
+    min-height: 85vh ;
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-image: url("/public/img/flat.jpg");
     background-position: center;
     background-size: cover;
-    gap: 0.5rem;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 .NewHotel-form{
     background-color: rgba(0, 0, 0, 0.644);
@@ -45,23 +46,7 @@
     background-color: #e7c621;
     border:1px solid #1b2021;
     width: 5rem;
-    
-}
-.NewHotel-google{
-    height: 100%;
-    object-fit: cover;
     cursor: pointer;
-}
-.NewHotel-google2{
-    height: 1.5rem;
-    width: 12rem;
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0.2rem;
-    padding: 0.2rem;
-    border-radius: 8px;
 }
 .NewHotel-h2{
     background-color: #1b2021;
@@ -84,18 +69,28 @@
 }
 @media (max-width: 425px){
     .NewHotel-form{
-        width: 70%;
+        width: 80%;
+        gap: 0.5rem;
     }
     .NewHotel-input{
-        width: 14rem;
+        width: 17rem;
     }
 }
 @media (max-width: 375px){
     .NewHotel-form{
-        width: 80%;
+        width: 90%;
         padding: 1rem;
     }
     .NewHotel-input{
-        width: 14rem;
+        width: 19rem;
+    }
+}
+@media (max-width: 320px){
+    .NewHotel-form{
+        width: 90%;
+        padding: 1rem;
+    }
+    .NewHotel-input{
+        width: 16rem;
     }
 }

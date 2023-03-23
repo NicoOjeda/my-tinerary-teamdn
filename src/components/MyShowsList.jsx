@@ -82,27 +82,26 @@ async function SendDataShow(e){
 }
 
 const hotelView = (myShow)=> (
-    <div className="MyShows-card  ">
+    <div className="MyShows-card" key={myShow._id}>
                 <div className="MyShows-title">Show: {myShow.name}</div>
-                <img className="MyShows-img" src={myShow.photo} alt="nada"></img>
-                <div className="MyShows-title2">
-                    <div>Description: {myShow.description}</div>
-                    <div>Price: USD {myShow.price}</div>
-                    <div>Date: {myShow.date}</div>
+                <img className="MyShows-img" src={myShow.photo} alt={myShow.name}></img>
+                    <p className="MyShows-title3">Price: USD {myShow.price}</p>
+                    <p className="MyShows-title2">Date: {myShow.date}</p>
+                    <p className="MyShows-title2">{myShow.description}</p>
+                <div className="MyShows-containerbuttons">
+                  <Link to={`/editshow/${myShow._id}`} className="myshows-link"><button className='NewShow-button2'>Edit</button></Link>
+                  <button className='NewShow-button2' onClick={()=>deleteShow(myShow._id)}>Delete</button>
                 </div>
-                <Link to={`/editshow/${myShow._id}`}><button className='MyShows-btn'>Edit Hotel</button></Link>
-                <button className='MyShows-btn' onClick={()=>deleteShow(myShow._id)}>Delete</button>
             </div>
 )
 
     return (
-    <div className='MyHotels-container'>
-      <div>
-    <div className='newShowFrom-box' >
-        <form className='newShowFrom-form' onSubmit={SendDataShow} >
+      <>
+      <div className='newShowFrom-box' >
+      <h1>My Shows</h1>
+        <form className='NewShow-form' onSubmit={SendDataShow} >
         <label  for='hotelId'>Select a Hotel:</label>
-          <select  id='hotelId' name='hotelId' onChange={getInplut}>
-
+          <select  id='hotelId' className='NewShow-select' name='hotelId' onChange={getInplut}>
             <option value="636d6fe9fe85fb66a3614788">Select</option>
             <option value="636d6fe9fe85fb66a3614789">Andronis Luxury Suites</option>
             <option value="636d6fe9fe85fb66a361478a">Holland Casino Amsterdam Centrum</option>
@@ -118,59 +117,22 @@ const hotelView = (myShow)=> (
             <option value="636d6fe9fe85fb66a361478c">Dear Hotel Madrid</option>
           </select> 
             <label for='name'>Name</label>
-            <input 
-                className='newShowFrom-input' 
-                id="name" 
-                name="name" 
-                type="text"
-                placeholder='Enter name'
-                onChange={getInplut}  
-                required />
+            <input className='NewShow-input' id="name" name="name" type="text" placeholder='Enter name' onChange={getInplut} required />
             <label for='description'>description</label>
-            <input 
-                className='newShowFrom-input' 
-                id="description" 
-                name="description" 
-                type="text"
-                placeholder='Enter description'
-                onChange={getInplut}  
-                required />
+            <input className='NewShow-input' id="description" name="description" type="text" placeholder='Enter description' onChange={getInplut} required />
             <label for='photo'>Photo</label>
-            <input 
-                className='newShowFrom-input' 
-                id="photo" 
-                name="photo" 
-                type="text"
-                placeholder='Enter Url'
-                onChange={getInplut}  
-                required />
+            <input className='NewShow-input' id="photo" name="photo" type="text" placeholder='Enter Url' onChange={getInplut} required />
             <label for='price'>Price</label>
-            <input 
-                className='newShowFrom-input' 
-                id="price" 
-                name="price" 
-                type="number"
-                placeholder='Enter price'
-                onChange={getInplut}  
-                required />
+            <input className='NewShow-input' id="price" name="price" type="number" placeholder='Enter price' onChange={getInplut} required />
             <label for='date'>Date</label>
-            <input 
-                className='newShowFrom-input' 
-                id="date" 
-                name="date" 
-                type="date"
-                placeholder='Enter date'
-                onChange={getInplut}  
-                required />
-            
-            <div className='newShowFrom-button'>
-                <button className='newShowFrom-button2' type='submit'>Create</button>
+            <input className='NewShow-input'  id="date"  name="date"  type="date" placeholder='Enter date' onChange={getInplut} required />
+            <div className='NewShow-button'>
+                <button className='NewShow-button2' type='submit'>Create</button>
             </div>
         </form>
-        </div>
-      </div>
         {listShow.map((myShow)=> hotelView(myShow))}
-    </div>
+      </div>
+    </>
   )
 }
  
