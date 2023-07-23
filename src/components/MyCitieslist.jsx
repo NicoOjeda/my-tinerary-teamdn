@@ -41,7 +41,7 @@ export default function MyCitieslist() {
   };
 
   const cityView = (myCity) => (
-      <div className="mc-card">
+      <div className="mc-card" key={myCity._id}>
         <div className="mc-title">{myCity.name}</div>
         <img className="mc-img" src={myCity.photo} alt={myCity.photo}></img>
         <div className="mc-continent"> {myCity.continent}</div>
