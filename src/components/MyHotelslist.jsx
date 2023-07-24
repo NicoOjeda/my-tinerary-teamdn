@@ -1,12 +1,12 @@
 import React, {useEffect } from 'react'
 import '../styles/myhotelslist.css'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import myHotelsAction from '../redux/actions/myHotelsActions'
 import swal from 'sweetalert'
 
 export default function MyHotelslist() {
-    
+  const navigate= useNavigate()  
   const listHotel = useSelector(store => store.myHotelsReducer.hotelAdm) 
   const dispatch = useDispatch()
   const tokenList = useSelector(store => store.tokenReducer.tokenList)
@@ -17,9 +17,9 @@ export default function MyHotelslist() {
     dispatch(myHotelsAction.hotelList(tokenList._id))
   },[listHotel])
    
-  // console.log(listHotel);
+  console.log(listHotel);
 
-    const deleteHotel = (e)=>{
+const deleteHotel = (e)=>{
       let objeto = {
         idHotel: e,
         newToken: token.token.user
@@ -32,6 +32,7 @@ export default function MyHotelslist() {
       icon: "success",
       timer: "3000"
   })
+  navigate('/hotels')
 }
 
 

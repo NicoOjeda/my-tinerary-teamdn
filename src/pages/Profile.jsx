@@ -8,11 +8,12 @@ import { BASE_URL } from '../api/url';
 import swal from 'sweetalert'
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css";
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
     const profileUser = useSelector(store=> store.profileReducer.profileData)
     const tokenList = useSelector(store => store.tokenReducer.tokenList)
-    
+    const navigate = useNavigate()
     const dispatch = useDispatch();
 
     const [data, setData] = useState({
@@ -56,6 +57,7 @@ export default function Profile() {
                     timer: "3000",
                   });
                   e.target.reset();
+                  navigate('/')
                 }
               } catch (error) {
                 console.log(error);

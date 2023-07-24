@@ -78,7 +78,7 @@ async function SendDataShow(e){
       console.log( err)
   }
  
-  // e.target.reset()
+  e.target.reset()
 }
 
 const hotelView = (myShow)=> (
