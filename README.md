@@ -8,13 +8,11 @@ A list of technologies used within the project:
 * [sweetalert](https://example.com): Version 2.1.2
 ## Run Project
 npm start
-## Table of Contents
-<a name="general-info"></a>
+## Video
+<a name="general-info">[http://youtube.com](https://youtu.be/1vaCPefH-LM)</a>
 ### General Info
-## General Info
-***
-Write down the general informations of your project. It is worth to always put a project status in the Readme file. This is where you can add it. 
+
 ### Screenshot
-![Image text](/path/to/the/screenshot.png)
+![mytinerary](https://github.com/NicoOjeda/my-tinerary-teamdn/assets/92500277/477ef5b2-b4b7-41c4-a431-bb42b0e42fae)
 
 
